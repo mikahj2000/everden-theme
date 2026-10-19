@@ -1,0 +1,55 @@
+{%- liquid
+  assign menu = section.settings.menu
+  assign shop_product = section.settings.product
+  assign button_url = section.settings.button_link | default: shop_product.url | default: routes.all_products_collection_url
+-%}
+<div class="header-wrapper">
+  <header class="header page-width">
+    <details class="mobile-menu">
+      <summary class="header__icon" aria-label="{{ 'accessibility.menu' | t }}">{% render 'icon', name: 'menu' %}</summary>
+      <nav class="mobile-menu__panel" aria-label="Mobile">
+        {%- for link in menu.links -%}
+          <a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title }}</a>
+        {%- endfor -%}
+      </nav>
+    </details>
+
+    <a class="header__logo" href="{{ routes.root_url }}">
+      {%- if section.settings.logo != blank -%}
+        {{ section.settings.logo | image_url: width: 400 | image_tag: alt: shop.name, widths: '200, 400' }}
+      {%- else -%}
+        {{ shop.name | downcase }}<span>.</span>
+      {%- endif -%}
+    </a>
+
+    <nav class="header__nav" aria-label="Main">
+      {%- for link in menu.links -%}
+        <a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title }}</a>
+      {%- endfor -%}
+    </nav>
+
+    <div class="header__actions">
+      {%- if section.settings.button_label != blank -%}
+        <a class="button button--primary" href="{{ button_url }}">{{ section.settings.button_label }}</a>
+      {%- endif -%}
+      <a class="header__icon" href="{{ routes.cart_url }}" aria-label="{{ 'accessibility.cart' | t }} ({{ cart.item_count }})">
+        {% render 'icon', name: 'cart' %}
+        {%- if cart.item_count > 0 -%}<span class="cart-count" aria-hidden="true">{{ cart.item_count }}</span>{%- endif -%}
+      </a>
+    </div>
+  </header>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "section-header",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo", "info": "Leave empty to show the store name in the heading font." },
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop now" },
+    { "type": "product", "id": "product", "label": "Button product", "info": "The button goes to this product." },
+    { "type": "url", "id": "button_link", "label": "Button link (overrides product)" }
+  ]
+}
+{% endschema %}

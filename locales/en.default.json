@@ -1,0 +1,48 @@
+{
+  "accessibility": {
+    "skip_to_content": "Skip to content",
+    "cart": "Cart",
+    "menu": "Menu",
+    "search": "Search",
+    "close": "Close"
+  },
+  "products": {
+    "add_to_cart": "Add to cart",
+    "sold_out": "Sold out",
+    "choose": "Choose your set"
+  },
+  "cart": {
+    "title": "Your cart",
+    "empty": "Your cart is empty.",
+    "continue": "Continue shopping",
+    "subtotal": "Subtotal",
+    "taxes": "Taxes and shipping calculated at checkout.",
+    "checkout": "Check out",
+    "remove": "Remove",
+    "product": "Product",
+    "quantity": "Quantity",
+    "total": "Total"
+  },
+  "newsletter": {
+    "email": "Email address",
+    "success": "Thanks for joining. Check your inbox."
+  },
+  "general": {
+    "404_title": "Page not found",
+    "404_text": "The page you were looking for doesn't exist.",
+    "search_placeholder": "Search",
+    "search_results": "Results for \"{{ terms }}\"",
+    "no_results": "No results found.",
+    "previous": "Previous",
+    "next": "Next",
+    "password_title": "Opening soon"
+  },
+  "contact": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send",
+    "success": "Thanks for reaching out. We'll reply within one business day."
+  }
+}

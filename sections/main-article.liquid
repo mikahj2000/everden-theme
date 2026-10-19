@@ -1,0 +1,12 @@
+<article class="main-page page-width">
+  <p class="eyebrow">{{ article.published_at | date: '%B %-d, %Y' }}</p>
+  <h1 class="h2 main-page__title">{{ article.title }}</h1>
+  {%- if article.image -%}
+    <div style="max-width:760px;margin-bottom:32px">{% render 'media', image: article.image, label: article.title, ratio: '16 / 9' %}</div>
+  {%- endif -%}
+  <div class="rte">{{ article.content }}</div>
+</article>
+
+{% schema %}
+{ "name": "Article", "settings": [] }
+{% endschema %}

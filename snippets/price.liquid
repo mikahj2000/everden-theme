@@ -1,0 +1,15 @@
+{%- comment -%} Params: variant (or product). Shows price and a compare-at price when one is set. {%- endcomment -%}
+{%- liquid
+  assign target = variant | default: product.selected_or_first_available_variant
+  assign on_sale = false
+  if target.compare_at_price > target.price
+    assign on_sale = true
+  endif
+-%}
+<div class="price" data-price>
+  <span class="price__current">{{ target.price | money }}</span>
+  {%- if on_sale -%}
+    <s class="price__compare">{{ target.compare_at_price | money }}</s>
+    <span class="price__badge">Save {{ target.compare_at_price | minus: target.price | money_without_trailing_zeros }}</span>
+  {%- endif -%}
+</div>

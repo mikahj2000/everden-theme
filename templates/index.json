@@ -1,0 +1,429 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "product": "wireless-rechargeable-vibration-massage-red-light-therapy-heated-device-red-light-therapy-knee-arms-shoulders-elbow-brace",
+        "badge": "New",
+        "kicker": "Red + near-infrared light · Massage · Cordless",
+        "heading": "Your 15‑minute <em>knee</em> recovery ritual.",
+        "text": "<p>Red and near-infrared light with gentle massage, in one cordless wrap. Strap it on, press one button and unwind on the couch.</p>",
+        "primary_label": "Shop the wrap",
+        "show_price": true,
+        "secondary_label": "See how it works",
+        "secondary_link": "#how-it-works",
+        "image_label": "The wrap on a knee, LEDs glowing red, warm living-room light"
+      },
+      "blocks": {
+        "trust_1": {
+          "type": "trust",
+          "settings": {
+            "icon": "truck",
+            "text": "Ships in 1–2 weeks"
+          }
+        },
+        "trust_2": {
+          "type": "trust",
+          "settings": {
+            "icon": "shield",
+            "text": "60-day guarantee"
+          }
+        },
+        "trust_3": {
+          "type": "trust",
+          "settings": {
+            "icon": "lock",
+            "text": "Secure checkout"
+          }
+        }
+      },
+      "block_order": [
+        "trust_1",
+        "trust_2",
+        "trust_3"
+      ]
+    },
+    "marquee": {
+      "type": "marquee",
+      "settings": {
+        "speed": 36
+      },
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "text": "15-minute ritual"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "text": "660nm red + 850nm near-infrared"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "text": "Cordless & rechargeable"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "text": "Strap on. Press one button. Unwind."
+          }
+        },
+        "item_5": {
+          "type": "item",
+          "settings": {
+            "text": "60-day guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5"
+      ]
+    },
+    "story": {
+      "type": "story",
+      "settings": {
+        "anchor": "how-it-works",
+        "eyebrow": "Why Everden",
+        "heading": "Something to do that isn't another pill"
+      },
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "image_label": "Someone easing up from the couch, hand on their knee",
+            "heading": "The ache shows up at the worst moments",
+            "text": "<p>Getting up from the couch. Going down the stairs. Sitting on the edge of the bed in the morning, waiting for your knees to agree. After a 12-hour shift or a long run, it's waiting for you.</p>"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "image_label": "The wrap on a knee, LEDs glowing red",
+            "heading": "Meet the Everden knee wrap",
+            "text": "<p>A soft neoprene wrap with a panel of 660nm red and 850nm near-infrared lights on the inside, plus three levels of gentle massage. Red and near-infrared light has been studied in dozens of clinical trials for knee discomfort.</p>"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "image_label": "Relaxing on the sofa with the wrap on, TV or book in hand",
+            "heading": "Fifteen minutes, wherever you sit",
+            "text": "<p>It's cordless, with a 5000mAh rechargeable battery. Use it on the couch, at your desk or in the passenger seat. Strap it on, press one button and let it run.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3"
+      ]
+    },
+    "features": {
+      "type": "feature-cards",
+      "settings": {
+        "eyebrow": "Built for real routines",
+        "heading": "Everything in one wrap. Nothing to plug in."
+      },
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "icon": "light",
+            "heading": "Red + near-infrared light",
+            "text": "<p>660nm red and 850nm near-infrared, the wavelength ranges used in clinical studies. Five brightness levels.</p>"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "icon": "wave",
+            "heading": "Gentle massage",
+            "text": "<p>Three vibration levels for a soothing, relaxing session while you sit.</p>"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "icon": "heart",
+            "heading": "Soothing warmth",
+            "text": "<p>A built-in warmth setting for knees that feel stiff after a long day or a cold morning.</p>"
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "icon": "battery",
+            "heading": "Truly cordless",
+            "text": "<p>A 5000mAh rechargeable battery means no hunting for an outlet near the couch.</p>"
+          }
+        },
+        "card_5": {
+          "type": "card",
+          "settings": {
+            "icon": "power",
+            "heading": "One-button simple",
+            "text": "<p>Strap it on and press start. No app, no account, nothing to set up.</p>"
+          }
+        },
+        "card_6": {
+          "type": "card",
+          "settings": {
+            "icon": "shield",
+            "heading": "The Everden Guarantee",
+            "text": "<p>60 days to try it every day. If it's not for you, get a full refund of the product price.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4",
+        "card_5",
+        "card_6"
+      ]
+    },
+    "stats": {
+      "type": "stats-band",
+      "settings": {
+        "eyebrow": "The details",
+        "heading": "Made for a daily routine",
+        "note": "Use it daily for 4–8 weeks to see how it fits your routine. Individual experiences vary."
+      },
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "value": "660 + 850nm",
+            "label": "red and near-infrared light, the ranges studied in clinical research"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "value": "15 min",
+            "label": "per session, once a day, on your own schedule"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "value": "5000mAh",
+            "label": "rechargeable battery for cordless sessions anywhere you sit"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ]
+    },
+    "compare": {
+      "type": "comparison",
+      "settings": {
+        "eyebrow": "Compare",
+        "heading": "Why choose one or the other?",
+        "col_1": "Everden",
+        "col_2": "Heating pad",
+        "col_3": "Clinic light sessions"
+      },
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "feature": "Red + near-infrared light",
+            "us": true,
+            "them_1": false,
+            "them_2": true
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "feature": "Gentle massage",
+            "us": true,
+            "them_1": false,
+            "them_2": false
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "feature": "Cordless, use it anywhere",
+            "us": true,
+            "them_1": false,
+            "them_2": false
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "feature": "At home, on your schedule",
+            "us": true,
+            "them_1": true,
+            "them_2": false
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "feature": "One-time cost",
+            "us": true,
+            "them_1": true,
+            "them_2": false
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "feature": "60-day money-back guarantee",
+            "us": true,
+            "them_1": false,
+            "them_2": false
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6"
+      ]
+    },
+    "reviews": {
+      "type": "testimonials",
+      "settings": {
+        "eyebrow": "Everden stories",
+        "heading": "From people who use it every day"
+      }
+    },
+    "guarantee": {
+      "type": "guarantee",
+      "settings": {
+        "product": "wireless-rechargeable-vibration-massage-red-light-therapy-heated-device-red-light-therapy-knee-arms-shoulders-elbow-brace",
+        "deep": true,
+        "days": "60",
+        "eyebrow": "60-day guarantee",
+        "heading": "The Everden Guarantee",
+        "text": "<p>Use it every day for up to 60 days. If it doesn't earn a place in your routine, send it back for a full refund of the product price. No hoops, no fine print.</p>",
+        "button_label": "Try it for 60 days"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "eyebrow": "Questions",
+        "heading": "Everything you'd want to know"
+      },
+      "blocks": {
+        "question_1": {
+          "type": "question",
+          "settings": {
+            "question": "How do I use it?",
+            "answer": "<p>Wrap it around your knee with the light panel against your skin and fasten the three straps. Press the power button, choose your light and massage settings, and relax for 15 minutes. Once a day is plenty.</p>"
+          }
+        },
+        "question_2": {
+          "type": "question",
+          "settings": {
+            "question": "How soon will I notice a difference?",
+            "answer": "<p>Most people find the massage relaxing from the first session. With red light, the people who describe the clearest changes used it daily for 4 to 8 weeks, so give it a fair try. Everyone is different, and results vary.</p>"
+          }
+        },
+        "question_3": {
+          "type": "question",
+          "settings": {
+            "question": "Will it fit my knee?",
+            "answer": "<p>It's one size with three adjustable hook-and-loop straps. If you're unsure, measure around the middle of your knee and <a href=\"/pages/contact\">send us the number</a> before you order.</p>"
+          }
+        },
+        "question_4": {
+          "type": "question",
+          "settings": {
+            "question": "How long does the battery last?",
+            "answer": "<p>The 5000mAh battery runs several 15-minute sessions on one charge. Recharge it with the included USB cable.</p>"
+          }
+        },
+        "question_5": {
+          "type": "question",
+          "settings": {
+            "question": "Who shouldn't use it?",
+            "answer": "<p>Don't use it over broken or irritated skin. Check with your doctor first if you're pregnant, have a pacemaker or other implanted device, have reduced feeling in your legs, or take medicine that makes your skin sensitive to light.</p>"
+          }
+        },
+        "question_6": {
+          "type": "question",
+          "settings": {
+            "question": "Is it a medical device?",
+            "answer": "<p>No. The Everden wrap is a wellness product for relaxation and recovery. It isn't intended to diagnose, treat, cure or prevent any condition, and it doesn't replace care from your doctor or physical therapist.</p>"
+          }
+        },
+        "question_7": {
+          "type": "question",
+          "settings": {
+            "question": "When will my order arrive?",
+            "answer": "<p>Most orders arrive within 1 to 2 weeks. You'll get a tracking link by email as soon as it ships.</p>"
+          }
+        },
+        "question_8": {
+          "type": "question",
+          "settings": {
+            "question": "What if it's not for me?",
+            "answer": "<p>You have 60 days to try it. If it doesn't earn a place in your routine, contact us for a full refund of the product price.</p>"
+          }
+        },
+        "question_9": {
+          "type": "question",
+          "settings": {
+            "question": "Does it make a good gift?",
+            "answer": "<p>Yes. It's a popular pick for parents and grandparents who spend a lot of time on their feet, and the 2-pack lets you keep one and give one.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_1",
+        "question_2",
+        "question_3",
+        "question_4",
+        "question_5",
+        "question_6",
+        "question_7",
+        "question_8",
+        "question_9"
+      ]
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "Join the Everden list",
+        "heading": "Routine tips and early offers",
+        "text": "<p>Short, useful emails about building a daily knee routine, plus first access to new offers. No spam.</p>",
+        "button_label": "Sign up"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "marquee",
+    "story",
+    "features",
+    "stats",
+    "compare",
+    "reviews",
+    "guarantee",
+    "faq",
+    "newsletter"
+  ]
+}

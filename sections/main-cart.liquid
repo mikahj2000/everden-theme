@@ -1,0 +1,47 @@
+<section class="main-page page-width">
+  <h1 class="h2 main-page__title">{{ 'cart.title' | t }}</h1>
+  {%- if cart.item_count > 0 -%}
+    <form action="{{ routes.cart_url }}" method="post" novalidate>
+      <table class="cart-table">
+        <thead><tr><th>{{ 'cart.product' | t }}</th><th>{{ 'cart.quantity' | t }}</th><th style="text-align:right">{{ 'cart.total' | t }}</th></tr></thead>
+        <tbody>
+          {%- for item in cart.items -%}
+            <tr>
+              <td>
+                <div class="cart-item">
+                  <div class="cart-item__img media" style="aspect-ratio:1/1">
+                    {%- if item.image -%}{{ item.image | image_url: width: 200 | image_tag: alt: item.product.title, loading: 'lazy' }}{%- endif -%}
+                  </div>
+                  <div>
+                    <a class="cart-item__title" href="{{ item.url }}">{{ item.product.title }}</a>
+                    {%- unless item.product.has_only_default_variant -%}<div style="font-size:.9rem">{{ item.variant.title }}</div>{%- endunless -%}
+                    <div style="font-size:.9rem">{{ item.final_price | money }}</div>
+                    <a class="link" style="font-size:.85rem" href="{{ item.url_to_remove }}">{{ 'cart.remove' | t }}</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <label class="visually-hidden" for="Qty-{{ forloop.index }}">{{ 'cart.quantity' | t }}</label>
+                <input class="qty" id="Qty-{{ forloop.index }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" data-cart-qty>
+              </td>
+              <td style="text-align:right;font-weight:600">{{ item.final_line_price | money }}</td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+      <div class="cart-footer">
+        <div class="cart-footer__total">{{ 'cart.subtotal' | t }}: {{ cart.total_price | money_with_currency }}</div>
+        <p style="font-size:.9rem;margin:0">{{ 'cart.taxes' | t }}</p>
+        <button class="button button--primary" type="submit" name="checkout">{{ 'cart.checkout' | t }}</button>
+        {%- if additional_checkout_buttons -%}<div>{{ content_for_additional_checkout_buttons }}</div>{%- endif -%}
+      </div>
+    </form>
+  {%- else -%}
+    <p>{{ 'cart.empty' | t }}</p>
+    <a class="button button--primary" href="{{ routes.all_products_collection_url }}">{{ 'cart.continue' | t }}</a>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{ "name": "Cart", "settings": [] }
+{% endschema %}

@@ -1,0 +1,14 @@
+{
+  "current": {
+    "color_charcoal": "#17181B",
+    "color_stone": "#EEEAE4",
+    "color_stone_deep": "#E4DED5",
+    "color_ember": "#D63A2F",
+    "color_ember_text": "#B32E25",
+    "color_silver": "#A8ABB0",
+    "color_ink": "#2B2B2E",
+    "color_sage": "#3F6B4F",
+    "page_width": 1240,
+    "radius": 20
+  }
+}

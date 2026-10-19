@@ -1,0 +1,37 @@
+<section class="section section--dark">
+  <div class="page-width">
+    {% render 'section-heading', eyebrow: section.settings.eyebrow, heading: section.settings.heading, align: 'left' %}
+    <div class="stats">
+      {%- for block in section.blocks -%}
+        <div {{ block.shopify_attributes }}>
+          <div class="stat__value">{{ block.settings.value }}</div>
+          <p class="stat__label">{{ block.settings.label }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.note != blank -%}<p class="stats__note">{{ section.settings.note }}</p>{%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Numbers band",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Small label", "default": "The details" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Made for a daily routine" },
+    { "type": "text", "id": "note", "label": "Footnote" }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Number",
+      "settings": [
+        { "type": "text", "id": "value", "label": "Number", "default": "15 min" },
+        { "type": "text", "id": "label", "label": "Description", "default": "per session" }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [{ "name": "Numbers band", "blocks": [{ "type": "stat" }, { "type": "stat" }, { "type": "stat" }] }]
+}
+{% endschema %}

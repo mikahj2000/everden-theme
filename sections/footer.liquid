@@ -1,0 +1,48 @@
+<footer class="footer">
+  <div class="page-width">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="{{ routes.root_url }}">{{ shop.name | downcase }}<span>.</span></a>
+        {%- if section.settings.text != blank -%}<div>{{ section.settings.text }}</div>{%- endif -%}
+      </div>
+      {%- for menu_id in (1..2) -%}
+        {%- liquid
+          assign key = 'menu_' | append: menu_id
+          assign title_key = 'menu_title_' | append: menu_id
+          assign m = section.settings[key]
+        -%}
+        {%- if m.links.size > 0 -%}
+          <div>
+            <h2>{{ section.settings[title_key] | default: m.title }}</h2>
+            <ul>
+              {%- for link in m.links -%}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.disclaimer != blank -%}
+      <div class="footer__disclaimer">{{ section.settings.disclaimer }}</div>
+    {%- endif -%}
+    <div class="footer__bottom">
+      <span>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</span>
+      <span>{{ section.settings.bottom_right }}</span>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "section-footer",
+  "settings": [
+    { "type": "richtext", "id": "text", "label": "Brand text", "default": "<p>A 15-minute knee recovery ritual: red and near-infrared light with gentle massage, on your own couch.</p>" },
+    { "type": "text", "id": "menu_title_1", "label": "First column heading", "default": "Explore" },
+    { "type": "link_list", "id": "menu_1", "label": "First column menu", "default": "main-menu" },
+    { "type": "text", "id": "menu_title_2", "label": "Second column heading", "default": "Support" },
+    { "type": "link_list", "id": "menu_2", "label": "Second column menu", "default": "footer" },
+    { "type": "richtext", "id": "disclaimer", "label": "Disclaimer", "default": "<p>Everden products are wellness devices for relaxation and recovery. They are not intended to diagnose, treat, cure or prevent any disease. Talk to your doctor about what's right for your knee. Individual experiences vary.</p>" },
+    { "type": "text", "id": "bottom_right", "label": "Bottom right text", "default": "Secure checkout · 60-day guarantee" }
+  ]
+}
+{% endschema %}

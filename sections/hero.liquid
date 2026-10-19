@@ -1,0 +1,73 @@
+{%- liquid
+  assign p = section.settings.product
+  assign hero_image = section.settings.image | default: p.featured_image
+  assign primary_url = section.settings.primary_link | default: p.url | default: routes.all_products_collection_url
+-%}
+<section class="hero" id="hero-{{ section.id }}">
+  <div class="page-width hero__grid">
+    <div>
+      {%- if section.settings.kicker != blank -%}
+        <p class="hero__kicker"><span class="hero__kicker-dot" aria-hidden="true"></span>{{ section.settings.kicker }}</p>
+      {%- endif -%}
+      <h1 class="h1">{{ section.settings.heading }}</h1>
+      {%- if section.settings.text != blank -%}<div class="hero__text">{{ section.settings.text }}</div>{%- endif -%}
+      <div class="hero__buttons">
+        {%- if section.settings.primary_label != blank -%}
+          <a class="button button--primary" href="{{ primary_url }}">
+            {{ section.settings.primary_label }}{% if section.settings.show_price and p != blank %} · {{ p.price | money_without_trailing_zeros }}{% endif %}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.secondary_label != blank -%}
+          <a class="button button--secondary" href="{{ section.settings.secondary_link | default: '#how-it-works' }}">{{ section.settings.secondary_label }}</a>
+        {%- endif -%}
+      </div>
+      {%- if section.blocks.size > 0 -%}
+        <ul class="hero__trust">
+          {%- for block in section.blocks -%}
+            <li {{ block.shopify_attributes }}>{% render 'icon', name: block.settings.icon %}{{ block.settings.text }}</li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+    <div class="hero__media">
+      {%- if section.settings.badge != blank -%}<span class="hero__badge">{{ section.settings.badge }}</span>{%- endif -%}
+      {% render 'media', image: hero_image, label: section.settings.image_label, ratio: '1 / 1', loading: 'eager', class: 'media--shadow', sizes: '(min-width: 990px) 50vw, 100vw' %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "class": "section-hero",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Product", "info": "Its first photo is used when no image is chosen below, and the button links to it." },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "image_label", "label": "Placeholder description", "default": "The wrap on a knee, LEDs glowing red, warm living-room light" },
+    { "type": "text", "id": "badge", "label": "Image badge", "default": "New" },
+    { "type": "text", "id": "kicker", "label": "Line above heading", "default": "Red + near-infrared light · Massage · Cordless" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Your 15‑minute <em>knee</em> recovery ritual." },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Red and near-infrared light with gentle massage, in one cordless wrap. Strap it on, press one button and unwind on the couch.</p>" },
+    { "type": "text", "id": "primary_label", "label": "Main button label", "default": "Shop the wrap" },
+    { "type": "checkbox", "id": "show_price", "label": "Show price in main button", "default": true },
+    { "type": "url", "id": "primary_link", "label": "Main button link (overrides product)" },
+    { "type": "text", "id": "secondary_label", "label": "Second button label", "default": "See how it works" },
+    { "type": "text", "id": "secondary_link", "label": "Second button link", "default": "#how-it-works", "info": "#how-it-works scrolls to the numbered steps." }
+  ],
+  "blocks": [
+    {
+      "type": "trust",
+      "name": "Trust point",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "default": "shield", "options": [
+          { "value": "truck", "label": "Truck" }, { "value": "shield", "label": "Shield" }, { "value": "lock", "label": "Lock" },
+          { "value": "clock", "label": "Clock" }, { "value": "heart", "label": "Heart" }, { "value": "battery", "label": "Battery" }
+        ] },
+        { "type": "text", "id": "text", "label": "Text", "default": "60-day guarantee" }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}

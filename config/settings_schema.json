@@ -1,0 +1,37 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Everden",
+    "theme_version": "1.0.0",
+    "theme_author": "Everden",
+    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+    "theme_support_url": "https://help.shopify.com"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      { "type": "paragraph", "content": "Ember & Stone palette. Ember red is for buttons, stars and large words; use the darker red for small text." },
+      { "type": "color", "id": "color_charcoal", "label": "Charcoal (dark bands, footer, headings)", "default": "#17181B" },
+      { "type": "color", "id": "color_stone", "label": "Warm stone (page background)", "default": "#EEEAE4" },
+      { "type": "color", "id": "color_stone_deep", "label": "Deep stone (alternate sections)", "default": "#E4DED5" },
+      { "type": "color", "id": "color_ember", "label": "Ember red (buttons, accents)", "default": "#D63A2F" },
+      { "type": "color", "id": "color_ember_text", "label": "Dark ember (small red text)", "default": "#B32E25" },
+      { "type": "color", "id": "color_silver", "label": "Silver grey (lines, icons)", "default": "#A8ABB0" },
+      { "type": "color", "id": "color_ink", "label": "Ink (body text)", "default": "#2B2B2E" },
+      { "type": "color", "id": "color_sage", "label": "Sage (checkmarks, guarantee)", "default": "#3F6B4F" }
+    ]
+  },
+  {
+    "name": "Layout",
+    "settings": [
+      { "type": "range", "id": "page_width", "label": "Page width", "min": 1000, "max": 1600, "step": 20, "unit": "px", "default": 1240 },
+      { "type": "range", "id": "radius", "label": "Corner roundness", "min": 0, "max": 32, "step": 2, "unit": "px", "default": 20 }
+    ]
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      { "type": "image_picker", "id": "favicon", "label": "Favicon", "info": "Square image, at least 64 × 64px." }
+    ]
+  }
+]

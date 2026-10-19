@@ -1,0 +1,46 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement": {
+      "type": "announcement-bar",
+      "blocks": {
+        "m1": {
+          "type": "message",
+          "settings": {
+            "text": "60-day money-back guarantee"
+          }
+        },
+        "m2": {
+          "type": "message",
+          "settings": {
+            "text": "Ships in 1–2 weeks with tracking"
+          }
+        },
+        "m3": {
+          "type": "message",
+          "settings": {
+            "text": "Cordless & rechargeable"
+          }
+        }
+      },
+      "block_order": [
+        "m1",
+        "m2",
+        "m3"
+      ]
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "menu": "main-menu",
+        "button_label": "Shop now",
+        "product": "wireless-rechargeable-vibration-massage-red-light-therapy-heated-device-red-light-therapy-knee-arms-shoulders-elbow-brace"
+      }
+    }
+  },
+  "order": [
+    "announcement",
+    "header"
+  ]
+}

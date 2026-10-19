@@ -1,0 +1,19 @@
+<section class="section" style="padding-top:0">
+  <div class="page-width">
+    <div class="safety">
+      <h2>{{ section.settings.heading }}</h2>
+      {{ section.settings.text }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Safety note",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Before you use it" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<ul><li>Use on clean, unbroken skin.</li><li>Check with your doctor first if you are pregnant, have a pacemaker or take medicine that makes skin sensitive to light.</li><li>Don't look directly into the LEDs.</li></ul>" }
+  ],
+  "presets": [{ "name": "Safety note" }]
+}
+{% endschema %}

@@ -1,0 +1,18 @@
+{%- comment -%} Brand colors come from Theme settings > Colors, so they can be changed in the editor. {%- endcomment -%}
+{%- style -%}
+  :root {
+    --c-charcoal: {{ settings.color_charcoal }};
+    --c-stone: {{ settings.color_stone }};
+    --c-stone-deep: {{ settings.color_stone_deep }};
+    --c-ember: {{ settings.color_ember }};
+    --c-ember-text: {{ settings.color_ember_text }};
+    --c-silver: {{ settings.color_silver }};
+    --c-ink: {{ settings.color_ink }};
+    --c-sage: {{ settings.color_sage }};
+    --c-card: #FFFFFF;
+    --font-heading: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --page-width: {{ settings.page_width }}px;
+    --radius: {{ settings.radius }}px;
+  }
+{%- endstyle -%}

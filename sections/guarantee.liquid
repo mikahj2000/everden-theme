@@ -1,0 +1,41 @@
+{%- assign p = section.settings.product -%}
+<section class="section{% if section.settings.deep %} section--deep{% endif %}">
+  <div class="page-width">
+    <div class="guarantee">
+      <div class="guarantee__seal" aria-hidden="true">
+        <strong>{{ section.settings.days }}</strong>
+        <span>Day guarantee</span>
+      </div>
+      <div>
+        {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        <h2 class="h2">{{ section.settings.heading }}</h2>
+        {{ section.settings.text }}
+        <div class="guarantee__actions">
+          {%- if section.settings.button_label != blank -%}
+            <a class="button button--primary" href="{{ section.settings.button_link | default: p.url | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
+          {%- endif -%}
+          {%- if shop.refund_policy -%}
+            <a class="link" href="{{ shop.refund_policy.url }}">Read the refund policy</a>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Guarantee",
+  "settings": [
+    { "type": "checkbox", "id": "deep", "label": "Darker background", "default": true },
+    { "type": "text", "id": "days", "label": "Number of days", "default": "60" },
+    { "type": "text", "id": "eyebrow", "label": "Small label", "default": "60-day guarantee" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The Everden Guarantee" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Use it every day for up to 60 days. If it doesn't earn a place in your routine, send it back for a full refund of the product price. No hoops, no fine print.</p>" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Try it for 60 days" },
+    { "type": "product", "id": "product", "label": "Button product" },
+    { "type": "url", "id": "button_link", "label": "Button link (overrides product)" }
+  ],
+  "presets": [{ "name": "Guarantee" }]
+}
+{% endschema %}

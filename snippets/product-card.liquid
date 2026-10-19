@@ -1,0 +1,6 @@
+{%- comment -%} Params: product {%- endcomment -%}
+<a class="product-card" href="{{ product.url }}">
+  {% render 'media', image: product.featured_image, label: product.title, ratio: '1 / 1', class: 'media--contain', sizes: '(min-width: 990px) 33vw, 50vw' %}
+  <h2 class="product-card__title">{{ product.title }}</h2>
+  {% render 'price', variant: product.selected_or_first_available_variant %}
+</a>
