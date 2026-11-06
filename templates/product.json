@@ -218,7 +218,7 @@
             "ev_pills": {
               "type": "ev-trust-pills",
               "settings": {
-                "pill1": "Arrives in 5–7 business days",
+                "pill1": "Arrives in 7–12 business days",
                 "pill2": "30-day guarantee",
                 "pill3": "15-min sessions"
               },
@@ -422,7 +422,7 @@
                     "text": {
                       "type": "text",
                       "settings": {
-                        "text": "<ul><li>Light: 660nm red + 850nm near-infrared LEDs, 5 brightness levels</li><li>Massage: 3 vibration levels</li><li>Heat: 3 levels, 113°F / 122°F / 131°F (45°C / 50°C / 55°C)</li><li>Auto shut-off: after 30 minutes</li><li>Battery: 5000mAh rechargeable, cordless use</li><li>Charging: 5V 2A</li><li>Material: neoprene wrap with hook-and-loop strap</li><li>Size: one size, adjustable</li></ul><p><strong>In the box:</strong> 1 knee wrap, 1 USB charging cable (wall plug not included; a standard USB phone charger plug works) and 1 user manual. The 2-pack comes with two of each.</p>",
+                        "text": "<ul><li>Light: 660nm red + 850nm near-infrared LEDs, 5 brightness levels</li><li>Massage: 3 vibration levels</li><li>Heat: 3 levels, 104–131°F (40–55°C)</li><li>Auto shut-off: after 30 minutes</li><li>Battery: 5000mAh rechargeable, cordless use</li><li>Charging: 5V 2A</li><li>Material: neoprene wrap with hook-and-loop strap</li><li>Size: one size, adjustable</li></ul><p><strong>In the box:</strong> 1 knee wrap, 1 USB charging cable (wall plug not included; a standard USB phone charger plug works) and 1 user manual. The 2-pack comes with two of each.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -461,7 +461,7 @@
                     "text": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Orders ship with tracking and usually arrive within 5–7 business days. You'll get a tracking link by email as soon as your order ships.</p>",
+                        "text": "<p>Orders ship with tracking and usually arrive within 7–12 business days. You'll get a tracking link by email as soon as your order ships.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -590,7 +590,7 @@
           "type": "faq",
           "settings": {
             "question": "Does it get hot?",
-            "answer": "It has 3 heat levels: 113°F, 122°F and 131°F. Start on the lowest level and check your skin. If it ever feels too hot, turn the heat down or off. It switches off on its own after 30 minutes."
+            "answer": "It has 3 heat levels, from 104°F up to 131°F (40–55°C). Start on the lowest level and check your skin. If it ever feels too hot, turn the heat down or off. It switches off on its own after 30 minutes."
           }
         },
         "faq4": {
@@ -618,7 +618,7 @@
           "type": "faq",
           "settings": {
             "question": "When will my order arrive?",
-            "answer": "Orders ship with tracking and usually arrive within 5–7 business days."
+            "answer": "Orders ship with tracking and usually arrive within 7–12 business days."
           }
         },
         "faq8": {
