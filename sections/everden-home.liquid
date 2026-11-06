@@ -1,0 +1,262 @@
+{%- assign p = section.settings.product | default: all_products['everden-red-light-knee-wrap'] -%}
+{%- assign v1 = p.variants.first -%}
+{%- assign v2 = p.variants[1] -%}
+{%- assign img_hero = section.settings.hero_image | default: p.media[0].preview_image -%}
+{%- assign img_light = section.settings.light_image | default: p.media[1].preview_image -%}
+<style>
+  .evh{--ink:#17181B;--stone:#EEEAE4;--stone2:#E1DAD0;--ember:#D63A2F;--text:#3A3A3F;color:var(--ink);background:var(--stone)}
+  .evh *{box-sizing:border-box}
+  .evh-wrap{max-width:1160px;margin:0 auto;padding:80px 20px}
+  .evh-eyebrow{font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--ember);margin:0 0 12px}
+  .evh-h2{font-size:clamp(30px,4.4vw,48px);line-height:1.05;letter-spacing:-.02em;font-weight:800;margin:0 0 14px}
+  .evh-lede{font-size:18px;line-height:1.5;color:var(--text);max-width:640px;margin:0 0 40px}
+  .evh-center{text-align:center}
+  .evh-center .evh-lede{margin-left:auto;margin-right:auto}
+  .evh-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 30px;border:0;border-radius:999px;background:var(--ember);color:#fff;font-size:17px;font-weight:700;cursor:pointer;text-decoration:none}
+  .evh-btn svg{width:20px;height:20px;flex-shrink:0}
+  .evh-btn:hover{background:#B9301F;color:#fff}
+  .evh-btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+  .evh-link{display:inline-flex;align-items:center;min-height:54px;padding:0 8px;color:var(--ink);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+  .evh-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center;padding-top:56px;padding-bottom:56px}
+  .evh-hero h1{font-size:clamp(40px,6vw,76px);line-height:.98;letter-spacing:-.03em;font-weight:900;margin:0 0 22px}
+  .evh-hero h1 span{color:var(--ember)}
+  .evh-hero p.evh-sub{font-size:20px;line-height:1.45;color:var(--text);margin:0 0 30px;max-width:520px}
+  .evh-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .evh-hero-img img{width:100%;height:auto;display:block;border-radius:28px;background:#fff}
+  .evh-ticks{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:15px;font-weight:600;color:var(--text)}
+  .evh-ticks li::before{content:"\2713";color:var(--ember);font-weight:900;margin-right:8px}
+  .evh-strip{background:var(--ink);color:var(--stone)}
+  .evh-strip ul{list-style:none;margin:0 auto;padding:22px 20px;max-width:1160px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;text-align:center;font-size:15px;font-weight:700;letter-spacing:.02em}
+  .evh-strip li span{color:var(--ember);margin-right:8px}
+  .evh-moments{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .evh-moments li{background:#fff;border-radius:18px;padding:22px 22px 22px 52px;position:relative;font-size:18px;line-height:1.4;font-weight:600;text-align:left}
+  .evh-moments li::before{content:"";position:absolute;left:22px;top:28px;width:14px;height:14px;border-radius:7px;background:var(--ember)}
+  .evh-end{margin:32px auto 0;max-width:720px;font-size:20px;line-height:1.4;font-weight:700}
+  .evh-dark{background:var(--ink);color:var(--stone)}
+  .evh-dark .evh-lede{color:#C9C4BC}
+  .evh-inside{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:center}
+  .evh-inside img{width:100%;height:auto;display:block;border-radius:24px;background:var(--stone)}
+  .evh-stats{display:grid;grid-template-columns:1fr;gap:26px}
+  .evh-stat{border-top:3px solid var(--ember);padding-top:16px}
+  .evh-stat b{display:block;font-size:44px;line-height:1;font-weight:900;letter-spacing:-.02em}
+  .evh-stat b small{font-size:22px}
+  .evh-stat span{display:block;margin-top:8px;font-size:17px;line-height:1.45;color:#C9C4BC}
+  .evh-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;text-align:left}
+  .evh-step{background:#fff;border-radius:22px;padding:30px}
+  .evh-step b{display:block;font-size:52px;line-height:1;font-weight:900;color:var(--ember)}
+  .evh-step h3{margin:14px 0 8px;font-size:24px;font-weight:800}
+  .evh-step p{margin:0;font-size:17px;line-height:1.5;color:var(--text)}
+  .evh-promise{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;max-width:920px;margin:0 auto}
+  .evh-seal{width:160px;height:160px;border-radius:80px;background:var(--ember);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 6px var(--ink),0 0 0 9px var(--ember)}
+  .evh-seal b{font-size:36px;line-height:1;font-weight:900}
+  .evh-seal span{margin-top:6px;font-size:12px;font-weight:700;letter-spacing:.08em;line-height:1.3}
+  .evh-promise p{margin:0 0 22px;font-size:18px;line-height:1.5;color:#C9C4BC}
+  .evh-choose{margin:0 0 12px !important;font-size:13px !important;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .evh-ctas{display:flex;flex-wrap:wrap;gap:12px}
+  .evh-ctas form{margin:0}
+  .evh-ctas .evh-btn{box-shadow:0 6px 18px rgba(0,0,0,.25)}
+  .evh-light{background:var(--stone);color:var(--ink)}
+  .evh-light:hover{background:#fff;color:var(--ink)}
+  .evh-dark .evh-btn:focus-visible{outline-color:#fff}
+  .evh-save{margin:14px 0 0 !important;font-size:15px !important}
+  .evh-faq{max-width:780px;margin:0 auto;text-align:left}
+  .evh-faq details{border-bottom:1px solid #CFC7BB;padding:18px 0}
+  .evh-faq summary{cursor:pointer;list-style:none;font-size:18px;font-weight:700;display:flex;justify-content:space-between;gap:16px}
+  .evh-faq summary::-webkit-details-marker{display:none}
+  .evh-faq summary::after{content:"+";color:var(--ember);font-size:24px;line-height:1}
+  .evh-faq details[open] summary::after{content:"\2212"}
+  .evh-faq details p{margin:12px 0 0;font-size:16px;line-height:1.6;color:var(--text)}
+  .evh-note{max-width:780px;margin:28px auto 0;font-size:13px;line-height:1.5;color:#5A5A60;text-align:center}
+  .evh-more{margin-top:28px}
+  .evh-rlt{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:960px;margin:0 auto;text-align:left}
+  .evh-rlt div{background:#fff;border-radius:20px;padding:26px 28px}
+  .evh-rlt div.evh-rlt-wide{grid-column:1 / -1}
+  .evh-rlt h3{margin:0 0 8px;font-size:20px;font-weight:800}
+  .evh-rlt p{margin:0;font-size:16px;line-height:1.55;color:var(--text)}
+  .evh-rlt i{display:inline-block;width:12px;height:12px;border-radius:6px;background:var(--ember);margin-right:10px;vertical-align:1px}
+  .evh-rlt i.nir{background:#7A1E18}
+  @media (max-width:899px){
+    .evh-rlt{grid-template-columns:1fr}
+    .evh-hero,.evh-inside{grid-template-columns:1fr}
+    .evh-hero-img{order:-1}
+    .evh-strip ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .evh-moments,.evh-steps{grid-template-columns:1fr}
+  }
+  @media (max-width:749px){
+    .evh-wrap{padding:56px 16px}
+    .evh-hero{padding-top:24px}
+    .evh-promise{grid-template-columns:1fr;justify-items:center;text-align:center}
+    .evh-ctas{justify-content:center;flex-direction:column;align-items:stretch}
+    .evh-ctas .evh-btn{width:100%}
+  }
+</style>
+
+<div class="evh">
+
+  <div class="evh-wrap evh-hero">
+    <div>
+      <p class="evh-eyebrow">Everden · Red light recovery</p>
+      <h1>For the days your knees <span>feel older than you do.</span></h1>
+      <p class="evh-sub">A 15-minute daily ritual. Red and near-infrared light plus gentle massage, in one cordless wrap.</p>
+      <div class="evh-actions">
+        <a class="evh-btn" href="{{ p.url }}">Shop the wrap · {{ v1.price | money_without_trailing_zeros }}</a>
+        <a class="evh-link" href="#evh-how">How it works</a>
+      </div>
+      <ul class="evh-ticks">
+        <li>30-day money-back guarantee</li>
+        <li>Tracked shipping</li>
+      </ul>
+    </div>
+    <div class="evh-hero-img">
+      {%- if img_hero -%}
+        {{ img_hero | image_url: width: 1400 | image_tag: loading: 'eager', fetchpriority: 'high', sizes: '(max-width: 899px) 100vw, 50vw', alt: 'Everden Red Light Knee Wrap' }}
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="evh-strip">
+    <ul>
+      <li><span>&#9679;</span>15-minute sessions</li>
+      <li><span>&#9679;</span>Cordless, no app</li>
+      <li><span>&#9679;</span>Light + massage</li>
+      <li><span>&#9679;</span>30-day guarantee</li>
+    </ul>
+  </div>
+
+  <div class="evh-wrap evh-center">
+    <p class="evh-eyebrow">Sound familiar?</p>
+    <h2 class="evh-h2">Your knees remember every step.</h2>
+    <p class="evh-lede">A few of the moments we heard about again and again.</p>
+    <ul class="evh-moments">
+      <li>Waking up and needing a minute before your knees agree to stand.</li>
+      <li>Gripping the railing on stairs you used to run up.</li>
+      <li>Getting home from a long day and your knees are the first thing you notice.</li>
+      <li>Circling the parking lot for the closest spot, just to save your knees a few steps.</li>
+      <li>Stacking pillows between your knees just to get comfortable enough to sleep.</li>
+      <li>Saying no to plans because your knees said no first.</li>
+    </ul>
+    <p class="evh-end">These moments don't have to be your normal. Give your knees 15 minutes a day.</p>
+  </div>
+
+  <div class="evh-dark">
+    <div class="evh-wrap">
+      <div class="evh-inside">
+        <div>
+          {%- if img_light -%}
+            {{ img_light | image_url: width: 1400 | image_tag: loading: 'lazy', sizes: '(max-width: 899px) 100vw, 55vw', alt: 'Everden knee wrap laid flat, showing the control panel' }}
+          {%- endif -%}
+        </div>
+        <div>
+          <p class="evh-eyebrow">Inside the wrap</p>
+          <h2 class="evh-h2">Light and massage, in one wrap.</h2>
+          <div class="evh-stats">
+            <div class="evh-stat"><b>60</b><span>LEDs, each with red and near-infrared chips</span></div>
+            <div class="evh-stat"><b>660+850<small>nm</small></b><span>Red + near-infrared light, with 5 brightness levels</span></div>
+            <div class="evh-stat"><b>3</b><span>Massage levels, with or without the light</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evh-wrap evh-center">
+    <p class="evh-eyebrow">New to red light?</p>
+    <h2 class="evh-h2">What is red light therapy?</h2>
+    <p class="evh-lede">Light, in two wavelengths. Here's what that means.</p>
+    <div class="evh-rlt">
+      <div><h3><i></i>Red light (660nm)</h3><p>The warm red glow you can see. It works near the surface of the skin.</p></div>
+      <div><h3><i class="nir"></i>Near-infrared light (850nm)</h3><p>Invisible to the eye, and it reaches deeper than red light. Each of Everden's 60 LEDs gives off both.</p></div>
+      <div><h3>No heat lamps, no UV</h3><p>It's gentle light from LEDs, with none of the ultraviolet rays that cause sunburn.</p></div>
+      <div><h3>What it feels like</h3><p>A soft, warm-looking glow and nothing more. Most people pair it with the massage and use it as a 15-minute wind-down.</p></div>
+      <div class="evh-rlt-wide"><h3>Not new, just smaller</h3><p>Researchers have studied these wavelengths for decades under the name <em>photobiomodulation</em>. In plain English, that's the study of how light may assist the body's natural recovery. Spas, gyms and clinics use larger panels. Everden puts it in a wrap you can use at home.</p></div>
+    </div>
+  </div>
+
+  <div class="evh-wrap evh-center" id="evh-how">
+    <p class="evh-eyebrow">How it works</p>
+    <h2 class="evh-h2">Strap. Press. Relax.</h2>
+    <p class="evh-lede">Simple enough to do every day, which is the whole point.</p>
+    <div class="evh-steps">
+      <div class="evh-step"><b>01</b><h3>Strap it on</h3><p>Wrap it around your knee and fasten the straps so the light panel sits on the joint.</p></div>
+      <div class="evh-step"><b>02</b><h3>Press one button</h3><p>Pick your light and massage levels. Start low and adjust to what feels good.</p></div>
+      <div class="evh-step"><b>03</b><h3>Sit back for 15</h3><p>On the couch, at your desk or after a long day. It's cordless, so you can wear it wherever you sit.</p></div>
+    </div>
+  </div>
+
+  <div class="evh-dark">
+    <div class="evh-wrap">
+      <div class="evh-promise">
+        <div class="evh-seal" aria-hidden="true"><b>30-DAY</b><span>MONEY-BACK<br>GUARANTEE</span></div>
+        <div>
+          <h2 class="evh-h2">Try it for 30 days</h2>
+          <p>{{ section.settings.promise_text }}</p>
+          <p class="evh-choose">Choose your pack:</p>
+          <div class="evh-ctas">
+            {%- form 'product', p -%}
+              <input type="hidden" name="id" value="{{ v1.id }}">
+              <button type="submit" class="evh-btn evh-light"{% unless v1.available %} disabled{% endunless %}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 7H6"/></svg>
+                {%- if v1.available -%}Buy 1 wrap · {{ v1.price | money_without_trailing_zeros }}{%- else -%}Sold out{%- endif -%}
+              </button>
+            {%- endform -%}
+            {%- if v2 -%}
+              {%- form 'product', p -%}
+                <input type="hidden" name="id" value="{{ v2.id }}">
+                <button type="submit" class="evh-btn"{% unless v2.available %} disabled{% endunless %}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 7H6"/></svg>
+                  {%- if v2.available -%}Buy 2 wraps · {{ v2.price | money_without_trailing_zeros }}{%- else -%}Sold out{%- endif -%}
+                </button>
+              {%- endform -%}
+            {%- endif -%}
+          </div>
+          {%- if v2 and v2.compare_at_price > v2.price -%}
+            <p class="evh-save">Both knees? Save {{ v2.compare_at_price | minus: v2.price | money_without_trailing_zeros }} with the 2-pack.</p>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evh-wrap evh-center">
+    <p class="evh-eyebrow">Questions</p>
+    <h2 class="evh-h2">Good to know</h2>
+    <p class="evh-lede">Straight answers before you buy.</p>
+    <div class="evh-faq">
+      {%- for block in section.blocks -%}
+        <details {{ block.shopify_attributes }}>
+          <summary>{{ block.settings.question }}</summary>
+          <p>{{ block.settings.answer }}</p>
+        </details>
+      {%- endfor -%}
+    </div>
+    <div class="evh-more"><a class="evh-btn" href="{{ p.url }}">See the full details</a></div>
+    <p class="evh-note">{{ section.settings.disclaimer }}</p>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Everden home",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Product" },
+    { "type": "image_picker", "id": "hero_image", "label": "Hero image (defaults to the product's first photo)" },
+    { "type": "image_picker", "id": "light_image", "label": "Inside-the-wrap image (defaults to the product's second photo)" },
+    { "type": "textarea", "id": "promise_text", "label": "Guarantee text", "default": "Not for you? Email us within 30 days of delivery for a full refund." },
+    { "type": "textarea", "id": "disclaimer", "label": "Disclaimer", "default": "Everden is a wellness and recovery product. It is not a medical device and is not intended to diagnose, treat, cure or prevent any disease." }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Question" },
+        { "type": "textarea", "id": "answer", "label": "Answer", "default": "Answer" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Everden home" } ]
+}
+{% endschema %}

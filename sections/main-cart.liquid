@@ -1,47 +1,230 @@
-<section class="main-page page-width">
-  <h1 class="h2 main-page__title">{{ 'cart.title' | t }}</h1>
-  {%- if cart.item_count > 0 -%}
-    <form action="{{ routes.cart_url }}" method="post" novalidate>
-      <table class="cart-table">
-        <thead><tr><th>{{ 'cart.product' | t }}</th><th>{{ 'cart.quantity' | t }}</th><th style="text-align:right">{{ 'cart.total' | t }}</th></tr></thead>
-        <tbody>
-          {%- for item in cart.items -%}
-            <tr>
-              <td>
-                <div class="cart-item">
-                  <div class="cart-item__img media" style="aspect-ratio:1/1">
-                    {%- if item.image -%}{{ item.image | image_url: width: 200 | image_tag: alt: item.product.title, loading: 'lazy' }}{%- endif -%}
-                  </div>
-                  <div>
-                    <a class="cart-item__title" href="{{ item.url }}">{{ item.product.title }}</a>
-                    {%- unless item.product.has_only_default_variant -%}<div style="font-size:.9rem">{{ item.variant.title }}</div>{%- endunless -%}
-                    <div style="font-size:.9rem">{{ item.final_price | money }}</div>
-                    <a class="link" style="font-size:.85rem" href="{{ item.url_to_remove }}">{{ 'cart.remove' | t }}</a>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <label class="visually-hidden" for="Qty-{{ forloop.index }}">{{ 'cart.quantity' | t }}</label>
-                <input class="qty" id="Qty-{{ forloop.index }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" data-cart-qty>
-              </td>
-              <td style="text-align:right;font-weight:600">{{ item.final_line_price | money }}</td>
-            </tr>
-          {%- endfor -%}
-        </tbody>
-      </table>
-      <div class="cart-footer">
-        <div class="cart-footer__total">{{ 'cart.subtotal' | t }}: {{ cart.total_price | money_with_currency }}</div>
-        <p style="font-size:.9rem;margin:0">{{ 'cart.taxes' | t }}</p>
-        <button class="button button--primary" type="submit" name="checkout">{{ 'cart.checkout' | t }}</button>
-        {%- if additional_checkout_buttons -%}<div>{{ content_for_additional_checkout_buttons }}</div>{%- endif -%}
+
+
+{% liquid
+  assign custom_color = false
+  if section.settings.background_color != blank or section.settings.text_color != blank
+    assign custom_color = true
+    render 'contrast-override', background_color: section.settings.background_color, text_color: section.settings.text_color, section_id: section.id
+  endif
+%}
+
+{% capture cart_page_more_blocks_content %}
+  <div class="cart-page__more-blocks">
+    {%- content_for 'blocks' -%}
+  </div>
+{% endcapture %}
+
+{% capture cart_items_children %}
+  <template id="empty-cart-template">
+    <div class="section-background{% if custom_color %} color-custom-{{ section.id }}{% endif %}"></div>
+    <div
+      class="section{% if custom_color %} color-custom-{{ section.id }}{% endif %} section--{{ section.settings.section_width }}"
+    >
+      <div
+        class="cart-page spacing-style{% if cart.empty? %} cart-page--empty{% endif %}"
+        style="{% render 'spacing-style', settings: section.settings %}"
+      >
+        <div class="cart-page__title">
+          {%- content_for 'block', id: 'cart-page-title', type: '_cart-title', force_empty: true %}
+        </div>
+        <div class="cart-page__items">
+          {%- content_for 'block', id: 'cart-page-items', type: '_cart-products', force_empty: true %}
+        </div>
+        {{ cart_page_more_blocks_content }}
       </div>
-    </form>
-  {%- else -%}
-    <p>{{ 'cart.empty' | t }}</p>
-    <a class="button button--primary" href="{{ routes.all_products_collection_url }}">{{ 'cart.continue' | t }}</a>
-  {%- endif -%}
-</section>
+    </div>
+  </template>
+
+  <div class="section-background{% if custom_color %} color-custom-{{ section.id }}{% endif %}"></div>
+  <div
+    class="section{% if custom_color %} color-custom-{{ section.id }}{% endif %} section--{{ section.settings.section_width }}"
+  >
+    <div
+      class="cart-page spacing-style{% if cart.empty? %} cart-page--empty{% endif %}"
+      style="{% render 'spacing-style', settings: section.settings %}"
+    >
+      <div class="cart-page__title">
+        {%- content_for 'block', id: 'cart-page-title', type: '_cart-title' %}
+      </div>
+
+      <div class="cart-page__items">
+        {%- content_for 'block', id: 'cart-page-items', type: '_cart-products' %}
+      </div>
+
+      {%- unless cart.empty? -%}
+        <div class="cart-page__summary">
+          {%- content_for 'block', id: 'cart-page-summary', type: '_cart-summary' -%}
+        </div>
+      {%- endunless -%}
+
+      {{ cart_page_more_blocks_content }}
+    </div>
+  </div>
+{% endcapture %}
+{% render 'cart-items-component', children: cart_items_children, section_id: section.id %}
+
+{% stylesheet %}
+  .cart-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0 var(--padding-5xl);
+  }
+
+  .cart-page--empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart-page--empty .cart-page__title,
+  .cart-page--empty .cart-page__more-blocks {
+    margin-top: var(--margin-6xl);
+  }
+
+  .cart-page__more-blocks {
+    width: 100%;
+  }
+
+  .cart-page--empty .cart-title {
+    text-align: center;
+  }
+
+  .cart-page__main {
+    grid-column: 1;
+  }
+
+  .cart-page__summary {
+    padding-top: var(--padding-xl);
+  }
+
+  .cart-page__title + .cart-page__items {
+    margin-block-start: var(--margin-lg);
+  }
+
+  @media screen and (min-width: 750px) {
+    .cart-page {
+      grid-template-columns: 1fr min(50vw, var(--sidebar-width));
+      grid-template-rows: min-content min-content 1fr;
+    }
+
+    .cart-page__summary {
+      display: grid;
+      height: 100%;
+      grid-column: 2;
+      grid-row: 1 / -1;
+      align-self: stretch;
+      grid-template-rows: subgrid;
+      padding-top: 0;
+
+      /* needed to support blurred effect from hero section */
+      position: relative;
+    }
+
+    .section--page-width .cart-page:has(.cart-summary--extend) {
+      grid-column: 2 / 4;
+      grid-template-columns: 1fr minmax(
+          var(--sidebar-width),
+          calc((100vw - var(--page-width)) / 2 + var(--sidebar-width))
+        );
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    .cart-page {
+      grid-template-columns: 1fr var(--sidebar-width);
+    }
+  }
+{% endstylesheet %}
 
 {% schema %}
-{ "name": "Cart", "settings": [] }
+{
+  "name": "t:names.cart",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "@theme"
+    },
+    {
+      "type": "@app"
+    },
+    {
+      "type": "text"
+    },
+    {
+      "type": "icon"
+    },
+    {
+      "type": "image"
+    },
+    {
+      "type": "button"
+    },
+    {
+      "type": "video"
+    },
+    {
+      "type": "group"
+    },
+    {
+      "type": "spacer"
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ]
+}
 {% endschema %}

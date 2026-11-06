@@ -1,7 +1,0 @@
-{%- comment -%} Params: eyebrow, heading, text, align ('center' default), tag {%- endcomment -%}
-{%- assign tag = tag | default: 'h2' -%}
-<div class="section-heading{% if align == 'left' %} section-heading--left{% endif %}">
-  {%- if eyebrow != blank -%}<p class="eyebrow">{{ eyebrow }}</p>{%- endif -%}
-  {%- if heading != blank -%}<{{ tag }} class="h2">{{ heading }}</{{ tag }}>{%- endif -%}
-  {%- if text != blank -%}<div class="section-heading__text">{{ text }}</div>{%- endif -%}
-</div>

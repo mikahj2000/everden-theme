@@ -1,0 +1,193 @@
+{%- assign p = product -%}
+{%- assign v = p.selected_or_first_available_variant -%}
+<style>
+  .ev-pdp{--ev-ink:#17181B;--ev-stone:#EEEAE4;--ev-stone2:#E1DAD0;--ev-ember:#D63A2F;--ev-text:#3A3A3F;--ev-silver:#A8ABB0;color:var(--ev-ink);background:var(--ev-stone)}
+  .ev-pdp *{box-sizing:border-box}
+  [class*="__ev_benefits"] strong{color:#D63A2F}
+  .ev-wrap{max-width:1120px;margin:0 auto;padding:72px 20px}
+  .ev-eyebrow{font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--ev-ember);margin:0 0 12px;text-align:center}
+  .ev-h2{font-size:clamp(30px,4.4vw,48px);line-height:1.05;letter-spacing:-.02em;font-weight:800;margin:0 0 14px;text-align:center}
+  .ev-lede{font-size:18px;line-height:1.5;color:var(--ev-text);max-width:640px;margin:0 auto 44px;text-align:center}
+  .ev-dark{background:var(--ev-ink);color:var(--ev-stone)}
+  .ev-dark .ev-lede{color:#C9C4BC}
+  .ev-promise{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;max-width:900px;margin:0 auto}
+  .ev-seal{width:150px;height:150px;border-radius:75px;background:var(--ev-ember);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 6px var(--ev-ink),0 0 0 9px var(--ev-ember)}
+  .ev-seal b{font-size:34px;line-height:1;font-weight:900}
+  .ev-seal span{margin-top:6px;font-size:12px;font-weight:700;letter-spacing:.08em;line-height:1.3}
+  .ev-promise h2{text-align:left;margin-bottom:10px}
+  .ev-promise p{margin:0 0 20px;font-size:18px;line-height:1.5;color:#C9C4BC}
+  .ev-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border:0;border-radius:999px;background:var(--ev-ember);color:#fff;font-size:17px;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+  .ev-btn svg{width:20px;height:20px;flex-shrink:0}
+  .ev-btn:hover{background:#B9301F}
+  .ev-btn-light{background:var(--ev-stone);color:var(--ev-ink)}
+  .ev-btn-light:hover{background:#fff;color:var(--ev-ink)}
+  .ev-btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+  .ev-faq{max-width:780px;margin:0 auto}
+  .ev-faq details{border-bottom:1px solid #CFC7BB;padding:18px 0}
+  .ev-faq summary{cursor:pointer;list-style:none;font-size:18px;font-weight:700;display:flex;justify-content:space-between;gap:16px}
+  .ev-faq summary::-webkit-details-marker{display:none}
+  .ev-faq summary::after{content:"+";color:var(--ev-ember);font-size:24px;line-height:1}
+  .ev-faq details[open] summary::after{content:"\2212"}
+  .ev-faq details p{margin:12px 0 0;font-size:16px;line-height:1.6;color:var(--ev-text)}
+  .ev-note{max-width:780px;margin:28px auto 0;font-size:13px;line-height:1.5;color:#5A5A60;text-align:center}
+  .ev-moments{list-style:none;margin:0 auto;padding:0;max-width:960px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .ev-moments li{background:#fff;border-radius:18px;padding:22px 22px 22px 52px;position:relative;font-size:18px;line-height:1.4;font-weight:600}
+  .ev-moments li::before{content:"";position:absolute;left:22px;top:28px;width:14px;height:14px;border-radius:7px;background:var(--ev-ember)}
+  .ev-moments-end{margin:32px auto 0;max-width:720px;text-align:center;font-size:20px;line-height:1.4;font-weight:700}
+  .ev-fit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:960px;margin:0 auto}
+  .ev-fit-col{border-radius:20px;padding:30px}
+  .ev-fit-yes{background:var(--ev-ink);color:var(--ev-stone)}
+  .ev-fit-no{background:#fff}
+  .ev-fit h3{margin:0 0 16px;font-size:22px;font-weight:800}
+  .ev-fit ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+  .ev-fit li{position:relative;padding-left:32px;font-size:16px;line-height:1.5}
+  .ev-fit-yes li{color:#E4DFD8}
+  .ev-fit-no li{color:var(--ev-text)}
+  .ev-fit-yes li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--ev-ember);font-weight:900}
+  .ev-fit-no li::before{content:"\2715";position:absolute;left:0;top:0;color:#8A8A90;font-weight:900}
+  .ev-choose{margin:0 0 12px !important;font-size:13px !important;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#C9C4BC !important}
+  .ev-ctas{display:flex;flex-wrap:wrap;gap:12px}
+  .ev-ctas form{margin:0}
+  .ev-save{margin:14px 0 0 !important;font-size:15px !important;color:#C9C4BC}
+  @media (max-width:749px){
+    .ev-moments,.ev-fit{grid-template-columns:1fr}
+    .ev-ctas{justify-content:center;flex-direction:column;align-items:stretch}
+    .ev-ctas .ev-btn{width:100%}
+    .ev-wrap{padding:52px 16px}
+    .ev-promise{grid-template-columns:1fr;justify-items:center;text-align:center}
+    .ev-promise h2{text-align:center}
+  }
+</style>
+
+<div class="ev-pdp">
+
+  <div class="ev-wrap">
+    <p class="ev-eyebrow">Sound familiar?</p>
+    <h2 class="ev-h2">Your knees remember every step.</h2>
+    <p class="ev-lede">A few of the moments we heard about again and again.</p>
+    <ul class="ev-moments">
+      <li>Waking up and needing a minute before your knees agree to stand.</li>
+      <li>Gripping the railing on stairs you used to run up.</li>
+      <li>Getting home from a long day and your knees are the first thing you notice.</li>
+      <li>Circling the parking lot for the closest spot, just to save your knees a few steps.</li>
+      <li>Stacking pillows between your knees just to get comfortable enough to sleep.</li>
+      <li>Saying no to plans because your knees said no first.</li>
+    </ul>
+    <p class="ev-moments-end">These moments don't have to be your normal. Give your knees 15 minutes a day.</p>
+  </div>
+
+  <div class="ev-wrap" style="padding-top:0">
+    <p class="ev-eyebrow">Is it right for you?</p>
+    <h2 class="ev-h2">Who it's for</h2>
+    <p class="ev-lede">We'd rather you know up front.</p>
+    <div class="ev-fit">
+      <div class="ev-fit-col ev-fit-yes">
+        <h3>Made for you if</h3>
+        <ul>
+          <li>You stay active, whether it's walks, the gym or weekend sports, and want an easy routine for afterward.</li>
+          <li>Your knees stiffen up after sitting, driving or a long day on your feet.</li>
+          <li>You want something you can use on the couch with no cords or setup.</li>
+          <li>You'll give it 15 minutes a day, most days.</li>
+        </ul>
+      </div>
+      <div class="ev-fit-col ev-fit-no">
+        <h3>Not the right fit if</h3>
+        <ul>
+          <li>You have a new injury, swelling or sharp pain. See a doctor first.</li>
+          <li>You're looking for a medical treatment or an overnight fix.</li>
+          <li>You're pregnant, take medication that makes you sensitive to light, or the skin on your knee is broken or irritated.</li>
+          <li>You have reduced feeling in your legs, for example from diabetes or nerve damage. You may not notice if the heat gets too warm.</li>
+          <li>You won't use it regularly. It's a daily routine, not a one-time thing.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev-wrap">
+    <p class="ev-eyebrow">Questions</p>
+    <h2 class="ev-h2">Good to know</h2>
+    <p class="ev-lede">Straight answers before you buy.</p>
+    <div class="ev-faq">
+      {%- for block in section.blocks -%}
+        <details {{ block.shopify_attributes }}>
+          <summary>{{ block.settings.question }}</summary>
+          <p>{{ block.settings.answer }}</p>
+        </details>
+      {%- endfor -%}
+    </div>
+    <p class="ev-note">{{ section.settings.disclaimer }}</p>
+  </div>
+
+  <div class="ev-dark">
+    <div class="ev-wrap">
+      <div class="ev-promise">
+        <div class="ev-seal" aria-hidden="true"><b>30-DAY</b><span>MONEY-BACK<br>GUARANTEE</span></div>
+        <div>
+          <h2 class="ev-h2">Try it for 30 days</h2>
+          <p>{{ section.settings.promise_text }}</p>
+          {%- assign v1 = p.variants.first -%}
+          {%- assign v2 = p.variants[1] -%}
+          <p class="ev-choose">Choose your pack:</p>
+          <div class="ev-ctas">
+            {%- form 'product', p -%}
+              <input type="hidden" name="id" value="{{ v1.id }}">
+              <button type="submit" class="ev-btn ev-btn-light"{% unless v1.available %} disabled{% endunless %}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 7H6"/></svg>
+                {%- if v1.available -%}Buy 1 wrap · {{ v1.price | money_without_trailing_zeros }}{%- else -%}Sold out{%- endif -%}
+              </button>
+            {%- endform -%}
+            {%- if v2 -%}
+              {%- form 'product', p -%}
+                <input type="hidden" name="id" value="{{ v2.id }}">
+                <button type="submit" class="ev-btn"{% unless v2.available %} disabled{% endunless %}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 7H6"/></svg>
+                  {%- if v2.available -%}Buy 2 wraps · {{ v2.price | money_without_trailing_zeros }}{%- else -%}Sold out{%- endif -%}
+                </button>
+              {%- endform -%}
+            {%- endif -%}
+          </div>
+          {%- if v2 and v2.compare_at_price > v2.price -%}
+            <p class="ev-save">Both knees? Save {{ v2.compare_at_price | minus: v2.price | money_without_trailing_zeros }} with the 2-pack.</p>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Everden product story",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "stat1_label", "label": "Stat 1 label", "default": "A day is all it takes" },
+    { "type": "text", "id": "stat2_label", "label": "Stat 2 label", "default": "nm red + near-infrared light" },
+    { "type": "text", "id": "stat3_label", "label": "Stat 3 label", "default": "mAh battery, fully cordless" },
+    { "type": "text", "id": "features_heading", "label": "Features heading", "default": "Built for your daily routine" },
+    { "type": "text", "id": "features_lede", "label": "Features intro", "default": "Light, massage and a strap that stays put, in one wrap you can wear anywhere." },
+    { "type": "image_picker", "id": "features_image", "label": "Features image (not shown)" },
+    { "type": "textarea", "id": "promise_text", "label": "Guarantee text", "default": "Not for you? Email us within 30 days of delivery for a full refund." },
+    { "type": "textarea", "id": "disclaimer", "label": "Disclaimer", "default": "Everden is a wellness and recovery product. It is not a medical device and is not intended to diagnose, treat, cure or prevent any disease." }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Question" },
+        { "type": "textarea", "id": "answer", "label": "Answer", "default": "Answer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Everden product story",
+      "blocks": [
+        { "type": "faq", "settings": { "question": "How long is a session?", "answer": "15 minutes. Most people use it once a day at a time that's easy to stick to." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

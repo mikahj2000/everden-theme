@@ -1,0 +1,26 @@
+<div class="ev-pills" {{ block.shopify_attributes }}>
+  {%- if block.settings.pill1 != blank -%}
+  <span class="ev-pill"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3z"></path><path d="M14 10h4l3 3v3h-7"></path><circle cx="7" cy="17.5" r="1.8"></circle><circle cx="17" cy="17.5" r="1.8"></circle></svg>{{ block.settings.pill1 }}</span>
+  {%- endif -%}
+  {%- if block.settings.pill2 != blank -%}
+  <span class="ev-pill"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg>{{ block.settings.pill2 }}</span>
+  {%- endif -%}
+</div>
+<style>
+  .ev-pills{display:flex;flex-wrap:wrap;gap:8px;width:100%}
+  .ev-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:#F7E3E0;color:#17181B;font-size:14px;font-weight:600;line-height:1.2}
+  .ev-pill svg{color:#D63A2F;flex-shrink:0}
+</style>
+
+{% schema %}
+{
+  "name": "Trust pills",
+  "tag": null,
+  "settings": [
+    { "type": "text", "id": "pill1", "label": "Pill 1", "default": "Arrives in 5–7 business days" },
+    { "type": "text", "id": "pill2", "label": "Pill 2", "default": "30-day guarantee" },
+    { "type": "text", "id": "pill3", "label": "Pill 3 (not shown)" }
+  ],
+  "presets": [{ "name": "Trust pills" }]
+}
+{% endschema %}

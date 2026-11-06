@@ -1,8 +1,77 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
-      "type": "main-contact",
-      "settings": {}
+      "type": "everden-contact",
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "When will my order arrive?",
+            "answer": "Orders usually arrive within 5–7 business days. Shipping is free on every US order, and you'll get a tracking link by email as soon as your order ships."
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "Where is my order?",
+            "answer": "Check the tracking link in your shipping confirmation email. Can't find it, or tracking hasn't updated in a few days? Send us your order number and we'll look into it."
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "How does the 30-day guarantee work?",
+            "answer": "Try your wrap for 30 days. If it's not for you, email us within 30 days of delivery and we'll refund the full purchase price. You don't need to send it back."
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "My wrap arrived damaged or isn't working.",
+            "answer": "Sorry about that. Send us your order number and a photo or short video, and we'll send a replacement or a full refund, whichever you prefer."
+          }
+        },
+        "q5": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I change or cancel my order?",
+            "answer": "Email us as soon as possible. We can't cancel an order once it has shipped, but you're still covered by the 30-day guarantee."
+          }
+        },
+        "q6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship outside the US?",
+            "answer": "Not right now. We currently ship within the United States only."
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "settings": {
+        "eyebrow": "Customer service",
+        "heading": "How can we help?",
+        "intro": "Questions about your order, your wrap or our 30-day guarantee? We're real people and we're happy to help.",
+        "reply_text": "Fill out the form or email us. We reply within 1–2 business days.",
+        "email": "pristinemintproducts@gmail.com",
+        "phone": "+1 225-225-1206",
+        "hours": "Monday–Friday, 9am–5pm CT"
+      }
     }
   },
   "order": [
