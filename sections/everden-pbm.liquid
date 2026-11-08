@@ -1,0 +1,188 @@
+<style>
+  .evp{--ink:#17181B;--stone:#EEEAE4;--ember:#D63A2F;--deep:#7A1E18;--text:#3A3A3F;--muted:#C9C4BC;color:var(--ink);background:var(--stone)}
+  .evp *{box-sizing:border-box}
+  .evp-wrap{max-width:1080px;margin:0 auto;padding:72px 20px}
+  .evp-eyebrow{font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--ember);margin:0 0 12px}
+  .evp-h2{font-size:clamp(26px,4vw,44px);overflow-wrap:break-word;line-height:1.06;letter-spacing:-.02em;font-weight:800;margin:0 0 14px}
+  .evp-lede{font-size:18px;line-height:1.55;color:var(--text);max-width:680px;margin:0 0 40px}
+  .evp-center{text-align:center}
+  .evp-center .evp-lede{margin-left:auto;margin-right:auto}
+  .evp-hero{text-align:center;padding-top:72px;padding-bottom:48px}
+  .evp-hero .evp-title{font-size:clamp(28px,7.4vw,68px);overflow-wrap:break-word;line-height:1;letter-spacing:-.03em;font-weight:900;margin:0 0 20px}
+  .evp-hero .evp-title span{color:var(--ember)}
+  .evp-hero p{font-size:20px;line-height:1.5;color:var(--text);max-width:720px;margin:0 auto}
+  .evp-word{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .evp-word div{background:#fff;border-radius:20px;padding:26px}
+  .evp-word b{display:block;font-size:30px;font-weight:900;color:var(--ember);letter-spacing:-.01em}
+  .evp-word em{display:block;font-style:normal;font-weight:700;margin:4px 0 8px}
+  .evp-word p{margin:0;font-size:16px;line-height:1.5;color:var(--text)}
+  .evp-note{margin:24px 0 0;font-size:16px;line-height:1.6;color:var(--text);max-width:760px}
+  .evp-dark{background:var(--ink);color:var(--stone)}
+  .evp-dark .evp-lede,.evp-dark p{color:var(--muted)}
+  .evp-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+  .evp-step{border-top:3px solid var(--ember);padding-top:18px}
+  .evp-step b{display:block;font-size:48px;line-height:1;font-weight:900;color:var(--ember)}
+  .evp-step h3{margin:12px 0 8px;font-size:22px;font-weight:800;color:var(--stone)}
+  .evp-step p{margin:0;font-size:16px;line-height:1.55}
+  .evp-waves{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:40px}
+  .evp-wave{border-radius:20px;padding:24px 26px;background:#24252A}
+  .evp-wave h3{margin:0 0 6px;font-size:20px;font-weight:800;color:var(--stone)}
+  .evp-wave i{display:inline-block;width:12px;height:12px;border-radius:6px;background:var(--ember);margin-right:10px;vertical-align:1px}
+  .evp-wave i.nir{background:var(--deep);box-shadow:0 0 0 2px #B9301F}
+  .evp-wave p{margin:0;font-size:16px;line-height:1.55}
+  .evp-time{list-style:none;margin:0 auto;padding:0;max-width:820px;text-align:left}
+  .evp-time li{position:relative;padding:0 0 30px 120px;min-height:60px}
+  .evp-time li::before{content:"";position:absolute;left:96px;top:8px;bottom:-8px;width:2px;background:#CFC7BB}
+  .evp-time li:last-child::before{display:none}
+  .evp-time li::after{content:"";position:absolute;left:90px;top:4px;width:14px;height:14px;border-radius:7px;background:var(--ember)}
+  .evp-time b{position:absolute;left:0;top:0;font-size:20px;font-weight:900;width:80px;text-align:right}
+  .evp-time h3{margin:0 0 4px;font-size:19px;font-weight:800}
+  .evp-time p{margin:0;font-size:16px;line-height:1.55;color:var(--text)}
+  .evp-isnt{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;text-align:left}
+  .evp-isnt div{background:#fff;border-radius:20px;padding:24px 26px}
+  .evp-isnt h3{margin:0 0 6px;font-size:19px;font-weight:800}
+  .evp-isnt h3::before{content:"\2715";color:var(--ember);margin-right:10px}
+  .evp-isnt p{margin:0;font-size:16px;line-height:1.55;color:var(--text)}
+  .evp-dose{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
+  .evp-curve{background:#fff;border-radius:24px;padding:24px}
+  .evp-curve svg{width:100%;height:auto;display:block}
+  .evp-everden{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:0 0 36px}
+  .evp-stat{border-top:3px solid var(--ember);padding-top:14px;text-align:left}
+  .evp-stat b{display:block;font-size:clamp(26px,7vw,38px);line-height:1;font-weight:900;color:var(--stone)}
+  .evp-stat b small{font-size:18px}
+  .evp-stat span{display:block;margin-top:8px;font-size:15px;line-height:1.45;color:var(--muted)}
+  .evp-btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 30px;border-radius:999px;background:var(--ember);color:#fff;font-size:17px;font-weight:700;text-decoration:none}
+  .evp-btn:hover{background:#B9301F;color:#fff}
+  .evp-btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+  .evp-faq{max-width:780px;margin:0 auto;text-align:left}
+  .evp-faq details{border-bottom:1px solid #CFC7BB;padding:18px 0}
+  .evp-faq summary{cursor:pointer;list-style:none;font-size:18px;font-weight:700;display:flex;justify-content:space-between;gap:16px}
+  .evp-faq summary::-webkit-details-marker{display:none}
+  .evp-faq summary::after{content:"+";color:var(--ember);font-size:24px;line-height:1}
+  .evp-faq details[open] summary::after{content:"\2212"}
+  .evp-faq details p{margin:12px 0 0;font-size:16px;line-height:1.6;color:var(--text)}
+  .evp-small{max-width:780px;margin:28px auto 0;font-size:13px;line-height:1.5;color:#5A5A60;text-align:center}
+  @media (max-width:899px){
+    .evp-word,.evp-steps,.evp-waves,.evp-isnt,.evp-dose{grid-template-columns:1fr}
+    .evp-everden{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media (max-width:599px){
+    .evp-wrap{padding:52px 16px}
+    .evp-time li{padding-left:28px}
+    .evp-time li::before{left:6px}
+    .evp-time li::after{left:0}
+    .evp-time b{position:static;display:block;width:auto;text-align:left;margin-bottom:2px;color:var(--ember)}
+  }
+</style>
+
+<div class="evp">
+
+  <div class="evp-wrap evp-hero">
+    <p class="evp-eyebrow">The science, in plain English</p>
+    <h2 class="evp-title">What is <span>photobiomodulation?</span></h2>
+    <p>It's the scientific name for red light therapy, and the idea behind your Everden wrap. Here's what the word means, how researchers think it works, and where it came from.</p>
+  </div>
+
+  <div class="evp-wrap" style="padding-top:0">
+    <p class="evp-eyebrow">The word, broken down</p>
+    <h2 class="evp-h2">Light that adjusts how cells behave.</h2>
+    <div class="evp-word">
+      <div><b>Photo</b><em>Light</em><p>Specific colors of light, measured in nanometers (nm).</p></div>
+      <div><b>Bio</b><em>Life</em><p>The living cells in your body.</p></div>
+      <div><b>Modulation</b><em>Adjusting</em><p>Nudging how those cells work, not forcing them.</p></div>
+    </div>
+    <p class="evp-note">You may also see it called <strong>red light therapy</strong>, <strong>low-level light therapy</strong> or <strong>cold laser therapy</strong>. In the mid-2010s, researchers settled on "photobiomodulation" as one name that covers both lasers and LEDs.</p>
+  </div>
+
+  <div class="evp-dark">
+    <div class="evp-wrap">
+      <p class="evp-eyebrow">How it's thought to work</p>
+      <h2 class="evp-h2">From light to cell, in three steps.</h2>
+      <p class="evp-lede">This is the leading explanation in the research. Scientists are still studying exactly how and when it happens.</p>
+      <div class="evp-steps">
+        <div class="evp-step"><b>01</b><h3>Light reaches your cells</h3><p>Red and near-infrared light fall in an "optical window": colors that skin and blood absorb less, so they can travel further into tissue than other light.</p></div>
+        <div class="evp-step"><b>02</b><h3>Mitochondria absorb it</h3><p>Inside your cells, the mitochondria make energy. An enzyme there, called cytochrome c oxidase, absorbs red and near-infrared light.</p></div>
+        <div class="evp-step"><b>03</b><h3>Cells respond</h3><p>Studies suggest this may support the cell's energy production (a molecule called ATP) and its normal signaling, which is why it's studied for recovery.</p></div>
+      </div>
+      <div class="evp-waves">
+        <div class="evp-wave"><h3><i></i>Red light · 660nm</h3><p>The red glow you can see. It's mostly absorbed near the surface, in the skin.</p></div>
+        <div class="evp-wave"><h3><i class="nir"></i>Near-infrared · 850nm</h3><p>Invisible to your eyes. Longer wavelengths travel deeper, toward muscle and joints.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evp-wrap evp-center">
+    <p class="evp-eyebrow">A short history</p>
+    <h2 class="evp-h2">Not new. Just smaller.</h2>
+    <p class="evp-lede">Researchers have been studying light and the body for more than 50 years.</p>
+    <ol class="evp-time">
+      <li><b>1967</b><h3>A surprise in a lab</h3><p>Hungarian physician Endre Mester shined a low-power laser on shaved mice. To his surprise, hair grew back faster where the light had been. It's often called the first observation of photobiomodulation.</p></li>
+      <li><b>1990s</b><h3>NASA gets curious</h3><p>NASA-funded projects used red LEDs to grow plants in space, and researchers went on to study how the same light affects human cells.</p></li>
+      <li><b>2000s</b><h3>LEDs change everything</h3><p>LEDs made red and near-infrared light cheaper, cooler and easier to use than lasers, and research grew quickly.</p></li>
+      <li><b>Today</b><h3>From clinics to your couch</h3><p>Thousands of studies have been published. Spas, gyms and clinics use large light panels, and home devices like Everden put the same wavelengths in a wearable.</p></li>
+    </ol>
+  </div>
+
+  <div class="evp-wrap evp-center" style="padding-top:0">
+    <p class="evp-eyebrow">Clearing things up</p>
+    <h2 class="evp-h2">What it isn't</h2>
+    <p class="evp-lede">A lot of things glow red. Photobiomodulation is something specific.</p>
+    <div class="evp-isnt">
+      <div><h3>Not UV light</h3><p>There are no ultraviolet rays, so it doesn't tan or burn your skin.</p></div>
+      <div><h3>Not a heat lamp</h3><p>The light itself isn't about warmth. On Everden, heat is a separate setting you control.</p></div>
+      <div><h3>Not a laser</h3><p>Everden uses LEDs, which spread light gently over a wider area.</p></div>
+      <div><h3>Not a quick fix or a cure</h3><p>It's a routine. Research looks at regular use over weeks, not one-time sessions.</p></div>
+    </div>
+  </div>
+
+  <div class="evp-wrap">
+    <div class="evp-dose">
+      <div>
+        <p class="evp-eyebrow">Why more isn't better</p>
+        <h2 class="evp-h2">There's a sweet spot.</h2>
+        <p class="evp-lede" style="margin-bottom:16px">Researchers often describe a "biphasic" response: too little light may do nothing, and much more than needed doesn't help more and may do less.</p>
+        <p class="evp-lede" style="margin-bottom:0">That's why Everden uses short 15-minute sessions and switches off on its own after 30 minutes. Showing up most days matters more than long sessions.</p>
+      </div>
+      <div class="evp-curve" aria-hidden="true">
+        <svg viewBox="0 0 400 240" role="presentation">
+          <line x1="40" y1="200" x2="380" y2="200" stroke="#CFC7BB" stroke-width="2"/>
+          <line x1="40" y1="200" x2="40" y2="20" stroke="#CFC7BB" stroke-width="2"/>
+          <path d="M40 195 C 110 190, 140 50, 190 45 S 290 120, 370 170" fill="none" stroke="#D63A2F" stroke-width="4" stroke-linecap="round"/>
+          <rect x="150" y="30" width="80" height="170" fill="#D63A2F" opacity=".08"/>
+          <text x="190" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#17181B">Sweet spot</text>
+          <text x="210" y="225" text-anchor="middle" font-size="13" fill="#5A5A60">Amount of light →</text>
+          <text x="22" y="110" text-anchor="middle" font-size="13" fill="#5A5A60" transform="rotate(-90 22 110)">Response →</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="evp-dark">
+    <div class="evp-wrap evp-center">
+      <p class="evp-eyebrow">How Everden uses it</p>
+      <h2 class="evp-h2">Built around the research wavelengths.</h2>
+      <p class="evp-lede">Both wavelengths, wrapped around your knee, in a session you'll actually keep up.</p>
+      <div class="evp-everden" style="margin-bottom:0">
+        <div class="evp-stat"><b>60</b><span>LEDs, each with red and near-infrared chips</span></div>
+        <div class="evp-stat"><b>660+850<small>nm</small></b><span>Red + near-infrared light</span></div>
+        <div class="evp-stat"><b>15<small>min</small></b><span>Sessions, with auto shut-off at 30 minutes</span></div>
+        <div class="evp-stat"><b>5</b><span>Brightness levels, plus optional heat and massage</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evp-wrap" style="padding-top:28px;padding-bottom:28px">
+    <p class="evp-small" style="margin-top:0">This section is for general information and isn't medical advice. Research on photobiomodulation is ongoing, and results vary from person to person. Everden is not a medical device and is not intended to diagnose, treat, cure or prevent any disease.</p>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Photobiomodulation explainer",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [ { "name": "Photobiomodulation explainer" } ]
+}
+{% endschema %}

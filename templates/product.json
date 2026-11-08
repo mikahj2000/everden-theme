@@ -562,6 +562,10 @@
         "padding-block-end": 24
       }
     },
+    "everden_pbm": {
+      "type": "everden-pbm",
+      "settings": {}
+    },
     "everden_story": {
       "type": "everden-pdp",
       "blocks": {
@@ -698,6 +702,7 @@
   },
   "order": [
     "main",
+    "everden_pbm",
     "everden_story",
     "17933353646b94768b"
   ]
