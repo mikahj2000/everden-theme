@@ -103,7 +103,7 @@
                   "type": "text",
                   "name": "t:names.product_title",
                   "settings": {
-                    "text": "<h1>Everden Red Light Knee Wrap</h1>",
+                    "text": "<h1>{{ closest.product.title }}</h1>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -133,14 +133,14 @@
             "lai_product_reviews_star_rating_product_xTayYh": {
               "type": "shopify://apps/lai-product-reviews/blocks/star_rating_product/cad3c6c6-329e-4416-ba74-b79359b5b6e1",
               "settings": {
-                "lai_product": "everden-red-light-knee-wrap"
+                "lai_product": ""
               }
             },
             "ev_benefits": {
               "type": "text",
               "name": "Benefits",
               "settings": {
-                "text": "<ul><li><strong>Red + near-infrared light</strong> (660nm + 850nm) that reaches beneath the surface while you sit back</li><li><strong>Gentle massage</strong> with 3 levels: a soothing start to stiff mornings</li><li><strong>Soothing heat</strong> with 3 levels to help improve blood circulation</li><li><strong>Cordless</strong>: easy to fit into your day, not one more thing to make time for</li><li><strong>15-minute sessions</strong>: a simple daily ritual your knees will thank you for</li></ul>",
+                "text": "<ul><li><strong>Solid teak</strong>, rich in natural oils that help it resist moisture</li><li><strong>One of a kind</strong>: the grain on your piece is unique</li><li><strong>Made for daily use</strong>, from prep to the table</li><li><strong>Easy care</strong>: hand wash, dry, oil once a month</li></ul>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -211,7 +211,7 @@
               "settings": {
                 "pill1": "Arrives in 7–12 business days",
                 "pill2": "30-day guarantee",
-                "pill3": "15-min sessions"
+                "pill3": ""
               },
               "blocks": {}
             },
@@ -261,9 +261,9 @@
                   "static": true,
                   "settings": {
                     "style_class": "button",
-                    "custom_button_background": "#d63a2f",
-                    "custom_button_text": "#ffffff",
-                    "custom_button_border": "#d63a2f"
+                    "custom_button_background": "#241c16",
+                    "custom_button_text": "#f4efe6",
+                    "custom_button_border": "#241c16"
                   },
                   "blocks": {}
                 },
@@ -335,85 +335,7 @@
                     "text": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>The Everden Red Light Knee Wrap combines 660nm red and 850nm near-infrared light, soothing heat and gentle massage in one cordless wrap. Strap it on, press one button, and sit back for 15 minutes. It's a simple daily recovery routine you can do on the couch, at your desk or after a long day.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "text_color": "",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text"
-                  ]
-                },
-                "r5": {
-                  "type": "_accordion-row",
-                  "settings": {
-                    "heading": "What is red light therapy?",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<ul><li><strong>Red light (660nm):</strong> the warm red glow you can see. It works near the surface of the skin.</li><li><strong>Near-infrared light (850nm):</strong> invisible to the eye, and it reaches deeper than red light. Each of the 60 LEDs gives off both.</li><li><strong>No UV:</strong> gentle light from LEDs, with none of the ultraviolet rays that cause sunburn. The warmth comes from a separate heat setting you control.</li></ul><p>Researchers have studied these wavelengths for decades under the name <em>photobiomodulation</em>. In plain English, that's the study of how light may assist the body's natural recovery. Spas, gyms and clinics use larger panels. Everden puts it in a wrap you can use at home.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "text_color": "",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text"
-                  ]
-                },
-                "r2": {
-                  "type": "_accordion-row",
-                  "settings": {
-                    "heading": "Specs",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<ul><li>Light: 660nm red + 850nm near-infrared LEDs, 5 brightness levels</li><li>Massage: 3 vibration levels</li><li>Heat: 3 levels, 104–131°F (40–55°C)</li><li>Auto shut-off: after 30 minutes</li><li>Battery: 5000mAh rechargeable, cordless use</li><li>Charging: 5V 2A</li><li>Material: neoprene wrap with hook-and-loop strap</li><li>Size: one size, adjustable</li></ul><p><strong>In the box:</strong> 1 knee wrap, 1 USB charging cable (wall plug not included; a standard USB phone charger plug works) and 1 user manual. The 2-pack comes with two of each.</p>",
+                        "text": "{{ closest.product.description }}",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -517,12 +439,50 @@
                   "block_order": [
                     "text"
                   ]
+                },
+                "r_care": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Care",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<ol><li><strong>Hand wash</strong> with warm water and a little mild soap.</li><li><strong>Dry it upright</strong> straight away so air reaches both sides.</li><li><strong>Oil once a month</strong> with food-grade mineral oil.</li></ol><p>Never put teak in the dishwasher or leave it soaking.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "text_color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text"
+                  ]
                 }
               },
               "block_order": [
                 "r1",
-                "r5",
-                "r2",
+                "r_care",
                 "r3",
                 "r4"
               ]
@@ -548,102 +508,9 @@
         "limit_details_width": false,
         "gap": 48,
         "enable_sticky_add_to_cart": true,
-        "background_color": "#eeeae4",
+        "background_color": "#f4efe6",
         "padding-block-start": 24,
         "padding-block-end": 24
-      }
-    },
-    "everden_pbm": {
-      "type": "everden-pbm",
-      "settings": {}
-    },
-    "everden_story": {
-      "type": "everden-pdp",
-      "blocks": {
-        "faq1": {
-          "type": "faq",
-          "settings": {
-            "question": "How long is a session?",
-            "answer": "15 minutes. Most people pick one time a day that's easy to stick to, like after coffee, after work or before bed."
-          }
-        },
-        "faq2": {
-          "type": "faq",
-          "settings": {
-            "question": "Will it fit my knee?",
-            "answer": "The wrap fastens with an adjustable hook-and-loop strap. If you're not sure it will fit, measure around your knee and message us before you order."
-          }
-        },
-        "faq3": {
-          "type": "faq",
-          "settings": {
-            "question": "What does it feel like?",
-            "answer": "A soft red glow, gentle warmth and a light vibration. Start on the lowest heat and massage levels, then adjust to what feels comfortable."
-          }
-        },
-        "faq9": {
-          "type": "faq",
-          "settings": {
-            "question": "Does it get hot?",
-            "answer": "It has 3 heat levels, from 104°F up to 131°F (40–55°C). Start on the lowest level and check your skin. If it ever feels too hot, turn the heat down or off. It switches off on its own after 30 minutes."
-          }
-        },
-        "faq4": {
-          "type": "faq",
-          "settings": {
-            "question": "How soon will I notice anything?",
-            "answer": "Everyone is different. Think of it as a daily routine, not a quick fix, and give it a few weeks of regular use."
-          }
-        },
-        "faq5": {
-          "type": "faq",
-          "settings": {
-            "question": "Who shouldn't use it?",
-            "answer": "Check with your doctor first if you're pregnant, take medication that makes your skin sensitive to light, have reduced feeling in your legs (for example from diabetes or nerve damage), have a skin condition or an injury at the area, or have any medical concerns. Don't use it over broken skin, don't fall asleep with the heat on, and don't look directly into the lights."
-          }
-        },
-        "faq6": {
-          "type": "faq",
-          "settings": {
-            "question": "Is it a medical device?",
-            "answer": "No. Everden is a wellness and recovery product. It isn't intended to diagnose, treat, cure or prevent any disease."
-          }
-        },
-        "faq7": {
-          "type": "faq",
-          "settings": {
-            "question": "When will my order arrive?",
-            "answer": "Orders ship with tracking and usually arrive within 7–12 business days."
-          }
-        },
-        "faq8": {
-          "type": "faq",
-          "settings": {
-            "question": "What if it's not for me?",
-            "answer": "You're covered by our 30-day money-back guarantee. Email us within 30 days of delivery and we'll refund you in full."
-          }
-        }
-      },
-      "block_order": [
-        "faq1",
-        "faq2",
-        "faq3",
-        "faq9",
-        "faq4",
-        "faq5",
-        "faq6",
-        "faq7",
-        "faq8"
-      ],
-      "settings": {
-        "stat1_label": "A day is all it takes",
-        "stat2_label": "nm red + near-infrared light",
-        "stat3_label": "mAh battery, fully cordless",
-        "features_heading": "Built for your daily routine",
-        "features_lede": "Light, massage and a strap that stays put, in one wrap you can wear anywhere.",
-        "features_image": "shopify://shop_images/9b864812-edb3-4cfe-b8b2-4f13bda24f0f.png",
-        "promise_text": "Not for you? Email us within 30 days of delivery for a full refund.",
-        "disclaimer": "Everden is a wellness and recovery product. It is not a medical device and is not intended to diagnose, treat, cure or prevent any disease."
       }
     },
     "17933353646b94768b": {
@@ -689,12 +556,67 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "everden_teak_story": {
+      "type": "everden-teak-story",
+      "blocks": {
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Will my piece look exactly like the photos?",
+            "answer": "Not exactly. Every piece is cut from real teak, so the grain, colour and small markings on yours will be unique."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Can it go in the dishwasher?",
+            "answer": "No. The heat and long soak can dry out and crack the wood. Hand wash with warm, soapy water, dry it straight away, and oil it about once a month."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Why does it feel slightly oily?",
+            "answer": "That's teak's own natural oil, and it's part of what helps the wood resist moisture. It's normal and settles down with use."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I get rid of smells or stains?",
+            "answer": "Sprinkle on coarse salt, scrub with half a lemon, rinse, dry, then add a little food-grade mineral oil."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "When will my order arrive?",
+            "answer": "Orders ship with tracking and usually arrive within 7–12 business days."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "What if it's not for me?",
+            "answer": "You're covered by our 30-day money-back guarantee. Email us within 30 days of delivery and we'll refund you in full."
+          }
+        }
+      },
+      "block_order": [
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "main",
-    "everden_pbm",
-    "everden_story",
+    "everden_teak_story",
     "17933353646b94768b"
   ]
 }

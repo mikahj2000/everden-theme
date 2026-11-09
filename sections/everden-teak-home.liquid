@@ -1,0 +1,270 @@
+{%- liquid
+  assign shop_url = section.settings.shop_link | default: routes.all_products_collection_url
+  assign featured = section.settings.featured_collection
+-%}
+<style>
+  .evt{--linen:#F4EFE6;--card:#FBF8F3;--char:#241C16;--text:#4A3F36;--muted:#7A6E62;--line:#DDD2C2;--teak:#A0673A;--oil:#6B4226;--sage:#7A8466;--serif:"Young Serif",Georgia,"Times New Roman",serif;color:var(--char);background:var(--linen)}
+  .evt *{box-sizing:border-box}
+  .evt-wrap{max-width:1160px;margin:0 auto;padding:80px 20px}
+  .evt-eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--teak);margin:0 0 14px}
+  .evt-h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.4vw,48px);line-height:1.08;letter-spacing:-.01em;margin:0 0 14px;text-wrap:balance;overflow-wrap:break-word}
+  .evt-lede{font-size:18px;line-height:1.6;color:var(--text);max-width:620px;margin:0 0 44px}
+  .evt-center{text-align:center}
+  .evt-center .evt-lede{margin-left:auto;margin-right:auto}
+  .evt-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;background:var(--char);color:var(--linen);font-size:16px;font-weight:600;text-decoration:none}
+  .evt-btn:hover{background:var(--oil);color:var(--linen)}
+  .evt-btn:focus-visible,.evt-link:focus-visible,.evt-tile:focus-visible{outline:3px solid var(--teak);outline-offset:3px}
+  .evt-link{display:inline-flex;align-items:center;min-height:52px;padding:0 6px;color:var(--char);font-weight:600;text-decoration:underline;text-underline-offset:4px}
+  .evt-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center;padding-top:56px;padding-bottom:64px}
+  .evt-hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,6vw,72px);line-height:1.02;letter-spacing:-.015em;margin:0 0 22px;text-wrap:balance}
+  .evt-hero h1 em{font-style:normal;color:var(--teak)}
+  .evt-sub{font-size:19px;line-height:1.55;color:var(--text);margin:0 0 30px;max-width:520px}
+  .evt-actions{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+  .evt-media{border-radius:28px;overflow:hidden;aspect-ratio:4/5;max-width:100%;background:var(--oil)}
+  .evt-media img{width:100%;height:100%;object-fit:cover;display:block}
+  .evt-rings{width:100%;height:100%;display:block}
+  .evt-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .evt-strip ul{list-style:none;margin:0 auto;padding:20px;max-width:1160px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;text-align:center;font-size:14px;font-weight:600;color:var(--text)}
+  .evt-strip li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teak);margin-right:10px;vertical-align:2px}
+  .evt-cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .evt-tile{display:block;text-decoration:none;color:inherit}
+  .evt-tile .evt-media{aspect-ratio:1/1;border-radius:22px}
+  .evt-tile h3{font-family:var(--serif);font-weight:400;font-size:24px;margin:16px 0 4px}
+  .evt-tile p{margin:0;font-size:15px;line-height:1.5;color:var(--muted)}
+  .evt-tile span{display:inline-block;margin-top:10px;font-weight:600;font-size:15px;text-decoration:underline;text-underline-offset:4px}
+  .evt-tile:hover .evt-media{opacity:.92}
+  .evt-products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;text-align:left}
+  .evt-card{text-decoration:none;color:inherit;display:block}
+  .evt-card .evt-media{aspect-ratio:1/1;border-radius:18px;background:var(--card)}
+  .evt-card h3{font-size:16px;font-weight:600;margin:12px 0 2px}
+  .evt-card p{margin:0;font-size:15px;color:var(--text);font-variant-numeric:tabular-nums}
+  .evt-dark{background:var(--oil);color:var(--linen)}
+  .evt-dark .evt-eyebrow{color:#E3C9A8}
+  .evt-dark .evt-lede{color:#E9DFD2}
+  .evt-why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;text-align:left}
+  .evt-why div{border-top:1px solid rgba(244,239,230,.35);padding-top:18px}
+  .evt-why h3{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 8px}
+  .evt-why p{margin:0;font-size:16px;line-height:1.55;color:#E9DFD2}
+  .evt-care{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;text-align:left;counter-reset:c}
+  .evt-care li{background:var(--card);border-radius:20px;padding:28px;counter-increment:c}
+  .evt-care li::before{content:counter(c);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--teak);color:var(--linen);font-family:var(--serif);font-size:20px;margin-bottom:16px}
+  .evt-care h3{margin:0 0 6px;font-size:19px;font-weight:600}
+  .evt-care p{margin:0;font-size:16px;line-height:1.55;color:var(--text)}
+  .evt-never{margin:22px auto 0;max-width:640px;font-size:15px;line-height:1.5;color:var(--text)}
+  .evt-promise{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;max-width:860px;margin:0 auto}
+  .evt-seal{width:150px;height:150px;border-radius:50%;border:2px solid var(--teak);display:grid;place-items:center;text-align:center;font-family:var(--serif);color:var(--char)}
+  .evt-seal b{display:block;font-weight:400;font-size:40px;line-height:1}
+  .evt-seal span{display:block;font-family:inherit;font-size:13px;letter-spacing:.06em;margin-top:4px}
+  .evt-promise p{margin:0 0 22px;font-size:18px;line-height:1.55;color:var(--text)}
+  .evt-faq{max-width:780px;margin:0 auto;text-align:left}
+  .evt-faq details{border-bottom:1px solid var(--line);padding:18px 0}
+  .evt-faq summary{cursor:pointer;list-style:none;font-size:18px;font-weight:600;display:flex;justify-content:space-between;gap:16px}
+  .evt-faq summary::-webkit-details-marker{display:none}
+  .evt-faq summary::after{content:"+";color:var(--teak);font-size:24px;line-height:1}
+  .evt-faq details[open] summary::after{content:"\2212"}
+  .evt-faq details p{margin:12px 0 0;font-size:16px;line-height:1.6;color:var(--text)}
+  @media (max-width:899px){
+    .evt-hero{grid-template-columns:1fr}
+    .evt-hero .evt-media{order:-1;aspect-ratio:5/4}
+    .evt-strip ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .evt-cats,.evt-care{grid-template-columns:1fr}
+    .evt-why,.evt-products{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media (max-width:599px){
+    .evt-wrap{padding:56px 16px}
+    .evt-hero{padding-top:20px}
+    .evt-why{grid-template-columns:1fr}
+    .evt-promise{grid-template-columns:1fr;justify-items:center;text-align:center}
+  }
+  @media (prefers-reduced-motion:no-preference){.evt-tile .evt-media{transition:opacity .2s}}
+</style>
+
+{%- capture rings -%}
+  <svg class="evt-rings" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <rect width="400" height="400" fill="#6B4226"/>
+    <g fill="none" stroke="#A0673A" stroke-width="5">
+      <circle cx="210" cy="190" r="40"/><circle cx="214" cy="186" r="80" stroke-opacity=".85"/><circle cx="206" cy="194" r="122" stroke-opacity=".7"/><circle cx="212" cy="188" r="168" stroke-opacity=".55"/><circle cx="208" cy="192" r="216" stroke-opacity=".4"/><circle cx="210" cy="190" r="266" stroke-opacity=".28"/>
+    </g>
+    <circle cx="214" cy="186" r="9" fill="#A0673A"/>
+  </svg>
+{%- endcapture -%}
+
+<div class="evt">
+
+  <div class="evt-wrap evt-hero">
+    <div>
+      <p class="evt-eyebrow">{{ section.settings.hero_eyebrow }}</p>
+      <h1>{{ section.settings.hero_heading }}</h1>
+      <p class="evt-sub">{{ section.settings.hero_text }}</p>
+      <div class="evt-actions">
+        <a class="evt-btn" href="{{ shop_url }}">Shop the collection</a>
+        <a class="evt-link" href="#evt-why">Why teak</a>
+      </div>
+    </div>
+    <div class="evt-media">
+      {%- if section.settings.hero_image -%}
+        {{ section.settings.hero_image | image_url: width: 1400 | image_tag: loading: 'eager', fetchpriority: 'high', sizes: '(max-width: 899px) 100vw, 50vw' }}
+      {%- else -%}
+        {{ rings }}
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="evt-strip">
+    <ul>
+      <li>Solid teak</li>
+      <li>No two grains alike</li>
+      <li>30-day guarantee</li>
+      <li>Tracked shipping</li>
+    </ul>
+  </div>
+
+  <div class="evt-wrap evt-center">
+    <p class="evt-eyebrow">Shop by category</p>
+    <h2 class="evt-h2">For prep, cooking and the table.</h2>
+    <p class="evt-lede">Three ranges, one wood. Pieces that work hard every day and still look good on the counter.</p>
+    <div class="evt-cats">
+      {%- for i in (1..3) -%}
+        {%- liquid
+          assign k_title = 'cat' | append: i | append: '_title'
+          assign k_text = 'cat' | append: i | append: '_text'
+          assign k_image = 'cat' | append: i | append: '_image'
+          assign k_coll = 'cat' | append: i | append: '_collection'
+          assign c = section.settings[k_coll]
+          assign c_url = c.url | default: shop_url
+        -%}
+        <a class="evt-tile" href="{{ c_url }}">
+          <div class="evt-media">
+            {%- if section.settings[k_image] -%}
+              {{ section.settings[k_image] | image_url: width: 900 | image_tag: loading: 'lazy', sizes: '(max-width: 899px) 100vw, 33vw' }}
+            {%- else -%}
+              {{ rings }}
+            {%- endif -%}
+          </div>
+          <h3>{{ section.settings[k_title] }}</h3>
+          <p>{{ section.settings[k_text] }}</p>
+          <span>Shop {{ section.settings[k_title] | downcase }}</span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  {%- if featured != blank and featured.products_count > 0 -%}
+    <div class="evt-wrap evt-center" style="padding-top:0">
+      <p class="evt-eyebrow">Bestsellers</p>
+      <h2 class="evt-h2">{{ section.settings.featured_heading }}</h2>
+      <div class="evt-products" style="margin-top:36px">
+        {%- for prod in featured.products limit: 4 -%}
+          <a class="evt-card" href="{{ prod.url }}">
+            <div class="evt-media">
+              {%- if prod.featured_image -%}
+                {{ prod.featured_image | image_url: width: 700 | image_tag: loading: 'lazy', sizes: '(max-width: 899px) 50vw, 25vw' }}
+              {%- else -%}
+                {{ rings }}
+              {%- endif -%}
+            </div>
+            <h3>{{ prod.title }}</h3>
+            <p>{{ prod.price | money }}</p>
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  <div class="evt-dark" id="evt-why">
+    <div class="evt-wrap">
+      <p class="evt-eyebrow">Why teak</p>
+      <h2 class="evt-h2">A wood with a reputation.</h2>
+      <p class="evt-lede">Teak has been used for boat decks and outdoor furniture for centuries, because it stands up to water and weather. Those same qualities make it a natural fit for the kitchen.</p>
+      <div class="evt-why">
+        <div><h3>Natural oils</h3><p>Teak is rich in its own natural oils, which help it resist moisture.</p></div>
+        <div><h3>Dense and stable</h3><p>A tight, dense grain that's less prone to warping and cracking than many woods.</p></div>
+        <div><h3>One of a kind</h3><p>Every piece is cut from real wood, so the grain on yours is unique.</p></div>
+        <div><h3>Ages well</h3><p>With regular oiling, teak deepens to a warmer, richer tone over the years.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evt-wrap evt-center">
+    <p class="evt-eyebrow">Care</p>
+    <h2 class="evt-h2">Three habits. Years of use.</h2>
+    <p class="evt-lede">Teak doesn't ask much. Do these and it will keep looking good.</p>
+    <ol class="evt-care">
+      <li><h3>Hand wash</h3><p>Warm water and a little mild soap, straight after use.</p></li>
+      <li><h3>Dry it upright</h3><p>Towel it off and stand it on its edge so air reaches both sides.</p></li>
+      <li><h3>Oil once a month</h3><p>Rub in food-grade mineral oil, leave it overnight, then wipe off the extra.</p></li>
+    </ol>
+    <p class="evt-never">Never put teak in the dishwasher or leave it soaking in water.</p>
+  </div>
+
+  <div class="evt-wrap" style="padding-top:0">
+    <div class="evt-promise">
+      <div class="evt-seal" aria-hidden="true"><div><b>30</b><span>DAY GUARANTEE</span></div></div>
+      <div>
+        <h2 class="evt-h2">Try it in your kitchen.</h2>
+        <p>{{ section.settings.promise_text }}</p>
+        <a class="evt-btn" href="{{ shop_url }}">Shop the collection</a>
+      </div>
+    </div>
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="evt-wrap evt-center" style="padding-top:0">
+      <p class="evt-eyebrow">Questions</p>
+      <h2 class="evt-h2">Good to know</h2>
+      <div class="evt-faq" style="margin-top:28px">
+        {%- for block in section.blocks -%}
+          <details {{ block.shopify_attributes }}>
+            <summary>{{ block.settings.question }}</summary>
+            <p>{{ block.settings.answer }}</p>
+          </details>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+</div>
+
+{% schema %}
+{
+  "name": "Everden teak home",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "hero_eyebrow", "label": "Hero eyebrow", "default": "Everden · Teakwood for the kitchen" },
+    { "type": "text", "id": "hero_heading", "label": "Hero heading", "default": "Solid teak, made for every day." },
+    { "type": "textarea", "id": "hero_text", "label": "Hero text", "default": "Cutting boards, cooking utensils and serving pieces, each one cut from teak with its own grain." },
+    { "type": "image_picker", "id": "hero_image", "label": "Hero image" },
+    { "type": "url", "id": "shop_link", "label": "Shop button link (defaults to all products)" },
+    { "type": "header", "content": "Categories" },
+    { "type": "text", "id": "cat1_title", "label": "Category 1 title", "default": "Cutting boards" },
+    { "type": "text", "id": "cat1_text", "label": "Category 1 text", "default": "Boards for everyday chopping, carving and prep." },
+    { "type": "image_picker", "id": "cat1_image", "label": "Category 1 image" },
+    { "type": "collection", "id": "cat1_collection", "label": "Category 1 collection" },
+    { "type": "text", "id": "cat2_title", "label": "Category 2 title", "default": "Utensils" },
+    { "type": "text", "id": "cat2_text", "label": "Category 2 text", "default": "Spoons, spatulas and turners for stirring, flipping and serving." },
+    { "type": "image_picker", "id": "cat2_image", "label": "Category 2 image" },
+    { "type": "collection", "id": "cat2_collection", "label": "Category 2 collection" },
+    { "type": "text", "id": "cat3_title", "label": "Category 3 title", "default": "Serving pieces" },
+    { "type": "text", "id": "cat3_text", "label": "Category 3 text", "default": "Boards, bowls and trays that go from counter to table." },
+    { "type": "image_picker", "id": "cat3_image", "label": "Category 3 image" },
+    { "type": "collection", "id": "cat3_collection", "label": "Category 3 collection" },
+    { "type": "header", "content": "Bestsellers" },
+    { "type": "collection", "id": "featured_collection", "label": "Collection to feature (hidden when empty)" },
+    { "type": "text", "id": "featured_heading", "label": "Bestsellers heading", "default": "Start with these" },
+    { "type": "header", "content": "Guarantee" },
+    { "type": "textarea", "id": "promise_text", "label": "Guarantee text", "default": "If it's not right for you, email us within 30 days of delivery and we'll refund you in full." }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Question" },
+        { "type": "textarea", "id": "answer", "label": "Answer", "default": "Answer" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Everden teak home" } ]
+}
+{% endschema %}

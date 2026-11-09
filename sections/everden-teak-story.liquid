@@ -1,0 +1,120 @@
+<style>
+  .ets{--linen:#F4EFE6;--card:#FBF8F3;--char:#241C16;--text:#4A3F36;--line:#DDD2C2;--teak:#A0673A;--oil:#6B4226;--serif:"Young Serif",Georgia,"Times New Roman",serif;color:var(--char);background:var(--linen)}
+  .ets *{box-sizing:border-box}
+  .ets-wrap{max-width:1100px;margin:0 auto;padding:72px 20px}
+  .ets-eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--teak);margin:0 0 12px;text-align:center}
+  .ets-h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.2vw,44px);line-height:1.1;margin:0 0 14px;text-align:center;text-wrap:balance;overflow-wrap:break-word}
+  .ets-lede{font-size:18px;line-height:1.6;color:var(--text);max-width:620px;margin:0 auto 40px;text-align:center}
+  .ets-dark{background:var(--oil);color:var(--linen)}
+  .ets-dark .ets-eyebrow{color:#E3C9A8}
+  .ets-dark .ets-lede{color:#E9DFD2}
+  .ets-why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+  .ets-why div{border-top:1px solid rgba(244,239,230,.35);padding-top:18px}
+  .ets-why h3{font-family:var(--serif);font-weight:400;font-size:21px;margin:0 0 8px}
+  .ets-why p{margin:0;font-size:16px;line-height:1.55;color:#E9DFD2}
+  .ets-care{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;counter-reset:c}
+  .ets-care li{background:var(--card);border-radius:20px;padding:26px;counter-increment:c}
+  .ets-care li::before{content:counter(c);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--teak);color:var(--linen);font-family:var(--serif);font-size:19px;margin-bottom:14px}
+  .ets-care h3{margin:0 0 6px;font-size:18px;font-weight:600}
+  .ets-care p{margin:0;font-size:16px;line-height:1.55;color:var(--text)}
+  .ets-never{margin:20px auto 0;max-width:620px;font-size:15px;line-height:1.5;color:var(--text);text-align:center}
+  .ets-faq{max-width:780px;margin:0 auto}
+  .ets-faq details{border-bottom:1px solid var(--line);padding:18px 0}
+  .ets-faq summary{cursor:pointer;list-style:none;font-size:18px;font-weight:600;display:flex;justify-content:space-between;gap:16px}
+  .ets-faq summary::-webkit-details-marker{display:none}
+  .ets-faq summary::after{content:"+";color:var(--teak);font-size:24px;line-height:1}
+  .ets-faq details[open] summary::after{content:"\2212"}
+  .ets-faq details p{margin:12px 0 0;font-size:16px;line-height:1.6;color:var(--text)}
+  .ets-promise{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;max-width:820px;margin:0 auto}
+  .ets-seal{width:140px;height:140px;border-radius:50%;border:2px solid #E3C9A8;display:grid;place-items:center;text-align:center;font-family:var(--serif)}
+  .ets-seal b{display:block;font-weight:400;font-size:38px;line-height:1}
+  .ets-seal span{display:block;font-size:12px;letter-spacing:.06em;margin-top:4px}
+  .ets-promise h2{text-align:left}
+  .ets-promise p{margin:0;font-size:18px;line-height:1.55;color:#E9DFD2}
+  @media (max-width:899px){ .ets-why{grid-template-columns:repeat(2,minmax(0,1fr))} .ets-care{grid-template-columns:1fr} }
+  @media (max-width:599px){
+    .ets-wrap{padding:52px 16px}
+    .ets-why{grid-template-columns:1fr}
+    .ets-promise{grid-template-columns:1fr;justify-items:center;text-align:center}
+    .ets-promise h2{text-align:center}
+  }
+</style>
+
+<div class="ets">
+
+  <div class="ets-dark">
+    <div class="ets-wrap">
+      <p class="ets-eyebrow">Why teak</p>
+      <h2 class="ets-h2">A wood with a reputation.</h2>
+      <p class="ets-lede">Teak has been used for boat decks and outdoor furniture for centuries, because it stands up to water and weather.</p>
+      <div class="ets-why">
+        <div><h3>Natural oils</h3><p>Teak is rich in its own natural oils, which help it resist moisture.</p></div>
+        <div><h3>Dense and stable</h3><p>A tight grain that's less prone to warping and cracking than many woods.</p></div>
+        <div><h3>One of a kind</h3><p>Real wood, so the grain on your piece won't match the photos exactly.</p></div>
+        <div><h3>Ages well</h3><p>With regular oiling it deepens to a warmer, richer tone over time.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ets-wrap">
+    <p class="ets-eyebrow">Care</p>
+    <h2 class="ets-h2">Three habits. Years of use.</h2>
+    <p class="ets-lede">Teak doesn't ask much. Do these and it will keep looking good.</p>
+    <ol class="ets-care">
+      <li><h3>Hand wash</h3><p>Warm water and a little mild soap, straight after use.</p></li>
+      <li><h3>Dry it upright</h3><p>Towel it off and stand it on its edge so air reaches both sides.</p></li>
+      <li><h3>Oil once a month</h3><p>Rub in food-grade mineral oil, leave it overnight, then wipe off the extra.</p></li>
+    </ol>
+    <p class="ets-never">Never put teak in the dishwasher or leave it soaking in water.</p>
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="ets-wrap" style="padding-top:0">
+      <p class="ets-eyebrow">Questions</p>
+      <h2 class="ets-h2">Good to know</h2>
+      <div class="ets-faq" style="margin-top:28px">
+        {%- for block in section.blocks -%}
+          <details {{ block.shopify_attributes }}>
+            <summary>{{ block.settings.question }}</summary>
+            <p>{{ block.settings.answer }}</p>
+          </details>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  <div class="ets-dark">
+    <div class="ets-wrap">
+      <div class="ets-promise">
+        <div class="ets-seal" aria-hidden="true"><div><b>30</b><span>DAY GUARANTEE</span></div></div>
+        <div>
+          <h2 class="ets-h2">Try it in your kitchen.</h2>
+          <p>{{ section.settings.promise_text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Everden teak story",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "textarea", "id": "promise_text", "label": "Guarantee text", "default": "If it's not right for you, email us within 30 days of delivery and we'll refund you in full." }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Question" },
+        { "type": "textarea", "id": "answer", "label": "Answer", "default": "Answer" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Everden teak story" } ]
+}
+{% endschema %}

@@ -9,21 +9,21 @@
  */
 {
   "sections": {
-    "everden_home": {
-      "type": "everden-home",
+    "everden_teak_home": {
+      "type": "everden-teak-home",
       "blocks": {
         "faq1": {
           "type": "faq",
           "settings": {
-            "question": "How long is a session?",
-            "answer": "15 minutes. Most people pick one time a day that's easy to stick to, like after coffee, after work or before bed."
+            "question": "Will my piece look exactly like the photos?",
+            "answer": "Not exactly. Every piece is cut from real teak, so the grain, colour and small markings on yours will be unique."
           }
         },
         "faq2": {
           "type": "faq",
           "settings": {
-            "question": "Is it a medical device?",
-            "answer": "No. Everden is a wellness and recovery product. It isn't intended to diagnose, treat, cure or prevent any disease."
+            "question": "Can it go in the dishwasher?",
+            "answer": "No. The heat and long soak can dry out and crack the wood. Hand wash with warm, soapy water, dry it straight away, and oil it about once a month."
           }
         },
         "faq3": {
@@ -47,14 +47,10 @@
         "faq3",
         "faq4"
       ],
-      "settings": {
-        "product": "everden-red-light-knee-wrap",
-        "light_image": "shopify://shop_images/everden-home-controls.png",
-        "promise_text": "Not for you? Email us within 30 days of delivery for a full refund."
-      }
+      "settings": {}
     }
   },
   "order": [
-    "everden_home"
+    "everden_teak_home"
   ]
 }

@@ -16,7 +16,7 @@
           "type": "faq",
           "settings": {
             "question": "When will my order arrive?",
-            "answer": "Orders usually arrive within 7–12 business days. Shipping is free on every US order, and you'll get a tracking link by email as soon as your order ships."
+            "answer": "Orders usually arrive within 7–12 business days. You'll get a tracking link by email as soon as your order ships."
           }
         },
         "q2": {
@@ -30,13 +30,13 @@
           "type": "faq",
           "settings": {
             "question": "How does the 30-day guarantee work?",
-            "answer": "Try your wrap for 30 days. If it's not for you, email us within 30 days of delivery and we'll refund the full purchase price. You don't need to send it back."
+            "answer": "If it's not right for you, email us within 30 days of delivery and we'll refund the full purchase price."
           }
         },
         "q4": {
           "type": "faq",
           "settings": {
-            "question": "My wrap arrived damaged or isn't working.",
+            "question": "My order arrived damaged.",
             "answer": "Sorry about that. Send us your order number and a photo or short video, and we'll send a replacement or a full refund, whichever you prefer."
           }
         },
@@ -66,7 +66,7 @@
       "settings": {
         "eyebrow": "Customer service",
         "heading": "How can we help?",
-        "intro": "Questions about your order, your wrap or our 30-day guarantee? We're real people and we're happy to help.",
+        "intro": "Questions about your order or our 30-day guarantee? We're real people and we're happy to help.",
         "reply_text": "Fill out the form or email us. We reply within 1–2 business days.",
         "email": "pristinemintproducts@gmail.com",
         "phone": "+1 225-225-1206",

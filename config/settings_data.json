@@ -11,8 +11,8 @@
   "current": {
     "logo_height": 36,
     "logo_height_mobile": 28,
-    "logo": "shopify://shop_images/everden-logo.png",
-    "favicon": "shopify://shop_images/everden-icon.png",
+    "logo": "shopify://shop_images/everden-teak-logo.png",
+    "favicon": "shopify://shop_images/everden-teak-icon.png",
     "page_text_color": "{{ settings.color_palette.foreground }}",
     "type_body_font": "inter_n4",
     "type_subheading_font": "inter_n5",
@@ -123,10 +123,10 @@
       }
     },
     "color_palette": {
-      "background": "#ffffff",
-      "foreground": "#000000",
-      "color1": "#333333",
-      "color2": "#DFDFDF"
+      "background": "#F4EFE6",
+      "foreground": "#241C16",
+      "color1": "#4A3F36",
+      "color2": "#DDD2C2"
     }
   },
   "presets": {
