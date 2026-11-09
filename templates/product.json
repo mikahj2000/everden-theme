@@ -16,11 +16,11 @@
             "slideshow_mobile_controls_style": "thumbnails",
             "thumbnail_position": "bottom",
             "thumbnail_width": 72,
-            "thumbnail_radius": 8,
-            "aspect_ratio": "1",
+            "thumbnail_radius": 0,
+            "aspect_ratio": "1/1.25",
             "constrain_to_viewport": false,
             "media_fit": "cover",
-            "media_radius": 12,
+            "media_radius": 0,
             "extend_media": false,
             "zoom": true,
             "video_loop": true,
@@ -130,45 +130,13 @@
                 "text_xrnftG"
               ]
             },
-            "lai_product_reviews_star_rating_product_xTayYh": {
-              "type": "shopify://apps/lai-product-reviews/blocks/star_rating_product/cad3c6c6-329e-4416-ba74-b79359b5b6e1",
-              "settings": {
-                "lai_product": ""
-              }
-            },
-            "ev_benefits": {
-              "type": "text",
-              "name": "Benefits",
-              "settings": {
-                "text": "<ul><li><strong>Solid teak</strong>, rich in natural oils that help it resist moisture</li><li><strong>One of a kind</strong>: the grain on your piece is unique</li><li><strong>Made for daily use</strong>, from prep to the table</li><li><strong>Easy care</strong>: hand wash, dry, oil once a month</li></ul>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
             "ev_price": {
               "type": "price",
               "settings": {
                 "show_sale_price_first": true,
-                "show_installments": true,
+                "show_installments": false,
                 "show_tax_info": false,
-                "type_preset": "h4",
+                "type_preset": "paragraph",
                 "width": "100%",
                 "alignment": "left",
                 "font": "var(--font-body--family)",
@@ -203,15 +171,6 @@
                 "padding-block-end": 8,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "ev_pills": {
-              "type": "ev-trust-pills",
-              "settings": {
-                "pill1": "Arrives in 7–12 business days",
-                "pill2": "30-day guarantee",
-                "pill3": ""
               },
               "blocks": {}
             },
@@ -261,9 +220,9 @@
                   "static": true,
                   "settings": {
                     "style_class": "button",
-                    "custom_button_background": "#241c16",
-                    "custom_button_text": "#f4efe6",
-                    "custom_button_border": "#241c16"
+                    "custom_button_background": "#1f1a16",
+                    "custom_button_text": "#f6f2eb",
+                    "custom_button_border": "#1f1a16"
                   },
                   "blocks": {}
                 },
@@ -281,7 +240,7 @@
               "type": "text",
               "name": "Trust row",
               "settings": {
-                "text": "<p>Secure checkout · Tracked shipping · 30-day money-back guarantee</p>",
+                "text": "<p>Tracked delivery · Returns within 30 days</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -365,7 +324,7 @@
                 "r3": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Shipping & delivery",
+                    "heading": "Delivery & returns",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -374,46 +333,7 @@
                     "text": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Orders ship with tracking and usually arrive within 7–12 business days. You'll get a tracking link by email as soon as your order ships.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "text_color": "",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text"
-                  ]
-                },
-                "r4": {
-                  "type": "_accordion-row",
-                  "settings": {
-                    "heading": "30-day money-back guarantee",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>Not for you? Email us within 30 days of delivery and we'll refund you in full.</p>",
+                        "text": "<p>Every order ships tracked and usually arrives within 7–12 business days. If a piece isn't right for your home, tell us within 30 days of delivery for a full refund.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -483,18 +403,14 @@
               "block_order": [
                 "r1",
                 "r_care",
-                "r3",
-                "r4"
+                "r3"
               ]
             }
           },
           "block_order": [
             "group_icgrde",
-            "lai_product_reviews_star_rating_product_xTayYh",
-            "ev_benefits",
             "ev_price",
             "variant_picker_R3rGDr",
-            "ev_pills",
             "buy_buttons_eYQEYi",
             "ev_trust",
             "ev_accordion"
@@ -508,53 +424,9 @@
         "limit_details_width": false,
         "gap": 48,
         "enable_sticky_add_to_cart": true,
-        "background_color": "#f4efe6",
+        "background_color": "#f6f2eb",
         "padding-block-start": 24,
         "padding-block-end": 24
-      }
-    },
-    "17933353646b94768b": {
-      "type": "_blocks",
-      "blocks": {
-        "lai_product_reviews_lai_product_section_C3AgDy": {
-          "type": "shopify://apps/lai-product-reviews/blocks/lai-product-section/cad3c6c6-329e-4416-ba74-b79359b5b6e1",
-          "settings": {
-            "lai_product": "",
-            "title": "",
-            "use_other_product": false
-          }
-        }
-      },
-      "block_order": [
-        "lai_product_reviews_lai_product_section_C3AgDy"
-      ],
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "background_media": "none",
-        "background_color": "",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_color": "",
-        "border_radius": 0,
-        "padding-block-start": 0,
-        "padding-block-end": 0
       }
     },
     "everden_teak_story": {
@@ -616,7 +488,6 @@
   },
   "order": [
     "main",
-    "everden_teak_story",
-    "17933353646b94768b"
+    "everden_teak_story"
   ]
 }
