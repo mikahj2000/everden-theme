@@ -240,7 +240,7 @@
               "type": "text",
               "name": "Trust row",
               "settings": {
-                "text": "<p>Tracked delivery · Returns within 30 days</p>",
+                "text": "<p>Tracked delivery · 30-day money-back guarantee</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -324,7 +324,7 @@
                 "r3": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Delivery & returns",
+                    "heading": "Delivery & refunds",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
