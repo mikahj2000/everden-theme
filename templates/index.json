@@ -47,7 +47,12 @@
         "faq3",
         "faq4"
       ],
-      "settings": {}
+      "settings": {
+        "cat1_collection": "cutting-boards",
+        "cat2_collection": "utensils",
+        "cat3_collection": "serving",
+        "featured_collection": "all"
+      }
     }
   },
   "order": [
