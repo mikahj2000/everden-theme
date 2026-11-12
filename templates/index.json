@@ -66,7 +66,9 @@
         "cat3_image": "shopify://shop_images/everden-cutting-board-serving.jpg",
         "material_image": "shopify://shop_images/everden-kitchen-set-pasta.jpg",
         "gift_product": "the-kitchen-collection",
-        "gift_image": "shopify://shop_images/everden-trio-hand.jpg"
+        "gift_image": "shopify://shop_images/everden-trio-hand.jpg",
+        "hero_heading": "Stop letting microplastics leach into your food.",
+        "hero_text": "Plastic cutting boards and spatulas leach microplastics into food every time you cook. Make the healthy choice with our premium teak wood products."
       }
     }
   },
