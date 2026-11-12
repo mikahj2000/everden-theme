@@ -13,32 +13,48 @@
   "sections": {
     "header_announcements_9jGBFp": {
       "type": "header-announcements",
-      "disabled": true,
+      "disabled": false,
       "blocks": {
-        "announcement_BxgCk9": {
+        "ann_ship": {
           "type": "_announcement",
           "settings": {
-            "text": "Try it for 30 days. Not for you? Full refund, no return needed.",
-            "font": "var(--font-subheading--family)",
+            "text": "Complimentary shipping on every US order",
+            "font": "var(--font-body--family)",
             "font_size": "0.75rem",
-            "letter_spacing": "normal",
-            "case": "none"
+            "weight": "500",
+            "letter_spacing": "loose",
+            "case": "uppercase",
+            "text_color": "#F6F2EB"
+          },
+          "blocks": {}
+        },
+        "ann_xmas": {
+          "type": "_announcement",
+          "settings": {
+            "text": "Order by December 5 for Christmas delivery",
+            "font": "var(--font-body--family)",
+            "font_size": "0.75rem",
+            "weight": "500",
+            "letter_spacing": "loose",
+            "case": "uppercase",
+            "text_color": "#F6F2EB"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "announcement_BxgCk9"
+        "ann_ship",
+        "ann_xmas"
       ],
       "name": "t:names.announcement_bar",
       "settings": {
         "speed": 5,
         "section_width": "page-width",
-        "background_color": "{{ settings.color_palette.background }}",
-        "divider_width": 1,
+        "background_color": "#1F1A16",
+        "divider_width": 0,
         "divider_color": "{{ settings.color_palette.color2 }}",
-        "padding-block-start": 15,
-        "padding-block-end": 15
+        "padding-block-start": 10,
+        "padding-block-end": 10
       }
     },
     "header_section": {

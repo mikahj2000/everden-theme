@@ -77,6 +77,16 @@
   .lx-faq details[open] summary::after{content:"\2212"}
   .lx-faq details p{margin:14px 0 0;font-size:15px;line-height:1.75;color:var(--umber);max-width:640px}
 
+  .lx-gift{background:var(--esp);color:var(--ivory)}
+  .lx-gift .lx-label{color:#C9B49C}
+  .lx-gift .lx-split .lx-img{aspect-ratio:4/5}
+  .lx-gift .lx-h2{margin-bottom:22px}
+  .lx-gift .lx-p{color:#DCD2C5;margin-bottom:28px}
+  .lx-gift-list{list-style:none;margin:0 0 36px;padding:0;border-top:1px solid rgba(246,242,235,.18)}
+  .lx-gift-list li{padding:16px 0;border-bottom:1px solid rgba(246,242,235,.18);font-size:15px;line-height:1.6;color:#DCD2C5}
+  .lx-gift-list b{font-family:var(--serif);font-weight:600;font-size:19px;color:var(--ivory);display:block;margin-bottom:2px}
+  .lx-gift .lx-btn{background:var(--ivory);color:var(--esp);border-color:var(--ivory)}
+  .lx-gift .lx-btn:hover{background:transparent;color:var(--ivory)}
   @media (max-width:899px){
     .lx-cols{grid-template-columns:1fr}
     .lx-tile .lx-img{aspect-ratio:4/5}
@@ -206,6 +216,35 @@
     </div>
   {%- endif -%}
 
+  {%- assign gp = section.settings.gift_product -%}
+  <div class="lx-gift">
+    <div class="lx-wrap">
+      <div class="lx-split">
+        <div>
+          <p class="lx-label">{{ section.settings.gift_label }}</p>
+          <h2 class="lx-h2">{{ section.settings.gift_heading }}</h2>
+          <p class="lx-p">{{ section.settings.gift_text }}</p>
+          <ul class="lx-gift-list">
+            <li><b>Sent straight to them</b>Enter their name and address at checkout, and we'll ship it directly.</li>
+            <li><b>{{ section.settings.gift_deadline }}</b>Every order ships tracked, with free US shipping.</li>
+          </ul>
+          {%- if gp -%}
+            <a class="lx-btn" href="{{ gp.url }}">Shop {{ gp.title | remove: 'The ' }} · {{ gp.price | money_without_trailing_zeros }}</a>
+          {%- else -%}
+            <a class="lx-btn" href="{{ shop_url }}">Explore the collection</a>
+          {%- endif -%}
+        </div>
+        <div class="lx-img">
+          {%- if section.settings.gift_image -%}
+            {{ section.settings.gift_image | image_url: width: 1400 | image_tag: loading: 'lazy', sizes: '(max-width: 899px) 100vw, 50vw' }}
+          {%- else -%}
+            <div class="lx-ph">{{ grain }}</div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="lx-band">
     <div class="lx-wrap">
       <p class="lx-label">The ritual of care</p>
@@ -269,6 +308,13 @@
     { "type": "header", "content": "Selected pieces" },
     { "type": "collection", "id": "featured_collection", "label": "Collection to feature (hidden when empty)" },
     { "type": "text", "id": "featured_heading", "label": "Heading", "default": "Begin with these." },
+    { "type": "header", "content": "Gift" },
+    { "type": "text", "id": "gift_label", "label": "Gift label", "default": "The gift" },
+    { "type": "text", "id": "gift_heading", "label": "Gift heading", "default": "A gift they'll keep for decades." },
+    { "type": "textarea", "id": "gift_text", "label": "Gift text", "default": "Teak is made to be used every day and handed down. For a new home, a wedding, or anyone who loves to cook." },
+    { "type": "text", "id": "gift_deadline", "label": "Gift deadline line", "default": "Order by December 5 for Christmas" },
+    { "type": "product", "id": "gift_product", "label": "Gift product (button)" },
+    { "type": "image_picker", "id": "gift_image", "label": "Gift image (portrait)" },
     { "type": "header", "content": "Closing" },
     { "type": "text", "id": "close_heading", "label": "Closing heading", "default": "Pieces for a lifetime of meals." },
     { "type": "textarea", "id": "promise_text", "label": "Closing text", "default": "Every order ships tracked. If a piece isn't right for your home, tell us within 30 days of delivery for a full refund." }

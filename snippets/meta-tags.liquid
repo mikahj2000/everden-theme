@@ -19,6 +19,10 @@
 >
 
 {%- liquid
+  if request.page_type == 'index'
+    assign page_title = 'Everden | Solid Teak Cutting Boards & Kitchen Utensils'
+    assign page_description = 'Solid teak cutting boards, cooking utensils and serving pieces, made for daily use and the decades after. Free US shipping and a 30-day money-back guarantee.'
+  endif
   assign og_title = page_title | default: shop.name
   assign og_url = canonical_url | default: request.origin
   assign og_type = 'website'

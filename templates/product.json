@@ -473,6 +473,13 @@
             "question": "What if it's not for me?",
             "answer": "You're covered by our 30-day money-back guarantee. Email us within 30 days of delivery and we'll refund you in full."
           }
+        },
+        "faq_gift": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I send it as a gift?",
+            "answer": "Yes. Just enter their name and address at checkout and we'll ship it straight to them. For Christmas delivery, please order by December 5."
+          }
         }
       },
       "block_order": [
@@ -481,6 +488,7 @@
         "faq3",
         "faq4",
         "faq5",
+        "faq_gift",
         "faq6"
       ],
       "settings": {}
