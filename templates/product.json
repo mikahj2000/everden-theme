@@ -240,7 +240,7 @@
               "type": "text",
               "name": "Trust row",
               "settings": {
-                "text": "<p>Tracked delivery · 30-day money-back guarantee</p>",
+                "text": "<p>Tracked delivery · 30-day money-back guarantee · Free care guide</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -372,7 +372,7 @@
                     "text": {
                       "type": "text",
                       "settings": {
-                        "text": "<ol><li><strong>Hand wash</strong> with warm water and a little mild soap.</li><li><strong>Dry it upright</strong> straight away so air reaches both sides.</li><li><strong>Oil once a month</strong> with food-grade mineral oil.</li></ol><p>Never put teak in the dishwasher or leave it soaking.</p>",
+                        "text": "<ol><li><strong>Hand wash</strong> with warm water and a little mild soap.</li><li><strong>Dry it upright</strong> straight away so air reaches both sides.</li><li><strong>Oil once a month</strong> with food-grade mineral oil or fractionated coconut oil.</li></ol><p>Never put teak in the dishwasher or leave it soaking.</p><p><a href=\"https://cdn.shopify.com/s/files/1/0809/8372/0167/files/Everden-Care-Guide.pdf\" target=\"_blank\" rel=\"noopener\">Download the free Everden Care Guide (PDF)</a></p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",

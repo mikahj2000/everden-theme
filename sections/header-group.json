@@ -40,10 +40,24 @@
             "text_color": "#F6F2EB"
           },
           "blocks": {}
+        },
+        "ann_guide": {
+          "type": "_announcement",
+          "settings": {
+            "text": "Free care guide with every order",
+            "font": "var(--font-body--family)",
+            "font_size": "0.75rem",
+            "weight": "500",
+            "letter_spacing": "loose",
+            "case": "uppercase",
+            "text_color": "#F6F2EB"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "ann_ship",
+        "ann_guide",
         "ann_xmas"
       ],
       "name": "t:names.announcement_bar",
