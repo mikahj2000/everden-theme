@@ -1,0 +1,53 @@
+{%- comment -%} Teak vs bamboo vs plastic comparison. Rendered inside the teak home and story sections. {%- endcomment -%}
+<style>
+  .lxc{--ivory:#F6F2EB;--paper:#FBF9F5;--esp:#1F1A16;--umber:#5E4C3E;--muted:#8A7B6D;--stone:#E7DFD3;--teak:#8A5A36;--serif:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;color:var(--esp)}
+  .lxc *{box-sizing:border-box}
+  .lxc-wrap{max-width:1080px;margin:0 auto;padding:clamp(72px,10vw,128px) clamp(20px,4vw,48px)}
+  .lxc-label{font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;margin:0 0 22px;color:var(--muted);text-align:center}
+  .lxc-h2{font-family:var(--serif);font-weight:500;font-size:clamp(32px,4.2vw,54px);line-height:1.05;margin:0 auto 18px;text-align:center;max-width:16ch;text-wrap:balance}
+  .lxc-lede{font-size:16px;line-height:1.75;color:var(--umber);margin:0 auto 52px;text-align:center;max-width:560px}
+  .lxc-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lxc table{width:100%;min-width:560px;border-collapse:separate;border-spacing:0;font-size:15px;line-height:1.5}
+  .lxc th,.lxc td{padding:20px 18px;text-align:left;vertical-align:top;border-bottom:1px solid var(--stone)}
+  .lxc thead th{font-family:var(--serif);font-weight:600;font-size:24px;padding-top:26px;border-bottom:1px solid rgba(31,26,22,.35)}
+  .lxc thead th:first-child{font-family:inherit}
+  .lxc tbody th{font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);width:22%}
+  .lxc td{color:var(--umber);width:26%}
+  .lxc .lxc-teak{background:var(--paper);color:var(--esp)}
+  .lxc thead .lxc-teak{color:var(--teak);border-top:2px solid var(--teak)}
+  .lxc td.lxc-teak{font-weight:500}
+  .lxc-note{margin:22px 0 0;font-size:12px;line-height:1.6;color:var(--muted);text-align:center}
+  @media (max-width:599px){
+    .lxc table{min-width:0;font-size:14px}
+    .lxc thead tr,.lxc tbody tr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+    .lxc thead th:first-child{display:none}
+    .lxc thead th{font-size:20px;padding:16px 10px}
+    .lxc tbody th{grid-column:1 / -1;width:auto;border-bottom:0;padding:18px 10px 6px;font-size:11px}
+    .lxc td{width:auto;padding:4px 10px 16px;font-size:13.5px;line-height:1.45}
+  }
+</style>
+
+<div class="lxc">
+  <div class="lxc-wrap">
+    <p class="lxc-label">How teak compares</p>
+    <h2 class="lxc-h2">Teak, bamboo or plastic?</h2>
+    <p class="lxc-lede">All three will cut a lemon. Here's how they differ over years of daily use.</p>
+    <div class="lxc-scroll">
+      <table>
+        <thead>
+          <tr><th scope="col"><span class="visually-hidden">Feature</span></th><th scope="col" class="lxc-teak">Teak</th><th scope="col">Bamboo</th><th scope="col">Plastic</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">On your knives</th><td class="lxc-teak">Very gentle</td><td>Very hard, dulls blades faster</td><td>Gentle at first</td></tr>
+          <tr><th scope="row">Water and warping</th><td class="lxc-teak">Natural oils help it resist moisture</td><td>Glued strips can split or warp</td><td>Doesn't absorb water</td></tr>
+          <tr><th scope="row">Knife marks</th><td class="lxc-teak">Shallow, and blend in over time</td><td>Can splinter at the surface</td><td>Deep grooves that hold on to food</td></tr>
+          <tr><th scope="row">Harbors bacteria</th><td class="lxc-teak">No: dense, oily grain</td><td>Can, in cracks and glue seams</td><td>Yes, in knife grooves</td></tr>
+          <tr><th scope="row">Microplastics</th><td class="lxc-teak">None</td><td>None</td><td>Sheds particles as you cut</td></tr>
+          <tr><th scope="row">Dishwasher</th><td class="lxc-teak">No, wash by hand</td><td>No, wash by hand</td><td>Yes</td></tr>
+          <tr><th scope="row">How long it lasts</th><td class="lxc-teak">Generations, with care</td><td>A few years</td><td>Until it's deeply scored</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="lxc-note">General comparison of typical boards. Microplastics: Yadav et al., Environmental Science &amp; Technology, 2023.</p>
+  </div>
+</div>
