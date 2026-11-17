@@ -1,0 +1,23 @@
+{%- comment -%} Everden guarantee seal. Usage: render 'everden-seal', days: '30' {%- endcomment -%}
+{%- assign d = days | default: '30' -%}
+<svg class="evp-seal" viewBox="0 0 400 400" role="img" aria-label="{{ d }}-day money-back guarantee">
+  <defs>
+    <path id="evSealTop" d="M70 200a130 130 0 0 1 260 0"/>
+    <path id="evSealBot" d="M62 200a138 138 0 0 0 276 0"/>
+  </defs>
+  <g fill="#8A5A36">
+    {%- for i in (0..35) -%}
+      {%- assign a = i | times: 10 -%}
+      <circle cx="200" cy="18" r="13" transform="rotate({{ a }} 200 200)"/>
+    {%- endfor -%}
+  </g>
+  <circle cx="200" cy="200" r="182" fill="#8A5A36"/>
+  <circle cx="200" cy="200" r="168" fill="none" stroke="#C9A46A" stroke-width="2"/>
+  <circle cx="200" cy="200" r="104" fill="#F6F2EB"/>
+  <circle cx="200" cy="200" r="94" fill="none" stroke="#C9A46A" stroke-width="1.5"/>
+  <text font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="6" fill="#F6F2EB"><textPath href="#evSealTop" startOffset="50%" text-anchor="middle">MONEY-BACK</textPath></text>
+  <text font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="6" fill="#F6F2EB" dy="16"><textPath href="#evSealBot" startOffset="50%" text-anchor="middle">GUARANTEE</textPath></text>
+  <circle cx="86" cy="200" r="4" fill="#C9A46A"/><circle cx="314" cy="200" r="4" fill="#C9A46A"/>
+  <text x="200" y="214" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="96" font-weight="600" fill="#1F1A16">{{ d }}</text>
+  <text x="200" y="250" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="7" fill="#8A5A36">DAYS</text>
+</svg>

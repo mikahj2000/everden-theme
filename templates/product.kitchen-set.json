@@ -1,0 +1,618 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-information",
+      "blocks": {
+        "media-gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
+          "settings": {
+            "media_presentation": "carousel",
+            "media_columns": "one",
+            "image_gap": 0,
+            "large_first_image": false,
+            "icons_style": "arrows_large",
+            "slideshow_controls_style": "thumbnails",
+            "slideshow_mobile_controls_style": "thumbnails",
+            "thumbnail_position": "bottom",
+            "thumbnail_width": 72,
+            "thumbnail_radius": 0,
+            "aspect_ratio": "1",
+            "constrain_to_viewport": false,
+            "media_fit": "contain",
+            "media_radius": 0,
+            "extend_media": false,
+            "zoom": true,
+            "video_loop": true,
+            "hide_variants": true,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "details_position": "flex-start",
+            "gap": 20,
+            "sticky_details_desktop": true,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 24,
+            "padding-block-end": 24,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "group_icgrde": {
+              "type": "group",
+              "name": "t:names.header",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "text_xrnftG": {
+                  "type": "text",
+                  "name": "t:names.product_title",
+                  "settings": {
+                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h2",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_xrnftG"
+              ]
+            },
+            "ev_price": {
+              "type": "price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "paragraph",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "text_color": "",
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "variant_picker_R3rGDr": {
+              "type": "variant-picker",
+              "settings": {
+                "variant_style": "buttons",
+                "show_swatches": false,
+                "option_label_text_color": "",
+                "variant_style_class": "default",
+                "custom_variant_background": "{{ settings.color_palette.background }}",
+                "custom_variant_text": "{{ settings.color_palette.foreground }}",
+                "custom_variant_border": "{{ settings.color_palette.foreground }}",
+                "selected_variant_style_class": "default",
+                "custom_selected_variant_background": "{{ settings.color_palette.foreground }}",
+                "custom_selected_variant_text": "{{ settings.color_palette.background }}",
+                "custom_selected_variant_border": "{{ settings.color_palette.foreground }}",
+                "alignment": "left",
+                "padding-block-start": 0,
+                "padding-block-end": 8,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "buy_buttons_eYQEYi": {
+              "type": "buy-buttons",
+              "settings": {
+                "stacking": true,
+                "text_color": "",
+                "show_pickup_availability": false,
+                "gift_card_form": true,
+                "recipient_button_style": "default",
+                "recipient_button_background": "{{ settings.color_palette.background }}",
+                "recipient_button_text": "{{ settings.color_palette.foreground }}",
+                "recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_style": "default",
+                "selected_recipient_button_background": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_text": "{{ settings.color_palette.background }}",
+                "selected_recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "input_style": "default",
+                "input_background_color": "{{ settings.color_palette.background }}",
+                "input_text_color": "{{ settings.color_palette.foreground }}",
+                "input_border_color": "{{ settings.color_palette.foreground }}",
+                "border_width": 1,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {
+                    "input_style": "default",
+                    "input_background_color": "{{ settings.color_palette.background }}",
+                    "input_text_color": "{{ settings.color_palette.foreground }}",
+                    "input_border_color": "{{ settings.color_palette.foreground }}",
+                    "border_width": 1,
+                    "border_radius": 0
+                  },
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button",
+                    "custom_button_background": "#1f1a16",
+                    "custom_button_text": "#f6f2eb",
+                    "custom_button_border": "#1f1a16"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            },
+            "ev_trust": {
+              "type": "text",
+              "name": "Trust row",
+              "settings": {
+                "text": "<p>Free tracked US shipping · Free care guide with every order</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "ev_accordion": {
+              "type": "accordion",
+              "settings": {
+                "icon": "caret",
+                "dividers": true,
+                "divider_color": "",
+                "type_preset": "h6",
+                "background_color": "",
+                "text_color": "",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "r1": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Description",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text": {
+                      "type": "text",
+                      "settings": {
+                        "text": "{{ closest.product.description }}",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "text_color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text"
+                  ]
+                },
+                "r3": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Delivery & refunds",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Every order ships tracked and usually arrives within 7–12 business days. If a piece isn't right for your home, tell us within 30 days of delivery for a full refund.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "text_color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text"
+                  ]
+                },
+                "r_care": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Care",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<ol><li><strong>Hand wash</strong> with warm water and a little mild soap.</li><li><strong>Dry it upright</strong> straight away so air reaches both sides.</li><li><strong>Oil once a month</strong> with food-grade mineral oil or fractionated coconut oil.</li></ol><p>Never put teak in the dishwasher or leave it soaking.</p><p><a href=\"https://cdn.shopify.com/s/files/1/0809/8372/0167/files/Everden-Care-Guide.pdf\" target=\"_blank\" rel=\"noopener\">Download the free Everden Care Guide (PDF)</a></p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "text_color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text"
+                  ]
+                }
+              },
+              "block_order": [
+                "r1",
+                "r_care",
+                "r3"
+              ]
+            },
+            "ev_benefits": {
+              "type": "ev-benefits",
+              "settings": {
+                "heading": "Key benefits",
+                "items": "No plastic to shed into your food\nWon't melt or flake\nSafe on nonstick and enamel\nStays cool to hold\nFree US shipping and a 30-day money-back guarantee"
+              }
+            },
+            "ev_pay": {
+              "type": "payment-icons",
+              "settings": {
+                "horizontal_alignment": "center",
+                "gap": 8,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              }
+            },
+            "ev_guar": {
+              "type": "ev-guarantee",
+              "settings": {
+                "days": "30",
+                "title": "30-day money-back guarantee",
+                "text": "Not right for your home? Tell us within 30 days of delivery for a full refund."
+              }
+            }
+          },
+          "block_order": [
+            "group_icgrde",
+            "ev_price",
+            "ev_benefits",
+            "variant_picker_R3rGDr",
+            "buy_buttons_eYQEYi",
+            "ev_pay",
+            "ev_guar",
+            "ev_trust",
+            "ev_accordion"
+          ]
+        }
+      },
+      "settings": {
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "equal_columns": true,
+        "limit_details_width": false,
+        "gap": 48,
+        "enable_sticky_add_to_cart": true,
+        "background_color": "#f6f2eb",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
+    },
+    "story": {
+      "type": "everden-pdp-story",
+      "blocks": {
+        "icons": {
+          "type": "icons",
+          "settings": {
+            "icon1": "leaf",
+            "icon2": "flame",
+            "icon3": "pan",
+            "icon4": "hand",
+            "label1": "No plastic to shed",
+            "label2": "Won't melt or flake",
+            "label3": "Safe on nonstick and enamel",
+            "label4": "Stays cool to hold"
+          }
+        },
+        "why": {
+          "type": "split",
+          "settings": {
+            "image": "shopify://shop_images/everden-kitchen-set-stove.jpg",
+            "reverse": false,
+            "background": "ivory",
+            "label": "Why teak",
+            "heading": "No plastic to shed into your food.",
+            "text": "<p>Plastic cutting boards shed microplastics as you cut. Our teak utensils have no plastic to shed, and they won't melt or flake on a hot pan.</p>",
+            "points": "No plastic to shed\nWon't melt or flake\nSafe on nonstick and enamel\nStays cool to hold",
+            "note": "Plastic boards shed microplastics as you cut – Yadav et al., Environmental Science & Technology, 2023."
+          }
+        },
+        "cards": {
+          "type": "cards",
+          "settings": {
+            "background": "paper",
+            "label": "In the box",
+            "heading": "Everything you reach for at the stove.",
+            "text": "",
+            "image1": "shopify://shop_images/everden-kitchen-set-seven.jpg",
+            "title1": "Seven teak utensils",
+            "body1": "Ladle, cooking spoon, slotted spoon, spatula, turner, slotted turner and pasta server.",
+            "image2": "shopify://shop_images/everden-kitchen-set-stove.jpg",
+            "title2": "A solid jujube wood cup",
+            "body2": "Keeps all seven standing close at hand. 3.5 in wide and 5.1 in tall.",
+            "image3": "shopify://shop_images/everden-kitchen-set-pasta.jpg",
+            "title3": "Bamboo dish brush",
+            "body3": "Round, with natural bristles, on its own white ceramic dish.",
+            "image4": "shopify://shop_images/everden-kitchen-set-sizes-v2.jpg",
+            "title4": "Sized for every job",
+            "body4": "From the 10.2 in cooking spoon to the 13.4 in turner."
+          }
+        },
+        "stats": {
+          "type": "stats",
+          "settings": {
+            "background": "ivory",
+            "label": "By the numbers",
+            "heading": "One set for every job at the stove.",
+            "value1": "7",
+            "text1": "<p><strong>Teak utensils</strong>, one for every job at the stove.</p>",
+            "value2": "30",
+            "text2": "<p><strong>Days</strong> to try it, with a full refund if it's not for you.</p>",
+            "value3": "Free",
+            "text3": "<p><strong>Tracked US shipping</strong> on every order.</p>"
+          }
+        },
+        "material": {
+          "type": "split",
+          "settings": {
+            "image": "shopify://shop_images/everden-kitchen-set-pasta.jpg",
+            "reverse": true,
+            "background": "paper",
+            "label": "The material",
+            "heading": "Teak, chosen for the way it ages.",
+            "text": "<p>For centuries teak has been the wood of ships' decks and garden furniture, trusted where water and weather are hard on wood. In the kitchen, those same qualities suit boards and tools you use every day.</p>",
+            "points": "Rich in its own oils, which help the wood resist moisture.\nTight and stable, so it holds its shape with simple care.\nCut from real timber. The grain on your piece is yours alone.",
+            "note": ""
+          }
+        },
+        "compare": {
+          "type": "compare",
+          "settings": {}
+        },
+        "care": {
+          "type": "steps",
+          "settings": {
+            "background": "stone",
+            "label": "Care routine",
+            "heading": "A few minutes of care, once a month.",
+            "text": "Three simple habits keep your teak looking its best.",
+            "show_guide": true,
+            "step_title1": "Wash by hand",
+            "step_text1": "Warm water and a little mild soap, straight after use.",
+            "step_when1": "After every use",
+            "step_title2": "Dry upright",
+            "step_text2": "Towel it dry and stand it on its edge, so air reaches every side.",
+            "step_when2": "After every use",
+            "step_title3": "Oil each month",
+            "step_text3": "Work in food-grade mineral oil or fractionated coconut oil, leave it overnight, then buff away the excess.",
+            "step_when3": "Once a month",
+            "upsell_product": "the-kitchen-collection",
+            "upsell_label": "Complete the kitchen",
+            "upsell_text": "Every Everden piece in one set: our three-board trio, the counter-lip board and the complete set of teak cooking tools.",
+            "upsell_sub": "$517 bought separately",
+            "upsell_button": "View the collection"
+          }
+        },
+        "guarantee": {
+          "type": "guarantee",
+          "settings": {
+            "background": "paper",
+            "days": "30",
+            "label": "Our promise",
+            "heading": "30-day money-back guarantee",
+            "text": "<p>Every order ships tracked. If a piece isn't right for your home, tell us within 30 days of delivery for a full refund.</p><p>Questions before you order? We're real people and we're happy to help.</p>",
+            "button_label": "Back to top"
+          }
+        },
+        "faq": {
+          "type": "faq",
+          "settings": {
+            "background": "ivory",
+            "label": "Questions",
+            "heading": "Before you order",
+            "q1": "Can I send it as a gift?",
+            "a1": "Yes. Just enter their name and address at checkout and we'll ship it straight to them. For Christmas delivery, please order by December 5.",
+            "q2": "Will my piece look exactly like the photos?",
+            "a2": "Not exactly. Every piece is cut from real teak, so the grain, colour and small markings on yours will be unique.",
+            "q3": "Can it go in the dishwasher?",
+            "a3": "No. The heat and long soak can dry out and crack the wood. Hand wash with warm, soapy water, dry it straight away, and oil it about once a month.",
+            "q4": "Why does it feel slightly oily?",
+            "a4": "That's teak's own natural oil, and it's part of what helps the wood resist moisture. It's normal and settles down with use.",
+            "q5": "How do I get rid of smells or stains?",
+            "a5": "Sprinkle on coarse salt, scrub with half a lemon, rinse, dry, then add a little food-grade mineral oil.",
+            "q6": "When will my order arrive?",
+            "a6": "Orders ship with tracking and usually arrive within 7–12 business days.",
+            "q7": "What if it's not for me?",
+            "a7": "You're covered by our 30-day money-back guarantee. Email us within 30 days of delivery and we'll refund you in full."
+          }
+        }
+      },
+      "block_order": [
+        "icons",
+        "why",
+        "cards",
+        "stats",
+        "material",
+        "compare",
+        "care",
+        "guarantee",
+        "faq"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "story"
+  ]
+}

@@ -16,11 +16,19 @@
   .lxc .lxc-teak{background:var(--paper);color:var(--esp)}
   .lxc thead .lxc-teak{color:var(--teak);border-top:2px solid var(--teak)}
   .lxc td.lxc-teak{font-weight:500}
+  .lxc-scroll{border:1px solid var(--stone);border-radius:18px;background:var(--paper)}
+  .lxc thead th{background:var(--esp);color:#F6F2EB;border-bottom:0}
+  .lxc thead th:first-child{border-top-left-radius:17px}
+  .lxc thead th:last-child{border-top-right-radius:17px}
+  .lxc thead .lxc-teak{background:#2E2620;color:#C9A46A;border-top:0}
+  .lxc tbody tr:last-child th,.lxc tbody tr:last-child td{border-bottom:0}
+  .lxc td.lxc-teak{background:#F3ECE1}
   .lxc-note{margin:22px 0 0;font-size:12px;line-height:1.6;color:var(--muted);text-align:center}
   @media (max-width:599px){
     .lxc table{min-width:0;font-size:14px}
     .lxc thead tr,.lxc tbody tr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
     .lxc thead th:first-child{display:none}
+    .lxc thead th:nth-child(2){border-top-left-radius:17px}
     .lxc thead th{font-size:20px;padding:16px 10px}
     .lxc tbody th{grid-column:1 / -1;width:auto;border-bottom:0;padding:18px 10px 6px;font-size:11px}
     .lxc td{width:auto;padding:4px 10px 16px;font-size:13.5px;line-height:1.45}

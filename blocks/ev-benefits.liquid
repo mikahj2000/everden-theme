@@ -1,0 +1,32 @@
+{%- comment -%} Everden: key benefits checklist for the product buy box. One benefit per line. {%- endcomment -%}
+{%- assign lines = block.settings.items | newline_to_br | split: '<br />' -%}
+<div class="evb" {{ block.shopify_attributes }}>
+  {%- if block.settings.heading != blank -%}<p class="evb-h">{{ block.settings.heading }}</p>{%- endif -%}
+  <ul class="evb-list">
+    {%- for line in lines -%}
+      {%- assign l = line | strip -%}
+      {%- if l != blank -%}
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#8A5A36"/><path d="M5.6 10.4l2.9 2.9 6-6.3" fill="none" stroke="#F6F2EB" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>{{ l }}</span></li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</div>
+<style>
+  .evb{width:100%;margin:4px 0 2px}
+  .evb-h{font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#8A7B6D;margin:0 0 12px}
+  .evb-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .evb-list li{display:grid;grid-template-columns:20px 1fr;gap:12px;align-items:start;font-size:15px;line-height:1.45;color:#1F1A16}
+  .evb-list svg{width:20px;height:20px;margin-top:1px}
+</style>
+
+{% schema %}
+{
+  "name": "Key benefits",
+  "tag": null,
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Key benefits" },
+    { "type": "textarea", "id": "items", "label": "Benefits (one per line)", "default": "No plastic to shed into your food\nFree US shipping and a 30-day money-back guarantee" }
+  ],
+  "presets": [ { "name": "Key benefits" } ]
+}
+{% endschema %}
