@@ -497,15 +497,15 @@
             "image1": "shopify://shop_images/everden-trio-hand.jpg",
             "title1": "The Teak Board Trio",
             "body1": "Three boards (17 × 12, 13 × 9.5 and 10 × 7 in) with a matching teak stand.",
-            "url1": "/products/teak-board-trio",
+            "url1": "shopify://products/teak-board-trio",
             "image2": "shopify://shop_images/everden-cutting-board-serving.jpg",
             "title2": "The Teak Cutting Board",
             "body2": "16 × 12 in, 1 in thick, with a counter lip, juice groove and side handle.",
-            "url2": "/products/teak-cutting-board",
+            "url2": "shopify://products/teak-cutting-board",
             "image3": "shopify://shop_images/everden-kitchen-set-seven.jpg",
             "title3": "The Teak Kitchen Set",
             "body3": "Seven teak cooking utensils, a wooden holder and a bamboo dish brush on a ceramic dish.",
-            "url3": "/products/teak-kitchen-set"
+            "url3": "shopify://products/teak-kitchen-set"
           }
         },
         "stats": {
