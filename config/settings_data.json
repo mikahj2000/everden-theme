@@ -9,9 +9,10 @@
  */
 {
   "current": {
+    "logo": "shopify://shop_images/everden-lux-logo.png",
+    "logo_inverse": "shopify://shop_images/everden-lux-logo-light.png",
     "logo_height": 30,
     "logo_height_mobile": 24,
-    "logo": "shopify://shop_images/everden-lux-logo.png",
     "favicon": "shopify://shop_images/everden-lux-icon.png",
     "page_text_color": "{{ settings.color_palette.foreground }}",
     "type_body_font": "inter_n4",
@@ -120,6 +121,13 @@
         "type": "shopify://apps/lai-product-reviews/blocks/appBlockEmbed/cad3c6c6-329e-4416-ba74-b79359b5b6e1",
         "disabled": true,
         "settings": {}
+      },
+      "5896977436276835252": {
+        "type": "shopify://apps/eversogood-popup/blocks/eversogood-popup/019fd01f-e1bd-735e-a51b-91c44f3ac4ec",
+        "disabled": false,
+        "settings": {
+          "preview_in_editor": false
+        }
       }
     },
     "color_palette": {
@@ -127,8 +135,7 @@
       "foreground": "#1F1A16",
       "color1": "#5E4C3E",
       "color2": "#E7DFD3"
-    },
-    "logo_inverse": "shopify://shop_images/everden-lux-logo-light.png"
+    }
   },
   "presets": {
     "Horizon": {
