@@ -1,9 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "mcp__Shopify__theme_bash",
-      "mcp__Shopify__graphql_query",
-      "mcp__Shopify__theme_commit"
+      "mcp__Shopify"
     ]
   }
 }
