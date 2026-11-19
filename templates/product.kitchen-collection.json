@@ -420,7 +420,7 @@
       "type": "everden-feature-rows",
       "settings": {
         "label": "What's included",
-        "heading": "Everything Everden makes, together."
+        "heading": "Every piece, in one order."
       },
       "blocks": {
         "f_trio": {
@@ -458,7 +458,7 @@
       "type": "everden-compare-grid",
       "settings": {
         "label": "The value",
-        "heading": "Together, you save $68.",
+        "heading": "Together or separately.",
         "lede": "",
         "row_header": "Piece",
         "col1": "The Collection",
