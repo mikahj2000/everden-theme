@@ -1,0 +1,50 @@
+{%- comment -%} A single large image with an optional label and heading. Used for "What's in the set". {%- endcomment -%}
+<style>
+  .lxp-panel{--ivory:#F6F2EB;--paper:#FBF9F5;--esp:#1F1A16;--muted:#8A7B6D;--stone:#E7DFD3;--serif:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;color:var(--esp)}
+  .lxp-panel--ivory{background:var(--ivory)}
+  .lxp-panel--paper{background:var(--paper)}
+  .lxp-panel--stone{background:var(--stone)}
+  .lxp-panel *{box-sizing:border-box}
+  .lxp-panel__wrap{margin:0 auto;padding:clamp(56px,8vw,112px) clamp(20px,4vw,48px);text-align:center}
+  .lxp-panel__label{font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;margin:0 0 18px;color:var(--muted)}
+  .lxp-panel__h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,3.8vw,48px);line-height:1.08;margin:0 auto 36px;max-width:20ch;text-wrap:balance}
+  .lxp-panel__img img{width:100%;height:auto;display:block}
+  .lxp-panel__ph{aspect-ratio:1/1;background:var(--stone)}
+</style>
+<div class="lxp-panel lxp-panel--{{ section.settings.background }}">
+  <div class="lxp-panel__wrap" style="max-width:{{ section.settings.max_width }}px">
+    {%- if section.settings.label != blank -%}
+      <p class="lxp-panel__label">{{ section.settings.label }}</p>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="lxp-panel__h2">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    <div class="lxp-panel__img">
+      {%- if section.settings.image -%}
+        {%- assign alt = section.settings.image.alt | default: section.settings.label -%}
+        {{ section.settings.image | image_url: width: 2000 | image_tag: loading: 'lazy', sizes: '(max-width: 1100px) 100vw, 1100px', alt: alt }}
+      {%- else -%}
+        <div class="lxp-panel__ph"></div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Everden image panel",
+  "tag": "section",
+  "class": "section section--full-width",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "What's in the set" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "range", "id": "max_width", "label": "Maximum width", "min": 600, "max": 1400, "step": 50, "unit": "px", "default": 1100 },
+    { "type": "select", "id": "background", "label": "Background", "default": "paper", "options": [
+      { "value": "ivory", "label": "Ivory" },
+      { "value": "paper", "label": "Paper" },
+      { "value": "stone", "label": "Stone" }
+    ] }
+  ],
+  "presets": [{ "name": "Everden image panel" }]
+}
+{% endschema %}

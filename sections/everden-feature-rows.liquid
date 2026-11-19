@@ -1,0 +1,71 @@
+{%- comment -%} Alternating image and text rows, one block per feature. {%- endcomment -%}
+<style>
+  .lxf{--ivory:#F6F2EB;--esp:#1F1A16;--umber:#5E4C3E;--muted:#8A7B6D;--stone:#E7DFD3;--serif:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;color:var(--esp);background:var(--ivory)}
+  .lxf *{box-sizing:border-box}
+  .lxf__wrap{max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,112px) clamp(20px,4vw,48px)}
+  .lxf__head{text-align:center;margin:0 0 clamp(40px,6vw,72px)}
+  .lxf__label{font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;margin:0 0 18px;color:var(--muted)}
+  .lxf__h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,3.8vw,48px);line-height:1.08;margin:0 auto;max-width:18ch;text-wrap:balance}
+  .lxf__row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+  .lxf__row + .lxf__row{margin-top:clamp(48px,7vw,96px)}
+  .lxf__row:nth-child(even) .lxf__media{order:2}
+  .lxf__media{aspect-ratio:1/1;overflow:hidden;background:var(--stone)}
+  .lxf__media img{width:100%;height:100%;object-fit:cover;display:block}
+  .lxf__title{font-family:var(--serif);font-weight:500;font-size:clamp(26px,2.8vw,36px);line-height:1.12;margin:0 0 14px}
+  .lxf__text{font-size:16px;line-height:1.75;color:var(--umber);max-width:46ch}
+  .lxf__text p{margin:0}
+  @media (max-width:749px){
+    .lxf__row{grid-template-columns:1fr;gap:24px}
+    .lxf__row:nth-child(even) .lxf__media{order:0}
+  }
+</style>
+<div class="lxf">
+  <div class="lxf__wrap">
+    {%- if section.settings.label != blank or section.settings.heading != blank -%}
+      <div class="lxf__head">
+        {%- if section.settings.label != blank -%}<p class="lxf__label">{{ section.settings.label }}</p>{%- endif -%}
+        {%- if section.settings.heading != blank -%}<h2 class="lxf__h2">{{ section.settings.heading }}</h2>{%- endif -%}
+      </div>
+    {%- endif -%}
+    <div class="lxf__rows">
+      {%- for block in section.blocks -%}
+        <div class="lxf__row" {{ block.shopify_attributes }}>
+          <div class="lxf__media">
+            {%- if block.settings.image -%}
+              {%- assign alt = block.settings.image.alt | default: block.settings.title -%}
+              {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', sizes: '(max-width: 749px) 100vw, 50vw', alt: alt }}
+            {%- endif -%}
+          </div>
+          <div>
+            {%- if block.settings.title != blank -%}<h3 class="lxf__title">{{ block.settings.title }}</h3>{%- endif -%}
+            {%- if block.settings.text != blank -%}<div class="lxf__text">{{ block.settings.text }}</div>{%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Everden feature rows",
+  "tag": "section",
+  "class": "section section--full-width",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label" },
+    { "type": "text", "id": "heading", "label": "Heading" }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Feature" },
+        { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Describe the feature.</p>" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [{ "name": "Everden feature rows", "blocks": [{ "type": "feature" }, { "type": "feature" }] }]
+}
+{% endschema %}
