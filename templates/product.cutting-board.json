@@ -1,0 +1,580 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-information",
+      "blocks": {
+        "media-gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
+          "settings": {
+            "media_presentation": "carousel",
+            "media_columns": "one",
+            "image_gap": 0,
+            "large_first_image": false,
+            "icons_style": "arrows_large",
+            "slideshow_controls_style": "thumbnails",
+            "slideshow_mobile_controls_style": "thumbnails",
+            "thumbnail_position": "bottom",
+            "thumbnail_width": 72,
+            "thumbnail_radius": 0,
+            "aspect_ratio": "1",
+            "constrain_to_viewport": false,
+            "media_fit": "contain",
+            "media_radius": 0,
+            "extend_media": false,
+            "zoom": true,
+            "video_loop": true,
+            "hide_variants": true,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "details_position": "flex-start",
+            "gap": 20,
+            "sticky_details_desktop": true,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 24,
+            "padding-block-end": 24,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "group_icgrde": {
+              "type": "group",
+              "name": "t:names.header",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "text_xrnftG": {
+                  "type": "text",
+                  "name": "t:names.product_title",
+                  "settings": {
+                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h2",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_xrnftG"
+              ]
+            },
+            "ev_price": {
+              "type": "price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "paragraph",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "text_color": "",
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "variant_picker_R3rGDr": {
+              "type": "variant-picker",
+              "settings": {
+                "variant_style": "buttons",
+                "show_swatches": false,
+                "option_label_text_color": "",
+                "variant_style_class": "default",
+                "custom_variant_background": "{{ settings.color_palette.background }}",
+                "custom_variant_text": "{{ settings.color_palette.foreground }}",
+                "custom_variant_border": "{{ settings.color_palette.foreground }}",
+                "selected_variant_style_class": "default",
+                "custom_selected_variant_background": "{{ settings.color_palette.foreground }}",
+                "custom_selected_variant_text": "{{ settings.color_palette.background }}",
+                "custom_selected_variant_border": "{{ settings.color_palette.foreground }}",
+                "alignment": "left",
+                "padding-block-start": 0,
+                "padding-block-end": 8,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "buy_buttons_eYQEYi": {
+              "type": "buy-buttons",
+              "settings": {
+                "stacking": true,
+                "text_color": "",
+                "show_pickup_availability": false,
+                "gift_card_form": true,
+                "recipient_button_style": "default",
+                "recipient_button_background": "{{ settings.color_palette.background }}",
+                "recipient_button_text": "{{ settings.color_palette.foreground }}",
+                "recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_style": "default",
+                "selected_recipient_button_background": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_text": "{{ settings.color_palette.background }}",
+                "selected_recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "input_style": "default",
+                "input_background_color": "{{ settings.color_palette.background }}",
+                "input_text_color": "{{ settings.color_palette.foreground }}",
+                "input_border_color": "{{ settings.color_palette.foreground }}",
+                "border_width": 1,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {
+                    "input_style": "default",
+                    "input_background_color": "{{ settings.color_palette.background }}",
+                    "input_text_color": "{{ settings.color_palette.foreground }}",
+                    "input_border_color": "{{ settings.color_palette.foreground }}",
+                    "border_width": 1,
+                    "border_radius": 0
+                  },
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button",
+                    "custom_button_background": "#1f1a16",
+                    "custom_button_text": "#f6f2eb",
+                    "custom_button_border": "#1f1a16"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            },
+            "ev_trust": {
+              "type": "text",
+              "name": "Trust row",
+              "settings": {
+                "text": "<p>Tracked delivery · 30-day money-back guarantee · Free care guide</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "ev_accordion": {
+              "type": "accordion",
+              "settings": {
+                "icon": "caret",
+                "dividers": true,
+                "divider_color": "",
+                "type_preset": "h6",
+                "background_color": "",
+                "text_color": "",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "r1": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Description",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text": {
+                      "type": "text",
+                      "settings": {
+                        "text": "{{ closest.product.description }}",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "text_color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text"
+                  ]
+                },
+                "r3": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Delivery & refunds",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Every order ships tracked and usually arrives within 7–12 business days. If a piece isn't right for your home, tell us within 30 days of delivery for a full refund.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "text_color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text"
+                  ]
+                }
+              },
+              "block_order": [
+                "r1",
+                "r3"
+              ]
+            },
+            "ev_teak_link": {
+              "type": "text",
+              "name": "Why teak link",
+              "settings": {
+                "text": "<p><a href=\"/#lx-material\">Why teak, and how to care for it →</a></p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "group_icgrde",
+            "ev_price",
+            "variant_picker_R3rGDr",
+            "buy_buttons_eYQEYi",
+            "ev_trust",
+            "ev_accordion",
+            "ev_teak_link"
+          ]
+        }
+      },
+      "settings": {
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "equal_columns": true,
+        "limit_details_width": false,
+        "gap": 48,
+        "enable_sticky_add_to_cart": true,
+        "background_color": "#f6f2eb",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
+    },
+    "cb_size": {
+      "type": "everden-image-panel",
+      "settings": {
+        "label": "The details",
+        "heading": "",
+        "image": "shopify://shop_images/everden-cutting-board-sizes.jpg",
+        "max_width": 1000,
+        "background": "paper"
+      }
+    },
+    "cb_features": {
+      "type": "everden-feature-rows",
+      "settings": {
+        "label": "Made for real cooking",
+        "heading": "Designed around how you work."
+      },
+      "blocks": {
+        "f_lip": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/everden-cutting-board-lip-closeup.jpg",
+            "title": "Stays put while you work",
+            "text": "<p>A counter lip hooks over your worktop edge and keeps the board from sliding while you chop.</p>"
+          }
+        },
+        "f_carry": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/everden-cutting-board-carry-vegetables.jpg",
+            "title": "From counter to table",
+            "text": "<p>A recessed side handle for lifting and carrying, even when it's full. Generous enough for a roast, handsome enough to bring straight to the table.</p>"
+          }
+        },
+        "f_groove": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/everden-cutting-board-upright-sink.jpg",
+            "title": "Catches the juices",
+            "text": "<p>A deep juice groove runs around the edge, with a corner well that catches juices from a roast or ripe fruit.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "f_lip",
+        "f_carry",
+        "f_groove"
+      ]
+    },
+    "cb_compare": {
+      "type": "everden-compare-grid",
+      "settings": {
+        "label": "How teak compares",
+        "heading": "Teak, bamboo or plastic?",
+        "lede": "No sales pitch, just the comparison. The choice is yours.",
+        "row_header": "Feature",
+        "col1": "Teak",
+        "col2": "Bamboo",
+        "col3": "Plastic",
+        "col4": "",
+        "note": "General comparison of typical boards. Plastic boards shed microplastics as you cut – Yadav et al., Environmental Science & Technology, 2023."
+      },
+      "blocks": {
+        "r_water": {
+          "type": "row",
+          "settings": {
+            "label": "Water and warping",
+            "c1": "Natural oils help it resist moisture",
+            "c2": "Can split or warp if soaked",
+            "c3": "Doesn't absorb water",
+            "c4": ""
+          }
+        },
+        "r_micro": {
+          "type": "row",
+          "settings": {
+            "label": "Microplastics",
+            "c1": "No plastic to shed",
+            "c2": "—",
+            "c3": "Sheds microplastics as you cut",
+            "c4": ""
+          }
+        },
+        "r_dish": {
+          "type": "row",
+          "settings": {
+            "label": "Dishwasher",
+            "c1": "No, wash by hand",
+            "c2": "No, wash by hand",
+            "c3": "Yes",
+            "c4": ""
+          }
+        },
+        "r_life": {
+          "type": "row",
+          "settings": {
+            "label": "How long it lasts",
+            "c1": "Made to be handed down, with simple care.",
+            "c2": "Varies with care",
+            "c3": "Until it's deeply scored",
+            "c4": ""
+          }
+        }
+      },
+      "block_order": [
+        "r_water",
+        "r_micro",
+        "r_dish",
+        "r_life"
+      ]
+    },
+    "cb_faq": {
+      "type": "everden-faq",
+      "settings": {
+        "label": "Questions",
+        "heading": "About the Cutting Board"
+      },
+      "blocks": {
+        "q_size": {
+          "type": "faq",
+          "settings": {
+            "question": "How big is it?",
+            "answer": "<p>The cutting surface is 16 × 12 in and the board is 1 in thick. The counter lip adds 0.7 in, for a total height of 1.7 in.</p>"
+          }
+        },
+        "q_serve": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I serve on it?",
+            "answer": "<p>Yes. It's generous enough for a roast and handsome enough to bring straight to the table, and the recessed side handle makes it easy to carry, even when it's full.</p>"
+          }
+        },
+        "q_well": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the corner well for?",
+            "answer": "<p>Together with the deep juice groove around the edge, it catches juices from a roast or ripe fruit.</p>"
+          }
+        },
+        "q_dish": {
+          "type": "faq",
+          "settings": {
+            "question": "Can it go in the dishwasher?",
+            "answer": "<p>No. Wash it by hand, dry it upright, and oil it once a month.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q_size",
+        "q_serve",
+        "q_well",
+        "q_dish"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "cb_size",
+    "cb_features",
+    "cb_compare",
+    "cb_faq"
+  ]
+}

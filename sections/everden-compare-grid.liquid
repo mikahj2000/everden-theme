@@ -16,7 +16,10 @@
   .lxg thead .lxg__us{color:var(--teak);border-top:2px solid var(--teak)}
   .lxg td.lxg__us{font-weight:500}
   .lxg__note{margin:20px 0 0;font-size:12px;line-height:1.6;color:var(--muted);text-align:center}
+  .lxg--3 th,.lxg--3 td{width:26%}
+  .lxg--3 tbody th{width:22%}
   @media (max-width:599px){
+    .lxg--3 thead tr,.lxg--3 tbody tr{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
     .lxg table{min-width:0;font-size:13px}
     .lxg thead tr,.lxg tbody tr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
     .lxg thead th:first-child{display:none}
@@ -25,7 +28,8 @@
     .lxg td{width:auto;padding:4px 6px 14px;font-size:12.5px;line-height:1.4}
   }
 </style>
-<div class="lxg">
+{%- assign has4 = false -%}{%- if section.settings.col4 != blank -%}{%- assign has4 = true -%}{%- endif -%}
+<div class="lxg{% unless has4 %} lxg--3{% endunless %}">
   <div class="lxg__wrap">
     {%- if section.settings.label != blank -%}<p class="lxg__label">{{ section.settings.label }}</p>{%- endif -%}
     {%- if section.settings.heading != blank -%}<h2 class="lxg__h2">{{ section.settings.heading }}</h2>{%- endif -%}
@@ -38,7 +42,7 @@
             <th scope="col" class="lxg__us">{{ section.settings.col1 }}</th>
             <th scope="col">{{ section.settings.col2 }}</th>
             <th scope="col">{{ section.settings.col3 }}</th>
-            <th scope="col">{{ section.settings.col4 }}</th>
+            {%- if has4 -%}<th scope="col">{{ section.settings.col4 }}</th>{%- endif -%}
           </tr>
         </thead>
         <tbody>
@@ -48,7 +52,7 @@
               <td class="lxg__us">{{ block.settings.c1 }}</td>
               <td>{{ block.settings.c2 }}</td>
               <td>{{ block.settings.c3 }}</td>
-              <td>{{ block.settings.c4 }}</td>
+              {%- if has4 -%}<td>{{ block.settings.c4 }}</td>{%- endif -%}
             </tr>
           {%- endfor -%}
         </tbody>
@@ -70,7 +74,7 @@
     { "type": "text", "id": "col1", "label": "Column 1 (highlighted)", "default": "Teak" },
     { "type": "text", "id": "col2", "label": "Column 2" },
     { "type": "text", "id": "col3", "label": "Column 3" },
-    { "type": "text", "id": "col4", "label": "Column 4" },
+    { "type": "text", "id": "col4", "label": "Column 4", "info": "Leave empty for a three-column table." },
     { "type": "text", "id": "note", "label": "Footnote" }
   ],
   "blocks": [
