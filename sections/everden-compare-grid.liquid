@@ -16,10 +16,13 @@
   .lxg thead .lxg__us{color:var(--teak);border-top:2px solid var(--teak)}
   .lxg td.lxg__us{font-weight:500}
   .lxg__note{margin:20px 0 0;font-size:12px;line-height:1.6;color:var(--muted);text-align:center}
+  .lxg--2 table{min-width:0;max-width:760px;margin:0 auto}
+  .lxg--2 th,.lxg--2 td{width:33%}
   .lxg--3 th,.lxg--3 td{width:26%}
   .lxg--3 tbody th{width:22%}
   @media (max-width:599px){
     .lxg--3 thead tr,.lxg--3 tbody tr{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+    .lxg--2 thead tr,.lxg--2 tbody tr{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
     .lxg table{min-width:0;font-size:13px}
     .lxg thead tr,.lxg tbody tr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
     .lxg thead th:first-child{display:none}
@@ -29,7 +32,8 @@
   }
 </style>
 {%- assign has4 = false -%}{%- if section.settings.col4 != blank -%}{%- assign has4 = true -%}{%- endif -%}
-<div class="lxg{% unless has4 %} lxg--3{% endunless %}">
+{%- assign has3 = false -%}{%- if section.settings.col3 != blank -%}{%- assign has3 = true -%}{%- endif -%}
+<div class="lxg{% unless has3 %} lxg--2{% else %}{% unless has4 %} lxg--3{% endunless %}{% endunless %}">
   <div class="lxg__wrap">
     {%- if section.settings.label != blank -%}<p class="lxg__label">{{ section.settings.label }}</p>{%- endif -%}
     {%- if section.settings.heading != blank -%}<h2 class="lxg__h2">{{ section.settings.heading }}</h2>{%- endif -%}
@@ -41,8 +45,8 @@
             <th scope="col"><span class="visually-hidden">{{ section.settings.row_header }}</span></th>
             <th scope="col" class="lxg__us">{{ section.settings.col1 }}</th>
             <th scope="col">{{ section.settings.col2 }}</th>
-            <th scope="col">{{ section.settings.col3 }}</th>
-            {%- if has4 -%}<th scope="col">{{ section.settings.col4 }}</th>{%- endif -%}
+            {%- if has3 -%}<th scope="col">{{ section.settings.col3 }}</th>{%- endif -%}
+            {%- if has3 and has4 -%}<th scope="col">{{ section.settings.col4 }}</th>{%- endif -%}
           </tr>
         </thead>
         <tbody>
@@ -51,8 +55,8 @@
               <th scope="row">{{ block.settings.label }}</th>
               <td class="lxg__us">{{ block.settings.c1 }}</td>
               <td>{{ block.settings.c2 }}</td>
-              <td>{{ block.settings.c3 }}</td>
-              {%- if has4 -%}<td>{{ block.settings.c4 }}</td>{%- endif -%}
+              {%- if has3 -%}<td>{{ block.settings.c3 }}</td>{%- endif -%}
+              {%- if has3 and has4 -%}<td>{{ block.settings.c4 }}</td>{%- endif -%}
             </tr>
           {%- endfor -%}
         </tbody>
@@ -73,7 +77,7 @@
     { "type": "text", "id": "row_header", "label": "Row header (screen readers)", "default": "Feature" },
     { "type": "text", "id": "col1", "label": "Column 1 (highlighted)", "default": "Teak" },
     { "type": "text", "id": "col2", "label": "Column 2" },
-    { "type": "text", "id": "col3", "label": "Column 3" },
+    { "type": "text", "id": "col3", "label": "Column 3", "info": "Leave empty for a two-column table." },
     { "type": "text", "id": "col4", "label": "Column 4", "info": "Leave empty for a three-column table." },
     { "type": "text", "id": "note", "label": "Footnote" }
   ],
