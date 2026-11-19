@@ -419,8 +419,8 @@
     "tr_features": {
       "type": "everden-feature-rows",
       "settings": {
-        "label": "Three boards, one stand",
-        "heading": "A board for every job."
+        "label": "The Board Trio",
+        "heading": "Three sizes, one stand."
       },
       "blocks": {
         "f_sizes": {
