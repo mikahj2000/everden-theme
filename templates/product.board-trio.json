@@ -420,7 +420,7 @@
       "type": "everden-feature-rows",
       "settings": {
         "label": "The Board Trio",
-        "heading": "Three sizes, one stand."
+        "heading": "Three sizes, for every job."
       },
       "blocks": {
         "f_sizes": {
@@ -431,26 +431,26 @@
             "text": "<p>Large, 17 × 12 in, for carving and big prep jobs. Medium, 13 × 9.5 in, the everyday board. Small, 10 × 7 in, for lemons, garlic, herbs and cheese.</p>"
           }
         },
-        "f_stand": {
-          "type": "feature",
-          "settings": {
-            "image": "shopify://shop_images/everden-trio-hand.jpg",
-            "title": "Stored upright, ready to grab",
-            "text": "<p>A solid teak stand holds all three upright, so they dry well and look good doing it.</p>"
-          }
-        },
         "f_groove": {
           "type": "feature",
           "settings": {
-            "image": "shopify://shop_images/everden-trio-boards.jpg",
+            "image": "shopify://shop_images/everden-trio-upright-sink.jpg",
             "title": "A juice groove on every board",
             "text": "<p>Each board is 0.78 in (2 cm) thick, with a juice groove around the edge.</p>"
+          }
+        },
+        "f_table": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/everden-trio-table-serving.jpg",
+            "title": "From prep to the table",
+            "text": "<p>One for prep, one for bread or cheese, one to carry to the table.</p>"
           }
         }
       },
       "block_order": [
         "f_sizes",
-        "f_stand",
+        "f_table",
         "f_groove"
       ]
     },
