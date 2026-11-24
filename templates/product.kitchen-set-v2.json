@@ -738,8 +738,7 @@
       "settings": {
         "label": "Why it matters",
         "heading": "What the research shows",
-        "intro": "Your utensils sit against a hot pan every night. Here's what two studies found about plastic in the kitchen, with links so you can read them yourself.",
-        "note": "Neither study shows these particles or compounds harm your health. Researchers say that's still being worked out. We share them so you can decide for yourself."
+        "intro": "Your utensils sit against a hot pan every night. Here's what two studies found about plastic in the kitchen, with links so you can read them yourself."
       },
       "blocks": {
         "s1": {
@@ -784,7 +783,7 @@
       "type": "everden-body-map",
       "settings": {
         "label": "Why it matters",
-        "heading": "Plastic doesn't belong in your body. It's already there.",
+        "heading": "Plastic doesn't belong in your body.",
         "intro": "It's building up in our brains, blood and arteries, and it's been linked to heart attack, stroke and dementia.",
         "image": "shopify://shop_images/everden-body-plastic.jpg",
         "width": 520,
