@@ -1,0 +1,97 @@
+{%- comment -%} Guarantee badge + icon benefit rows + free-gift box for the buy box. {%- endcomment -%}
+<div class="evq" {{ block.shopify_attributes }}>
+  {%- if block.settings.badge != blank -%}
+    <p class="evq__badge">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6l7-3z"/><path d="M8.5 12.2l2.4 2.4 4.6-4.8"/></svg>
+      <span>{{ block.settings.badge }}</span>
+    </p>
+  {%- endif -%}
+  <ul class="evq__list" role="list">
+    {%- for i in (1..3) -%}
+      {%- liquid
+        case i
+          when 1
+            assign t = block.settings.b1
+            assign ic = block.settings.i1
+          when 2
+            assign t = block.settings.b2
+            assign ic = block.settings.i2
+          when 3
+            assign t = block.settings.b3
+            assign ic = block.settings.i3
+        endcase
+      -%}
+      {%- if t != blank -%}
+        <li class="evq__item">
+          <span class="evq__icon" aria-hidden="true">
+            {%- case ic -%}
+              {%- when 'leaf' -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14z"/><path d="M5 19l7-7"/></svg>
+              {%- when 'flame' -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 01-10 0c0-2.5 1.5-4 2.5-5 .3 1.8 1.2 2.8 2.5 3 0-3.2-.5-5.6 0-8z"/></svg>
+              {%- when 'hand' -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 11V6.5a1.5 1.5 0 013 0V11m0-5.5V4.5a1.5 1.5 0 013 0V11m0-5a1.5 1.5 0 013 0v5m0-3a1.5 1.5 0 013 0v5.5c0 4-2.7 6.5-6.5 6.5-2.6 0-4.3-1.1-5.7-3.2L4.6 13a1.5 1.5 0 012.4-1.8L7 11"/></svg>
+              {%- when 'pan' -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="10" cy="13" rx="7" ry="4.5"/><path d="M17 13h5"/></svg>
+              {%- else -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16 9.5"/></svg>
+            {%- endcase -%}
+          </span>
+          <span class="evq__text">{{ t }}</span>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+  {%- if block.settings.gift_title != blank -%}
+    <div class="evq__gift">
+      {%- if block.settings.gift_image -%}
+        <div class="evq__gimg">{{ block.settings.gift_image | image_url: width: 240 | image_tag: loading: 'lazy', alt: block.settings.gift_title }}</div>
+      {%- else -%}
+        <div class="evq__gimg evq__gimg--icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.5" y="9" width="17" height="11.5"/><path d="M2.5 9h19v-3h-19zM12 6v14.5M12 6c-1-2.8-5-3.5-5-1s5 1 5 1zm0 0c1-2.8 5-3.5 5-1s-5 1-5 1z"/></svg></div>
+      {%- endif -%}
+      <div class="evq__gbody">
+        <p class="evq__glabel">{{ block.settings.gift_label }}</p>
+        <p class="evq__gtitle">{{ block.settings.gift_title }}</p>
+        {%- if block.settings.gift_text != blank -%}<p class="evq__gtext">{{ block.settings.gift_text }}</p>{%- endif -%}
+      </div>
+      {%- if block.settings.gift_value != blank -%}<p class="evq__gfree">{{ block.settings.gift_value }}</p>{%- endif -%}
+    </div>
+  {%- endif -%}
+</div>
+{% stylesheet %}
+  .evq{--esp:#1F1A16;--umber:#5E4C3E;--teak:#8A5A36;--stone:#E7DFD3;--paper:#FBF9F5;width:100%;color:var(--esp);display:grid;gap:18px}
+  .evq__badge{display:inline-flex;align-items:center;gap:8px;margin:0;font-size:13.5px;font-weight:500;color:var(--teak)}
+  .evq__badge svg{flex:none}
+  .evq__list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .evq__item{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:center;font-size:15px;line-height:1.45}
+  .evq__icon{width:34px;height:34px;border-radius:50%;background:var(--stone);color:var(--teak);display:grid;place-items:center}
+  .evq__icon svg{width:18px;height:18px}
+  .evq__gift{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;padding:14px 16px;border:1.5px dashed #c9b7a3;background:var(--paper)}
+  .evq__gimg{width:64px;height:64px;overflow:hidden;background:var(--stone)}
+  .evq__gimg img{width:100%;height:100%;object-fit:cover;display:block}
+  .evq__gimg--icon{display:grid;place-items:center;color:var(--teak)}
+  .evq__gimg--icon svg{width:30px;height:30px}
+  .evq__gbody p{margin:0}
+  .evq__glabel{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teak)}
+  .evq__gtitle{font-size:15px;font-weight:600;margin-top:2px !important}
+  .evq__gtext{font-size:13px;color:var(--umber);line-height:1.45;margin-top:2px !important}
+  .evq__gfree{margin:0;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--esp)}
+{% endstylesheet %}
+{% schema %}
+{
+  "name": "Everden benefits",
+  "tag": null,
+  "settings": [
+    { "type": "text", "id": "badge", "label": "Badge line", "default": "30-day money-back guarantee · Free US shipping" },
+    { "type": "header", "content": "Benefit rows" },
+    { "type": "select", "id": "i1", "label": "Icon 1", "default": "leaf", "options": [{"value":"leaf","label":"Leaf"},{"value":"flame","label":"Flame"},{"value":"hand","label":"Hand"},{"value":"pan","label":"Pan"},{"value":"check","label":"Check"}] },
+    { "type": "text", "id": "b1", "label": "Benefit 1" },
+    { "type": "select", "id": "i2", "label": "Icon 2", "default": "flame", "options": [{"value":"leaf","label":"Leaf"},{"value":"flame","label":"Flame"},{"value":"hand","label":"Hand"},{"value":"pan","label":"Pan"},{"value":"check","label":"Check"}] },
+    { "type": "text", "id": "b2", "label": "Benefit 2" },
+    { "type": "select", "id": "i3", "label": "Icon 3", "default": "hand", "options": [{"value":"leaf","label":"Leaf"},{"value":"flame","label":"Flame"},{"value":"hand","label":"Hand"},{"value":"pan","label":"Pan"},{"value":"check","label":"Check"}] },
+    { "type": "text", "id": "b3", "label": "Benefit 3" },
+    { "type": "header", "content": "Free gift box" },
+    { "type": "text", "id": "gift_label", "label": "Label", "default": "Free gift with your order" },
+    { "type": "text", "id": "gift_title", "label": "Title (blank hides the box)" },
+    { "type": "text", "id": "gift_text", "label": "Text" },
+    { "type": "text", "id": "gift_value", "label": "Right-hand text", "default": "Free" },
+    { "type": "image_picker", "id": "gift_image", "label": "Image (optional)" }
+  ],
+  "presets": [{ "name": "Everden benefits" }]
+}
+{% endschema %}

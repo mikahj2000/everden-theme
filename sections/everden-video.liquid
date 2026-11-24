@@ -1,0 +1,39 @@
+{%- comment -%} A short looping clip (shows nothing on the live store until a video is chosen). {%- endcomment -%}
+{%- assign v = section.settings.video -%}
+{%- if v != blank or request.design_mode -%}
+<style>
+  .evv{--esp:#1F1A16;--umber:#5E4C3E;--stone:#E7DFD3;--serif:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;background:#F6F2EB;color:var(--esp)}
+  .evv__wrap{max-width:760px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,4vw,48px);text-align:center}
+  .evv__h2{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.4vw,42px);line-height:1.1;margin:0 0 20px}
+  .evv__media{background:var(--stone);overflow:hidden}
+  .evv__media video{width:100%;height:auto;display:block}
+  .evv__ph{aspect-ratio:1/1;display:grid;place-items:center;font-size:14px;color:var(--umber)}
+  .evv__cap{font-size:15px;line-height:1.6;color:var(--umber);margin:16px auto 0;max-width:52ch}
+</style>
+<div class="evv">
+  <div class="evv__wrap">
+    {%- if section.settings.heading != blank -%}<h2 class="evv__h2">{{ section.settings.heading }}</h2>{%- endif -%}
+    <div class="evv__media">
+      {%- if v != blank -%}
+        {{ v | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, controls: false, image_size: '1200x' }}
+      {%- else -%}
+        <div class="evv__ph">Choose a video in this section's settings. It stays hidden on the store until you do.</div>
+      {%- endif -%}
+    </div>
+    {%- if section.settings.caption != blank -%}<p class="evv__cap">{{ section.settings.caption }}</p>{%- endif -%}
+  </div>
+</div>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Everden video",
+  "tag": "section",
+  "class": "section section--full-width",
+  "settings": [
+    { "type": "video", "id": "video", "label": "Video (MP4, a few seconds, loops silently)" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "textarea", "id": "caption", "label": "Caption" }
+  ],
+  "presets": [{ "name": "Everden video" }]
+}
+{% endschema %}
