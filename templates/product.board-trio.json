@@ -571,17 +571,17 @@
     "1795489735ef9d3340": {
       "type": "_blocks",
       "blocks": {
-        "lai_product_reviews_lai_product_section_jt4YB4": {
+        "lai_product_reviews_lai_product_section_kPCEMM": {
           "type": "shopify://apps/lai-product-reviews/blocks/lai-product-section/cad3c6c6-329e-4416-ba74-b79359b5b6e1",
           "settings": {
-            "lai_product": "teak-board-trio",
-            "title": "Ratings&Reviews",
+            "lai_product": "",
+            "title": "",
             "use_other_product": false
           }
         }
       },
       "block_order": [
-        "lai_product_reviews_lai_product_section_jt4YB4"
+        "lai_product_reviews_lai_product_section_kPCEMM"
       ],
       "settings": {
         "content_direction": "column",
