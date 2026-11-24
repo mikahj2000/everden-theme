@@ -575,7 +575,7 @@
           "type": "shopify://apps/lai-product-reviews/blocks/lai-product-section/cad3c6c6-329e-4416-ba74-b79359b5b6e1",
           "settings": {
             "lai_product": "teak-board-trio",
-            "title": "Ratings & Reviews",
+            "title": "Ratings and reviews",
             "use_other_product": false
           }
         }
