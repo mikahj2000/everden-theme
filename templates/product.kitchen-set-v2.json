@@ -444,7 +444,8 @@
         "heading": "",
         "image": "shopify://shop_images/everden-kitchen-set-sizes-v2.jpg",
         "max_width": 1100,
-        "background": "paper"
+        "background": "paper",
+        "image_mobile": "shopify://shop_images/everden-kitchen-set-sizes-mobile.jpg"
       }
     },
     "ks_features": {
