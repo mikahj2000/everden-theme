@@ -389,7 +389,6 @@
                 "heading": "Buy more & save",
                 "title_1": "Buy 1",
                 "price_1": 139,
-                "tag_1": "",
                 "title_2": "Buy 2",
                 "price_2": 249,
                 "tag_2": "Keep one, gift one",
@@ -713,10 +712,7 @@
     },
     "ks_video": {
       "type": "everden-video",
-      "settings": {
-        "heading": "",
-        "caption": ""
-      }
+      "settings": {}
     },
     "ks_research": {
       "type": "everden-research",
@@ -755,9 +751,7 @@
             "stat": "1 swap",
             "stat_label": "Where to start",
             "title": "Start with what touches the hot pan",
-            "text": "<p>You don't have to change everything at once. The spatula and spoon that sit in a hot pan every night are an easy first swap.</p><p>Everden utensils are solid teak with a non-toxic, food-grade finish. There's no plastic in them to shed.</p>",
-            "source": "",
-            "url": ""
+            "text": "<p>You don't have to change everything at once. The spatula and spoon that sit in a hot pan every night are an easy first swap.</p><p>Everden utensils are solid teak with a non-toxic, food-grade finish. There's no plastic in them to shed.</p>"
           }
         }
       },
