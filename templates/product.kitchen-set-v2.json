@@ -770,6 +770,97 @@
         "s2",
         "s3"
       ]
+    },
+    "ks_body": {
+      "type": "everden-body-map",
+      "settings": {
+        "label": "Why it matters",
+        "heading": "Plastic doesn't belong in your body. It's already there.",
+        "intro": "It's building up in our brains, blood and arteries, and it's been linked to heart attack, stroke and dementia.",
+        "image": "shopify://shop_images/everden-body-plastic.jpeg",
+        "width": 520,
+        "scheme": "cream",
+        "note": "The easiest place to start is what touches your food every day."
+      },
+      "blocks": {
+        "p1": {
+          "type": "point",
+          "settings": {
+            "stat": "Building up in our brains",
+            "title": "Brain",
+            "text": "Brains from 2024 held 50% more plastic than brains from 2016. The brains of people with dementia held 3 to 5 times more.",
+            "source": "Nihart et al., Nature Medicine, 2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39901044/",
+            "x": 50,
+            "y": 9.4,
+            "label_y": 4,
+            "side": "l"
+          }
+        },
+        "p2": {
+          "type": "point",
+          "settings": {
+            "stat": "4.5× the risk of heart attack, stroke or death",
+            "title": "Arteries",
+            "text": "People with plastic lodged in their artery plaque were 4.5 times more likely to have a heart attack, a stroke or die within 3 years.",
+            "source": "Marfella et al., NEJM, 2024",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11009876/",
+            "x": 51.7,
+            "y": 16.9,
+            "label_y": 11,
+            "side": "r"
+          }
+        },
+        "p3": {
+          "type": "point",
+          "settings": {
+            "stat": "Lodged deep in your lungs",
+            "title": "Lungs",
+            "text": "Found in 11 of 13 lung samples from living people, deep in the lungs where scientists didn't think pieces that big could reach.",
+            "source": "Jenner et al., Sci. Total Environ., 2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35364151/",
+            "x": 45.8,
+            "y": 26.9,
+            "label_y": 36,
+            "side": "l"
+          }
+        },
+        "p4": {
+          "type": "point",
+          "settings": {
+            "stat": "It's in your bloodstream",
+            "title": "Blood",
+            "text": "Found in the blood of nearly 8 in 10 healthy adults. From the blood, it's been found building up in the brain, liver and kidneys.",
+            "source": "Leslie et al., Environment International, 2022",
+            "url": "https://research.vu.nl/en/publications/discovery-and-quantification-of-plastic-particle-pollution-in-hum/",
+            "x": 65.5,
+            "y": 40,
+            "label_y": 52,
+            "side": "r"
+          }
+        },
+        "p5": {
+          "type": "point",
+          "settings": {
+            "stat": "You're eating it",
+            "title": "Gut",
+            "text": "Every stool sample tested contained plastic. It comes in with food and drink, and plastic utensils and cookware add more.",
+            "source": "Schwabl et al., Annals of Internal Medicine, 2019",
+            "url": "https://www.acpjournals.org/doi/10.7326/M19-0618",
+            "x": 50,
+            "y": 43.8,
+            "label_y": 70,
+            "side": "l"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ]
     }
   },
   "order": [
@@ -778,6 +869,7 @@
     "ks_video",
     "ks_whats_in",
     "ks_features",
+    "ks_body",
     "ks_research",
     "ks_compare",
     "ks_faq",
