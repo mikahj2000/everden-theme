@@ -64,7 +64,7 @@
       </ul>
     </div>
     {%- if count > 0 -%}
-      {%- assign ncols = section.settings.columns -%}
+      {%- assign ncols = section.settings.columns | plus: 0 -%}
       <div class="evs__cols" style="--cols:{{ ncols }}" aria-hidden="true">
         {%- for c in (1..ncols) -%}
           <div class="evs__col">
@@ -95,7 +95,7 @@
     { "type": "text", "id": "label", "label": "Label" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Made for the way you cook" },
     { "type": "textarea", "id": "intro", "label": "Intro" },
-    { "type": "range", "id": "columns", "label": "Photo columns", "min": 2, "max": 3, "step": 1, "default": 3 },
+    { "type": "select", "id": "columns", "label": "Photo columns", "default": "3", "options": [{"value":"2","label":"2"},{"value":"3","label":"3"}] },
     { "type": "paragraph", "content": "Photos are shared across the columns in order. Use 6 or 9 for even columns." },
     { "type": "image_picker", "id": "image_1", "label": "Photo 1" },
     { "type": "image_picker", "id": "image_2", "label": "Photo 2" },

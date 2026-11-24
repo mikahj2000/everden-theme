@@ -668,7 +668,7 @@
         "label": "Every night at the stove",
         "heading": "Made for the way you cook",
         "intro": "Seven solid teak tools that live by the stove and get used every night.",
-        "columns": 3
+        "columns": "3"
       },
       "blocks": {
         "f1": {
