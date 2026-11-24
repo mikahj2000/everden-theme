@@ -260,7 +260,7 @@
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "Description",
-                    "open_by_default": true,
+                    "open_by_default": false,
                     "icon": "none",
                     "width": 20
                   },
@@ -667,7 +667,16 @@
         "label": "Every night at the stove",
         "heading": "Made for the way you cook",
         "intro": "Seven solid teak tools that live by the stove and get used every night.",
-        "columns": "3"
+        "columns": "3",
+        "image_1": "shopify://shop_images/everden-kitchen-set-life-sauce.jpg",
+        "image_2": "shopify://shop_images/everden-kitchen-set-life-window.jpg",
+        "image_3": "shopify://shop_images/everden-kitchen-set-life-soup.jpg",
+        "image_4": "shopify://shop_images/everden-kitchen-set-life-cup-stove.jpg",
+        "image_5": "shopify://shop_images/everden-kitchen-set-life-onions.jpg",
+        "image_6": "shopify://shop_images/everden-kitchen-set-life-dinner.jpg",
+        "image_7": "shopify://shop_images/everden-kitchen-set-life-saute.jpg",
+        "image_8": "shopify://shop_images/everden-kitchen-set-life-wash.jpg",
+        "image_9": "shopify://shop_images/everden-kitchen-set-stove.jpg"
       },
       "blocks": {
         "f1": {
@@ -690,8 +699,8 @@
           "type": "feature",
           "settings": {
             "icon": "pan",
-            "title": "Gentle on your pans",
-            "text": "Safe for nonstick and enameled cookware, so you can stop worrying about scratches from metal."
+            "title": "Kind to nonstick",
+            "text": "Gentle on nonstick and enameled cookware, without the scratches metal can leave."
           }
         },
         "f4": {
