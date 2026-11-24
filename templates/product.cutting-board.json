@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -428,10 +437,6 @@
     },
     "cb_features": {
       "type": "everden-feature-rows",
-      "settings": {
-        "label": "Made for real cooking",
-        "heading": "Designed around how you work."
-      },
       "blocks": {
         "f_lip": {
           "type": "feature",
@@ -462,21 +467,14 @@
         "f_lip",
         "f_carry",
         "f_groove"
-      ]
+      ],
+      "settings": {
+        "label": "Made for real cooking",
+        "heading": "Designed around how you work."
+      }
     },
     "cb_compare": {
       "type": "everden-compare-grid",
-      "settings": {
-        "label": "How teak compares",
-        "heading": "Teak, bamboo or plastic?",
-        "lede": "No sales pitch, just the comparison. The choice is yours.",
-        "row_header": "Feature",
-        "col1": "Teak",
-        "col2": "Bamboo",
-        "col3": "Plastic",
-        "col4": "",
-        "note": "General comparison of typical boards. Plastic boards shed microplastics as you cut – Yadav et al., Environmental Science & Technology, 2023."
-      },
       "blocks": {
         "r_water": {
           "type": "row",
@@ -524,14 +522,65 @@
         "r_micro",
         "r_dish",
         "r_life"
-      ]
+      ],
+      "settings": {
+        "label": "How teak compares",
+        "heading": "Teak, bamboo or plastic?",
+        "lede": "No sales pitch, just the comparison. The choice is yours.",
+        "row_header": "Feature",
+        "col1": "Teak",
+        "col2": "Bamboo",
+        "col3": "Plastic",
+        "col4": "",
+        "note": "General comparison of typical boards. Plastic boards shed microplastics as you cut – Yadav et al., Environmental Science & Technology, 2023."
+      }
+    },
+    "179549599635ea14ba": {
+      "type": "_blocks",
+      "blocks": {
+        "lai_product_reviews_lai_product_section_k7BfdW": {
+          "type": "shopify://apps/lai-product-reviews/blocks/lai-product-section/cad3c6c6-329e-4416-ba74-b79359b5b6e1",
+          "settings": {
+            "lai_product": "teak-cutting-board",
+            "title": "",
+            "use_other_product": true
+          }
+        }
+      },
+      "block_order": [
+        "lai_product_reviews_lai_product_section_k7BfdW"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "#f6f2eb",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     },
     "cb_faq": {
       "type": "everden-faq",
-      "settings": {
-        "label": "Questions",
-        "heading": "About the Cutting Board"
-      },
       "blocks": {
         "q_size": {
           "type": "faq",
@@ -567,7 +616,11 @@
         "q_serve",
         "q_well",
         "q_dish"
-      ]
+      ],
+      "settings": {
+        "label": "Questions",
+        "heading": "About the Cutting Board"
+      }
     }
   },
   "order": [
@@ -575,6 +628,7 @@
     "cb_size",
     "cb_features",
     "cb_compare",
+    "179549599635ea14ba",
     "cb_faq"
   ]
 }
