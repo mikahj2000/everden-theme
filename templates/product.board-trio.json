@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -418,10 +427,6 @@
     },
     "tr_features": {
       "type": "everden-feature-rows",
-      "settings": {
-        "label": "The Board Trio",
-        "heading": "Three sizes, for every job."
-      },
       "blocks": {
         "f_sizes": {
           "type": "feature",
@@ -431,14 +436,6 @@
             "text": "<p>Large, 17 × 12 in, for carving and big prep jobs. Medium, 13 × 9.5 in, the everyday board. Small, 10 × 7 in, for lemons, garlic, herbs and cheese.</p>"
           }
         },
-        "f_groove": {
-          "type": "feature",
-          "settings": {
-            "image": "shopify://shop_images/everden-trio-upright-sink.jpg",
-            "title": "A juice groove on every board",
-            "text": "<p>Each board is 0.78 in (2 cm) thick, with a juice groove around the edge.</p>"
-          }
-        },
         "f_table": {
           "type": "feature",
           "settings": {
@@ -446,27 +443,28 @@
             "title": "From prep to the table",
             "text": "<p>One for prep, one for bread or cheese, one to carry to the table.</p>"
           }
+        },
+        "f_groove": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/everden-trio-upright-sink.jpg",
+            "title": "A juice groove on every board",
+            "text": "<p>Each board is 0.78 in (2 cm) thick, with a juice groove around the edge.</p>"
+          }
         }
       },
       "block_order": [
         "f_sizes",
         "f_table",
         "f_groove"
-      ]
+      ],
+      "settings": {
+        "label": "The Board Trio",
+        "heading": "Three sizes, for every job."
+      }
     },
     "tr_compare": {
       "type": "everden-compare-grid",
-      "settings": {
-        "label": "How teak compares",
-        "heading": "Teak, bamboo or plastic?",
-        "lede": "No sales pitch, just the comparison. The choice is yours.",
-        "row_header": "Feature",
-        "col1": "Teak",
-        "col2": "Bamboo",
-        "col3": "Plastic",
-        "col4": "",
-        "note": "General comparison of typical boards. Plastic boards shed microplastics as you cut – Yadav et al., Environmental Science & Technology, 2023."
-      },
       "blocks": {
         "r_water": {
           "type": "row",
@@ -514,14 +512,21 @@
         "r_micro",
         "r_dish",
         "r_life"
-      ]
+      ],
+      "settings": {
+        "label": "How teak compares",
+        "heading": "Teak, bamboo or plastic?",
+        "lede": "No sales pitch, just the comparison. The choice is yours.",
+        "row_header": "Feature",
+        "col1": "Teak",
+        "col2": "Bamboo",
+        "col3": "Plastic",
+        "col4": "",
+        "note": "General comparison of typical boards. Plastic boards shed microplastics as you cut – Yadav et al., Environmental Science & Technology, 2023."
+      }
     },
     "tr_faq": {
       "type": "everden-faq",
-      "settings": {
-        "label": "Questions",
-        "heading": "About the Board Trio"
-      },
       "blocks": {
         "q_sizes": {
           "type": "faq",
@@ -557,13 +562,62 @@
         "q_which",
         "q_stand",
         "q_dish"
-      ]
+      ],
+      "settings": {
+        "label": "Questions",
+        "heading": "About the Board Trio"
+      }
+    },
+    "1795489735ef9d3340": {
+      "type": "_blocks",
+      "blocks": {
+        "lai_product_reviews_lai_product_section_jt4YB4": {
+          "type": "shopify://apps/lai-product-reviews/blocks/lai-product-section/cad3c6c6-329e-4416-ba74-b79359b5b6e1",
+          "settings": {
+            "lai_product": "teak-board-trio",
+            "title": "Ratings&Reviews",
+            "use_other_product": false
+          }
+        }
+      },
+      "block_order": [
+        "lai_product_reviews_lai_product_section_jt4YB4"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
     "main",
     "tr_features",
     "tr_compare",
-    "tr_faq"
+    "tr_faq",
+    "1795489735ef9d3340"
   ]
 }
