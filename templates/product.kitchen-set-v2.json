@@ -731,7 +731,9 @@
     },
     "ks_video": {
       "type": "everden-video",
-      "settings": {}
+      "settings": {
+        "video": "shopify://files/videos/everden-egg-flip.mp4"
+      }
     },
     "ks_research": {
       "type": "everden-research",
