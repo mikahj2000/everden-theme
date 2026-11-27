@@ -8,6 +8,7 @@
 {%- enddoc -%}
 
 {% render 'price-styles' %}
+<style>.evd-bf-tag{display:inline-block;margin-inline-start:8px;padding:2px 7px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:#0E0C0B;color:#E3B96B;vertical-align:middle}</style>
 
 {%- liquid
   assign show_unit_price = show_unit_price | default: false
@@ -25,6 +26,19 @@
     assign price = 1999
   endif
 
+  # Everden Black Friday: show 20% off with the regular price crossed out, only between
+  # Nov 27 00:00 and Dec 1 23:59 Central (Unix seconds below). Matches the automatic discount.
+  assign evd_now = 'now' | date: '%s' | plus: 0
+  assign evd_sale = false
+  if product_resource != blank and evd_now >= 1795759200 and evd_now <= 1796191199
+    assign evd_sale = true
+    if compare_at_price == blank or compare_at_price < price
+      assign compare_at_price = price
+    endif
+    assign price = price | times: 0.8 | round
+    assign show_compare_price = true
+  endif
+
   # Check if variant has volume pricing
   assign has_volume_pricing = null
   assign price_min = null
@@ -40,6 +54,10 @@
   if is_product_card
     assign price_min = product_resource.price_min
     assign price_max = product_resource.price_max
+    if evd_sale
+      assign price_min = price_min | times: 0.8 | round
+      assign price_max = price_max | times: 0.8 | round
+    endif
     assign has_volume_pricing = product_resource.quantity_price_breaks_configured? | default: false
   else
     # Product page: only use selected variant's pricing
@@ -115,6 +133,7 @@
       >
     {% endif %}
   {% endif %}
+  {%- if evd_sale -%}<span class="evd-bf-tag">Black Friday</span>{%- endif -%}
   {%- if selected_variant.unit_price and show_unit_price %}
     {%- liquid
       if use_currency
