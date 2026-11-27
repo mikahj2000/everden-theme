@@ -130,9 +130,24 @@
         "enable_transparent_header_product": false,
         "enable_transparent_header_collection": false
       }
+    },
+    "everden_bf_banner": {
+      "type": "everden-sale-banner",
+      "settings": {
+        "enabled": true,
+        "start": 1795759200,
+        "end": 1796191199,
+        "items": "Black Friday: 20% off everything\n2 Kitchen Sets for $219\n3 Kitchen Sets for $299\nNo code needed\nEnds Cyber Monday",
+        "link": "shopify://products/teak-kitchen-set",
+        "bg": "#0E0C0B",
+        "fg": "#FFFFFF",
+        "accent": "#E3B96B",
+        "duration": 36
+      }
     }
   },
   "order": [
+    "everden_bf_banner",
     "header_announcements_9jGBFp",
     "header_section"
   ]

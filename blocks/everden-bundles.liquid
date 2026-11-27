@@ -4,9 +4,18 @@
   so keep the prices here in step with those discounts.
 {%- endcomment -%}
 {%- assign p1 = block.settings.price_1 -%}
+{%- liquid
+  assign now_s = 'now' | date: '%s' | plus: 0
+  assign sale = false
+  if block.settings.sale_on and block.settings.sale_start > 0 and now_s >= block.settings.sale_start and now_s <= block.settings.sale_end
+    assign sale = true
+  endif
+-%}
 {%- assign each = closest.product.price | default: 13900 -%}
 <div class="evb" id="evb-{{ block.id }}" {{ block.shopify_attributes }}>
-  {%- if block.settings.heading != blank -%}
+  {%- if sale and block.settings.sale_heading != blank -%}
+    <p class="evb__head evb__head--sale"><span>{{ block.settings.sale_heading }}</span></p>
+  {%- elsif block.settings.heading != blank -%}
     <p class="evb__head"><span>{{ block.settings.heading }}</span></p>
   {%- endif -%}
   <div class="evb__list" role="radiogroup" aria-label="{{ block.settings.heading | default: 'Bundle' | escape }}">
@@ -27,7 +36,20 @@
             assign total = block.settings.price_3
             assign tag = block.settings.tag_3
         endcase
-        assign total_cents = total | times: 100
+        if sale
+          case i
+            when 1
+              assign total = block.settings.sale_price_1
+              assign tag = block.settings.sale_tag_1
+            when 2
+              assign total = block.settings.sale_price_2
+              assign tag = block.settings.sale_tag_2
+            when 3
+              assign total = block.settings.sale_price_3
+              assign tag = block.settings.sale_tag_3
+          endcase
+        endif
+        assign total_cents = total | times: 100 | round
         assign full_cents = each | times: qty
         assign save_cents = full_cents | minus: total_cents
         assign per_cents = total_cents | divided_by: qty
@@ -53,7 +75,8 @@
       {%- endif -%}
     {%- endfor -%}
   </div>
-  {%- if block.settings.note != blank -%}<p class="evb__note">{{ block.settings.note }}</p>{%- endif -%}
+  {%- if sale and block.settings.sale_note != blank -%}<p class="evb__note">{{ block.settings.sale_note }}</p>
+  {%- elsif block.settings.note != blank -%}<p class="evb__note">{{ block.settings.note }}</p>{%- endif -%}
 </div>
 <script>
   (function () {
@@ -114,6 +137,7 @@
   .evb__now{font-size:17px;font-weight:600}
   .evb__was{font-size:13px;color:#8A7B6D}
   .evb__save{font-size:12px;font-weight:600;color:var(--teak)}
+  .evb__head--sale{color:#B4232A}
   .evb__note{margin:10px 0 0;font-size:13px;color:var(--umber);text-align:center}
 {% endstylesheet %}
 {% schema %}
@@ -132,7 +156,19 @@
     { "type": "text", "id": "title_3", "label": "Option 3 title", "default": "Buy 3" },
     { "type": "number", "id": "price_3", "label": "Option 3 total ($)", "default": 349 },
     { "type": "text", "id": "tag_3", "label": "Option 3 tag", "default": "Best value" },
-    { "type": "text", "id": "note", "label": "Note under options", "default": "Savings apply automatically at checkout." }
+    { "type": "text", "id": "note", "label": "Note under options", "default": "Savings apply automatically at checkout." },
+    { "type": "header", "content": "Sale prices (shown only between the start and end times)" },
+    { "type": "checkbox", "id": "sale_on", "label": "Use sale prices", "default": false },
+    { "type": "number", "id": "sale_start", "label": "Sale start (Unix seconds, UTC)", "default": 0 },
+    { "type": "number", "id": "sale_end", "label": "Sale end (Unix seconds, UTC)", "default": 0 },
+    { "type": "text", "id": "sale_heading", "label": "Sale heading" },
+    { "type": "number", "id": "sale_price_1", "label": "Sale option 1 total ($)" },
+    { "type": "text", "id": "sale_tag_1", "label": "Sale option 1 tag" },
+    { "type": "number", "id": "sale_price_2", "label": "Sale option 2 total ($)" },
+    { "type": "text", "id": "sale_tag_2", "label": "Sale option 2 tag" },
+    { "type": "number", "id": "sale_price_3", "label": "Sale option 3 total ($)" },
+    { "type": "text", "id": "sale_tag_3", "label": "Sale option 3 tag" },
+    { "type": "text", "id": "sale_note", "label": "Sale note under options" }
   ],
   "presets": [{ "name": "Everden bundles" }]
 }

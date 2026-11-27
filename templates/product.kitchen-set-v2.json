@@ -316,7 +316,7 @@
                     "text": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Every order ships tracked and usually arrives within 7–12 business days. If a piece isn't right for your home, tell us within 30 days of delivery for a full refund.</p>",
+                        "text": "<p>Every order ships tracked and usually arrives within 7\u201312 business days. If a piece isn't right for your home, tell us within 30 days of delivery for a full refund.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -353,7 +353,7 @@
               "type": "text",
               "name": "Why teak link",
               "settings": {
-                "text": "<p><a href=\"/#lx-material\">Why teak, and how to care for it →</a></p>",
+                "text": "<p><a href=\"/#lx-material\">Why teak, and how to care for it \u2192</a></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -378,7 +378,7 @@
             "ev_benefits": {
               "type": "everden-benefits",
               "settings": {
-                "badge": "30-day money-back guarantee, nothing to send back · Free US shipping",
+                "badge": "30-day money-back guarantee, nothing to send back \u00b7 Free US shipping",
                 "i1": "leaf",
                 "b1": "No plastic to shed into your food: solid teak with a non-toxic, food-grade finish",
                 "i2": "flame",
@@ -404,7 +404,18 @@
                 "title_3": "Buy 3",
                 "price_3": 349,
                 "tag_3": "Best value",
-                "note": "Savings apply automatically at checkout."
+                "note": "Savings apply automatically at checkout.",
+                "sale_on": true,
+                "sale_start": 1795759200,
+                "sale_end": 1796191199,
+                "sale_heading": "Black Friday prices",
+                "sale_price_1": 111.2,
+                "sale_tag_1": "20% off",
+                "sale_price_2": 219,
+                "sale_tag_2": "Black Friday",
+                "sale_price_3": 299,
+                "sale_tag_3": "Best deal of the year",
+                "sale_note": "Black Friday savings apply automatically at checkout. Ends Cyber Monday."
               },
               "blocks": {}
             },
@@ -746,7 +757,7 @@
         "s1": {
           "type": "study",
           "settings": {
-            "stat": "2,409–4,964",
+            "stat": "2,409\u20134,964",
             "stat_label": "Microplastics a year, estimated",
             "title": "Plastic cookware can add microplastics to home-cooked food",
             "text": "<p>Researchers estimated that cooking with plastic kitchen items, including utensils, boards and nonstick pans, could add roughly 2,400 to 5,000 microplastic particles a year to home-cooked food. Cookware without plastic added none.</p><p>It's a modelled estimate based on one home-cooked meal a day.</p>",
@@ -760,7 +771,7 @@
             "stat": "10 of 33",
             "stat_label": "Nylon utensils over the guideline",
             "title": "Nylon utensils can release plastic compounds into hot food",
-            "text": "<p>Germany's Federal Institute for Risk Assessment (BfR) tested 33 nylon (polyamide) kitchen utensils. In lab tests, 10 released more plastic oligomers than its 5 mg per kg of food guideline.</p><p>Its advice: keep nylon utensils' contact with hot food, above 70 °C, as brief as possible.</p>",
+            "text": "<p>Germany's Federal Institute for Risk Assessment (BfR) tested 33 nylon (polyamide) kitchen utensils. In lab tests, 10 released more plastic oligomers than its 5 mg per kg of food guideline.</p><p>Its advice: keep nylon utensils' contact with hot food, above 70 \u00b0C, as brief as possible.</p>",
             "source": "BfR Opinion 036/2019",
             "url": "https://www.bfr.bund.de/cm/349/polyamide-kitchen-utensils-keep-contact-with-hot-food-as-brief-as-possible.pdf"
           }
@@ -810,7 +821,7 @@
         "p2": {
           "type": "point",
           "settings": {
-            "stat": "4.5× the risk of heart attack, stroke or death",
+            "stat": "4.5\u00d7 the risk of heart attack, stroke or death",
             "title": "Arteries",
             "text": "People with plastic lodged in their artery plaque were 4.5 times more likely to have a heart attack, a stroke or die within 3 years.",
             "source": "Marfella et al., NEJM, 2024",
